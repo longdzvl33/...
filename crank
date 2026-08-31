@@ -1,0 +1,5586 @@
+-- Readable static deobfuscation of the FG100 payload.
+-- Built from the attached remote response; the original is preserved separately.
+-- The string table, obfuscator aliases, hex/binary literals, and artificial
+-- l/I-style variable names were normalized. This file has NOT been executed.
+--
+-- WARNING: this is a Roblox exploit-style script for Muscle Legends. It uses
+-- VirtualUser/VirtualInputManager, client remotes, automation, teleports,
+-- server hopping, fly/noclip-like behavior, and gameplay farming features.
+
+-- Static deobfuscation of the remote FG100 payload retrieved from the endpoint.
+-- The original string table has been resolved into literal strings.
+-- WARNING: this is a Roblox exploit-style UI script. Do not run it blindly.
+-- It interacts with the game client, uses VirtualUser/VirtualInputManager,
+-- teleports/automates gameplay, and may be intended to bypass game rules.
+
+return{[(function(y)return(y)end)(1201)]=((function(...)
+local _=(select('#'));
+local _=(select('#'));
+local _=((select('#'))) ;
+("This Script is Part of the Prometheus Obfuscator by Levno_710"):gsub(".+", function(var_001, ...)
+_WATERMARK = var_001
+		end);
+local var_001 = game:GetService("Players");
+local var_002 = game:GetService("ReplicatedStorage");
+local var_003 = game:GetService("RunService");
+local var_004 = game:GetService("TweenService");
+local var_005 = game:GetService("UserInputService");
+local var_006 = game:GetService("VirtualInputManager");
+local var_007 = game:GetService("VirtualUser");
+local var_008 = game:GetService("Stats");
+local var_009 = game:GetService("Lighting");
+local var_010 = 3623096087
+if game["PlaceId"] ~= var_010 and not ((tostring(game.Name or "")):lower()):find("muscle legends", 1, true) then
+return
+		end
+local var_011 = var_001["LocalPlayer"]
+local var_012 = var_011:WaitForChild("PlayerGui");
+local var_013 = getgenv and getgenv() or _G
+if not ({ [4473738491] = true, [2955289715] = true, [1620672820] = true, [2500188617] = true, [3845958096] = true, [10986230819] = true, [5486738320] = true, [9879123031] = true, [11395285875] = true, [10886140154] = true, [3039550957] = true, [1835330458] = true })[var_011.UserId] then
+task.spawn(function(...)
+for var_001 = 1, 5, 1 do
+local var_002 = pcall(function(...)
+(game:GetService("StarterGui")):SetCore("SendNotification", { ["Title"] = "FG100", ["Text"] = "No estás autorizado.", ["Duration"] = 6 })
+						end)
+if var_002 then
+break
+					end
+task.wait(1)
+				end
+			end)
+return
+		end
+do
+local var_001 = var_013["Young0xPersistentAntiAfk"]
+if type(var_001) ~= "table" then
+var_001 = {};
+var_013["Young0xPersistentAntiAfk"] = var_001
+			end
+if not var_001["connection"] or not var_001["connection"]["Connected"] then
+var_001["connection"] = var_011.Idled:Connect(function(...)
+pcall(function(...)
+var_007:CaptureController();
+local var_001 = workspace["CurrentCamera"]
+local var_002 = var_001 and var_001.CFrame or CFrame.new();
+var_007:Button2Down(Vector2.new(0, 0), var_002);
+task.wait(.05);
+var_007:Button2Up(Vector2.new(0, 0), var_002)
+						end)
+					end)
+			end
+		end
+local var_014 = { ["Title"] = "⚡  ¡Young0x Hub  -  Fast Glitch 100%!  ⚡", ["Discord"] = "https://discord.gg/NxZNRGJfQc", ["YouTube"] = "https://www.youtube.com/@Real_Young0x", ["Size"] = { ["DesktopWidth"] = 520, ["DesktopHeight"] = 338, ["MobileWidthScale"] = .86, ["MobileHeightScale"] = .5, ["MinWidth"] = 276, ["MinHeight"] = 232, ["MaxMobileWidth"] = 455, ["MaxMobileHeight"] = 305 }, ["Colors"] = { ["base"] = Color3["fromRGB"](2, 14, 32), ["panel"] = Color3["fromRGB"](4, 29, 57), ["row"] = Color3["fromRGB"](5, 34, 65), ["rowHover"] = Color3["fromRGB"](9, 53, 94), ["tab"] = Color3["fromRGB"](4, 27, 52), ["tabOn"] = Color3["fromRGB"](10, 103, 171), ["cyan"] = Color3["fromRGB"](42, 224, 255), ["blue"] = Color3["fromRGB"](26, 139, 255), ["green"] = Color3["fromRGB"](65, 239, 157), ["orange"] = Color3["fromRGB"](255, 185, 64), ["red"] = Color3["fromRGB"](255, 83, 111), ["white"] = Color3["fromRGB"](255, 255, 255), ["soft"] = Color3["fromRGB"](220, 247, 255), ["dim"] = Color3["fromRGB"](153, 207, 231), ["black"] = Color3["fromRGB"](0, 0, 0) }, ["Tabs"] = { { "Info", 62 }, { "Main", 62 }, { "Fast Glitch 100%", 120 }, { "Glitch Timer", 92 }, { "Auto Farm", 88 }, { "Fast Farm", 84 }, { "Rebirths", 78 }, { "Kills", 62 }, { "Pet Shop", 86 }, { "Gifts", 60 }, { "Fast Trade", 88 }, { "Teleports", 84 }, { "Stats", 62 }, { "Misc", 60 } }, ["Rocks"] = { { ["name"] = "Ancient Rock", ["durability"] = 10000000 }, { ["name"] = "Muscle King Rock", ["durability"] = 5000000 }, { ["name"] = "Legend Rock", ["durability"] = 1000000 }, { ["name"] = "Eternal Rock", ["durability"] = 750000 }, { ["name"] = "Mythical Rock", ["durability"] = 400000 }, { ["name"] = "Frost Rock", ["durability"] = 150000 }, { ["name"] = "Beach Rock", ["durability"] = 5000 }, { ["name"] = "Starter Rock", ["durability"] = 100 }, { ["name"] = "Tiny Rock", ["durability"] = 0 } }, ["Machines"] = { { ["label"] = "Jungle Bench", ["object"] = "Jungle Bench", ["fallback"] = CFrame.new(-8173, 64, 1898) }, { ["label"] = "Jungle Lift", ["object"] = "Jungle Bar Lift", ["fallback"] = CFrame.new(-8652.8672, 29.2667, 2089.2617) }, { ["label"] = "Jungle Squat", ["object"] = "Jungle Squat", ["fallback"] = CFrame.new(-8352, 34, 2878) } }, ["Teleports"] = { { "Jungle Gym", Vector3.new(-7894, 6, 2386) }, { "Muscle King", Vector3.new(-8799, 17, -5798) }, { "Legends Gym", Vector3.new(4429, 991, -3880) }, { "Eternal Gym", Vector3.new(-6768, 7, -1287) }, { "Mythical Gym", Vector3.new(2255, 7, 1071) }, { "Frost Gym", Vector3.new(-2650, 7, -393) }, { "Tiny Gym", Vector3.new(50, 7, 1918) }, { "Beach", Vector3.new(9, 7, 100) }, { "Secret Area", Vector3.new(1947, 2, 6191) }, { "Desert Brawl", Vector3.new(960, 17, -7398) }, { "Lava Brawl", Vector3.new(4471, 119, -8836) } }, ["UniqueAuras"] = { "Muscle King", "Entropic Blast" }, ["UniquePets"] = { "Neon Guardian", "Cybernetic Showdown Dragon", "Darkstar Hunter", "Muscle Sensei", "Infernal Dragon", "Aether Spirit Bunny", "Magic Butterfly", "Ultra Birdie" }, ["AutoEgg"] = { ["Interval"] = 1800, ["Names"] = { "ProteinEgg", "Protein Egg" } }, ["FastFarm"] = { ["StrengthPet"] = "Swift Samurai", ["RebirthPet"] = "Tribal Overlord", ["MaxPets"] = 8, ["RepsPerCycle"] = 70, ["RepDelay"] = .005, ["PingSoft"] = 180, ["PingMedium"] = 300, ["PingHigh"] = 450, ["PingCritical"] = 600, ["PingPause"] = 999, ["PingResume"] = 400, ["StrengthStartBatch"] = 14, ["StrengthMaxBatch"] = 42, ["StrengthRampPing"] = 140, ["StrengthRampInterval"] = 4, ["StrengthDelay"] = .02, ["SizeInvokeInterval"] = .75, ["SizeReleaseDuration"] = 5, ["FramesReleaseDuration"] = 10, ["RockName"] = "Rock5M", ["RockInterval"] = 5, ["RebirthCycleDelay"] = .2, ["RebirthRequestWindow"] = .75 }, ["ServerHop"] = { ["Interval"] = 120, ["LoaderUrl"] = "https://raw.githubusercontent.com/Young0xHUB/Young0x-HUB/refs/heads/main/loader.lua", ["ServerApi"] = "https://games.roblox.com/v1/games/%d/servers/Public?sortOrder=Desc&limit=100", ["PreferredPlayers"] = 18, ["MinimumPlayers"] = 16, ["NoTargetsDelay"] = 10, ["RetryDelay"] = 5, ["HistoryLimit"] = 60 }, ["Kills"] = { ["ProtectedPrivateServerIds"] = {} } };
+local var_015 = var_014.Colors
+do
+local var_001 = var_013["Young0xFG100"]
+if var_001 and type(var_001["Shutdown"]) == "function" then
+pcall(var_001["Shutdown"], true)
+			end
+		end
+local var_016 = { ["running"] = true, ["resume"] = type(var_013["Young0xFG100Resume"]) == "table" and var_013["Young0xFG100Resume"] or nil, ["fastPunch"] = false, ["selectedRock"] = nil, ["rockGeneration"] = 0, ["rockSessionStartedAt"] = nil, ["autoWeight"] = false, ["autoHandstands"] = false, ["autoLift"] = false, ["autoSitups"] = false, ["autoEgg"] = false, ["exerciseMovement"] = { ["active"] = {}, ["humanoid"] = nil, ["walkSpeed"] = nil, ["jumpValue"] = nil, ["usesJumpPower"] = true }, ["hideFrames"] = false, ["hideDurability"] = false, ["fastFarmMode"] = nil, ["machine"] = nil, ["autoPet"] = false, ["autoAura"] = false, ["antiLag"] = false, ["antiLagGeneration"] = 0, ["walkWater"] = false, ["autoSpinWheel"] = false, ["autoClaimChests"] = false, ["mainAutoSize"] = false, ["mainAutoSpeed"] = false, ["mainSize"] = 2, ["mainSpeed"] = 125, ["infiniteJump"] = false, ["removePortals"] = false, ["fastSpeed"] = false, ["fly"] = false, ["flyLevel"] = 10, ["antiKnockback"] = false, ["noclip"] = false, ["spin"] = false, ["spy"] = false, ["spyTarget"] = nil, ["kill"] = { ["auto"] = false, ["karmaMode"] = nil, ["protectFriends"] = false, ["targetMode"] = false, ["target"] = nil, ["serverHop"] = false, ["friendCache"] = {}, ["serverHistory"] = {}, ["serversVisited"] = 1, ["hopNow"] = false, ["noTargetsSince"] = nil, ["lockCFrame"] = nil, ["lockCharacter"] = nil }, ["trade"] = { ["busy"] = false, ["requestGeneration"] = 0, ["delivered"] = 0, ["total"] = 0 }, ["rebirth"] = { ["target"] = nil, ["autoTarget"] = false, ["infinite"] = false, ["sizeOne"] = false, ["fastWeight"] = false, ["king"] = false, ["lockPosition"] = false, ["lockCFrame"] = nil, ["ultimateRunning"] = false } }
+if var_016.resume and type(var_016.resume["serverHistory"]) == "table" then
+var_016.kill["serverHistory"] = var_016.resume["serverHistory"]
+		end
+if var_016.resume then
+var_016.kill["serversVisited"] = math.max(1, tonumber(var_016.resume["serversVisited"]) or 1)
+		end
+if game.JobId ~= "" and not table.find(var_016.kill["serverHistory"], game.JobId) then
+var_016.kill["serverHistory"][#var_016.kill["serverHistory"] + 1] = game.JobId
+		end
+var_013["Young0xFG100Resume"] = nil
+local var_017 = {};
+local var_018 = {};
+local var_019 = {};
+local var_020 = {};
+local var_021 = {};
+local function var_022(var_001, ...)
+var_017[#var_017 + 1] = var_001
+return var_001
+		end
+local function var_023(var_001, ...)
+var_019[#var_019 + 1] = var_001
+		end
+local function var_024(var_001, ...)
+local var_002 = var_018[var_001]
+if var_002 then
+pcall(task.cancel, var_002);
+var_018[var_001] = nil
+			end
+		end
+local function var_025(var_001, var_002, ...)
+var_024(var_001);
+var_018[var_001] = task.spawn(function(...)
+pcall(var_002);
+var_018[var_001] = nil
+				end)
+return var_018[var_001]
+		end
+local function var_026(...)
+for var_001, var_002 in ipairs(var_017) do
+pcall(function(...)
+var_002:Disconnect()
+				end)
+			end
+table.clear(var_017)
+for var_001 in pairs(var_018) do
+var_024(var_001)
+			end
+		end
+local function var_027(...)
+return var_011["Character"]
+		end
+local function var_028(...)
+local var_001 = var_027()
+return var_001 and var_001:FindFirstChildWhichIsA("Humanoid")
+		end
+local function var_029(...)
+local var_001 = var_027()
+return var_001 and var_001:FindFirstChild("HumanoidRootPart")
+		end
+local function var_030(var_002, ...)
+var_002 = (tostring(var_002 or "")):lower()
+if var_002 == "" then
+return nil
+			end
+for var_001, var_003 in ipairs(var_001:GetPlayers()) do
+if var_003.Name:lower() == var_002 or var_003["DisplayName"]:lower() == var_002 then
+return var_003
+				end
+			end
+for var_001, var_003 in ipairs(var_001:GetPlayers()) do
+if (var_003.Name:lower()):find(var_002, 1, true) or (var_003["DisplayName"]:lower()):find(var_002, 1, true) then
+return var_003
+				end
+			end
+return nil
+		end
+local function var_031(var_001, var_002, ...)
+if not var_001 then
+return nil
+			end
+local var_003 = {}
+for var_001, var_002 in ipairs(var_002) do
+var_003[(var_002:lower()):gsub("%s+", "")] = true
+			end
+for var_001, var_002 in ipairs(var_001:GetChildren()) do
+local var_004 = (var_002.Name:lower()):gsub("%s+", "")
+if var_003[var_004] and var_002:IsA("ValueBase") then
+return var_002
+				end
+			end
+return nil
+		end
+local function var_032(var_001, var_002, ...)
+local var_003 = var_001 and var_001:FindFirstChild("leaderstats")
+return var_031(var_003, var_002) or var_031(var_001, var_002)
+		end
+local function var_033(var_001, ...)
+local var_002 = tonumber(var_001) or 0
+local var_003 = var_002 < 0
+local var_004 = string.format("%.0f", math.abs(var_002));
+local var_005 = (((var_004:reverse()):gsub("(%d%d%d)", "%1.")):reverse()):gsub("^%.", "")
+return (var_003 and "-" or "") .. var_005
+		end
+local function var_034(var_001, ...)
+local var_002 = tonumber(var_001) or 0
+return (var_002 >= 0 and "+" or "") .. var_033(var_002)
+		end
+local function var_035(...)
+local var_001, var_002 = pcall(function(...)
+return var_008["Network"]["ServerStatsItem"]["Data Ping"]:GetValue()
+				end)
+return var_001 and math.floor((tonumber(var_002) or 0) + .5) or 0
+		end
+local function var_036(...)
+local var_001, var_002 = pcall(workspace["GetServerTimeNow"], workspace)
+if var_001 and type(var_002) == "number" then
+return var_002
+			end
+return os.clock()
+		end
+local function var_037(var_001, ...)
+local var_002 = getgenv and getgenv() or _G
+local var_003 = var_002["setclipboard"] or var_002["toclipboard"] or var_002["writeclipboard"]
+if type(var_003) == "function" then
+pcall(var_003, tostring(var_001))
+return true
+			end
+return false
+		end
+local function var_038(var_001, ...)
+local var_002 = var_027();
+local var_003 = var_028()
+if not var_002 or not var_003 then
+return nil
+			end
+local var_004 = {}
+for var_001, var_002 in ipairs(var_001) do
+var_004[var_002:lower()] = true
+			end
+for var_001, var_005 in ipairs({ var_002, var_011:FindFirstChild("Backpack") }) do
+if var_005 then
+for var_001, var_005 in ipairs(var_005:GetChildren()) do
+if var_005:IsA("Tool") and var_004[var_005.Name:lower()] then
+if var_005.Parent ~= var_002 then
+var_003:EquipTool(var_005)
+							end
+return var_005
+						end
+					end
+				end
+			end
+return nil
+		end
+local function var_039(...)
+return var_038({ "Punch" })
+		end
+local var_040 = {};
+local var_041 = {};
+local var_042 = nil
+local function var_043(var_001, ...)
+if not var_001 or var_041[var_001] then
+return
+			end
+local var_002 = var_001:FindFirstChild("TouchPart");
+var_041[var_001] = { ["rockCFrame"] = var_001.CFrame, ["touchCFrame"] = var_002 and (var_002:IsA("BasePart") and var_002.CFrame) or nil }
+		end
+local function var_044(var_001, ...)
+if not var_001 or not var_001.Parent then
+return
+			end
+local var_002 = var_027();
+local var_003 = var_002 and var_002:FindFirstChild("LeftHand");
+local var_004 = var_002 and var_002:FindFirstChild("RightHand")
+if type(firetouchinterest) == "function" then
+if var_004 then
+pcall(firetouchinterest, var_001, var_004, 1)
+				end
+if var_003 then
+pcall(firetouchinterest, var_001, var_003, 1)
+				end
+			end
+local var_005 = var_041[var_001]
+if var_005 then
+pcall(function(...)
+var_001.CFrame = var_005["rockCFrame"]
+local var_002 = var_001:FindFirstChild("TouchPart")
+if var_002 and var_005["touchCFrame"] then
+var_002.CFrame = var_005["touchCFrame"]
+					end
+				end)
+			end
+		end
+local function var_045(...)
+local var_001 = var_042
+var_042 = nil
+if var_001 then
+var_044(var_001)
+			end
+		end
+local function var_046(...)
+var_016["rockGeneration"] = var_016["rockGeneration"] + 1
+var_016["selectedRock"] = nil
+var_016["rockSessionStartedAt"] = nil
+var_045()
+		end
+local function var_047(var_001, var_002, ...)
+if not var_001 or not var_002 then
+return
+			end
+var_043(var_001);
+pcall(function(...)
+var_001.Size = Vector3.new(2, 1, 1);
+var_001["Transparency"] = 1
+var_001["CanCollide"] = false
+if var_001:FindFirstChild("rockGui") then
+for var_001, var_002 in pairs(var_001["rockGui"]:GetChildren()) do
+var_002["Visible"] = false
+					end
+				end
+for var_002, var_003 in ipairs({ "rockEmitter", "hoopParticle", "lavaParticle" }) do
+if var_001:FindFirstChild(var_003) then
+var_001[var_003]:Destroy()
+					end
+				end
+var_001.CFrame = var_002.CFrame
+local var_003 = var_001:FindFirstChild("TouchPart")
+if var_003 then
+var_003.CFrame = var_002.CFrame
+				end
+			end)
+		end
+local function var_048(var_001, ...)
+local var_002 = var_040[var_001]
+if var_002 and var_002.Parent then
+return var_002
+			end
+local var_003 = workspace:FindFirstChild("machinesFolder")
+if not var_003 then
+return nil
+			end
+for var_002, var_003 in pairs(var_003:GetDescendants()) do
+if var_003.Name == "neededDurability" and (var_003:IsA("ValueBase") and tonumber(var_003.Value) == var_001) then
+local var_002 = var_003.Parent and var_003.Parent:FindFirstChild("Rock")
+if var_002 and var_002:IsA("BasePart") then
+var_043(var_002);
+var_040[var_001] = var_002
+return var_002
+					end
+				end
+			end
+return nil
+		end
+local function var_049(...)
+local var_001 = var_016["selectedRock"]
+local var_002 = var_016["rockGeneration"]
+if not var_001 then
+return
+			end
+local var_003 = var_011:FindFirstChild("Durability")
+if var_003 and tonumber(var_003.Value) < var_001["durability"] then
+return
+			end
+local var_004 = var_027();
+local var_005 = var_004 and var_004:FindFirstChild("LeftHand");
+local var_006 = var_004 and var_004:FindFirstChild("RightHand")
+if not var_005 or not var_006 then
+return
+			end
+local var_007 = var_048(var_001["durability"])
+if not var_007 then
+return
+			end
+if var_016["rockGeneration"] ~= var_002 or var_016["selectedRock"] ~= var_001 then
+return
+			end
+if var_042 ~= var_007 then
+var_045()
+if var_016["rockGeneration"] ~= var_002 or var_016["selectedRock"] ~= var_001 then
+return
+				end
+var_042 = var_007
+			end
+var_047(var_007, var_005)
+if var_016["rockGeneration"] ~= var_002 or var_016["selectedRock"] ~= var_001 then
+return
+			end
+if type(firetouchinterest) == "function" then
+pcall(firetouchinterest, var_007, var_006, 0)
+if var_016["rockGeneration"] ~= var_002 or var_016["selectedRock"] ~= var_001 or var_042 ~= var_007 then
+pcall(firetouchinterest, var_007, var_006, 1)
+return
+				end
+pcall(firetouchinterest, var_007, var_006, 1)
+if var_016["rockGeneration"] ~= var_002 or var_016["selectedRock"] ~= var_001 or var_042 ~= var_007 then
+return
+				end
+pcall(firetouchinterest, var_007, var_005, 0)
+if var_016["rockGeneration"] ~= var_002 or var_016["selectedRock"] ~= var_001 or var_042 ~= var_007 then
+pcall(firetouchinterest, var_007, var_005, 1)
+return
+				end
+pcall(firetouchinterest, var_007, var_005, 1)
+			end
+var_039()
+		end
+local function var_050(var_001, ...)
+var_016["fastPunch"] = var_001 == true
+if not var_016["fastPunch"] then
+var_046();
+var_024("fastPunchEquip");
+var_024("fastPunchHit");
+var_024("fastPunchRock");
+pcall(function(...)
+local var_001 = var_027() and (var_027()):FindFirstChild("Punch");
+local var_002 = var_001 and var_001:FindFirstChild("attackTime")
+if var_002 then
+var_002.Value = .3
+					end
+				end)
+return
+			end
+var_025("fastPunchEquip", function(...)
+while var_016["running"] and var_016["fastPunch"] do
+pcall(function(...)
+local var_001 = var_039()
+if var_001 then
+local var_002 = var_001:FindFirstChild("attackTime")
+if var_002 then
+var_002.Value = 0
+							end
+						end
+					end);
+task.wait(.05)
+				end
+			end);
+var_025("fastPunchHit", function(...)
+while var_016["running"] and var_016["fastPunch"] do
+local var_001 = var_011:FindFirstChild("muscleEvent");
+local var_002 = var_027();
+local var_003 = var_002 and var_002:FindFirstChild("Punch")
+if var_001 then
+pcall(var_001["FireServer"], var_001, "punch", "rightHand");
+pcall(var_001["FireServer"], var_001, "punch", "leftHand")
+					end
+if var_003 then
+pcall(var_003["Activate"], var_003)
+					end
+task.wait(.01)
+				end
+			end);
+var_025("fastPunchRock", function(...)
+while var_016["running"] and var_016["fastPunch"] do
+if var_016["selectedRock"] then
+pcall(var_049);
+local var_001 = var_011:FindFirstChild("muscleEvent")
+if var_001 then
+pcall(var_001["FireServer"], var_001, "punch", "rightHand");
+pcall(var_001["FireServer"], var_001, "punch", "leftHand")
+						end
+					end
+task.wait()
+				end
+			end)
+		end
+local var_051 = {};
+local function var_052(var_001, var_002, ...)
+if not var_002 then
+return
+			end
+local var_003 = var_002:FindFirstChild("repTime")
+if not var_003 or not var_003:IsA("ValueBase") then
+return
+			end
+var_051[var_001] = var_051[var_001] or {}
+if var_051[var_001][var_003] == nil then
+var_051[var_001][var_003] = var_003.Value
+			end
+var_003.Value = 0
+		end
+local function var_053(var_001, ...)
+local var_002 = var_051[var_001]
+if not var_002 then
+return
+			end
+for var_001, var_002 in pairs(var_002) do
+if var_001 and var_001.Parent then
+pcall(function(...)
+var_001.Value = var_002
+					end)
+				end
+			end
+var_051[var_001] = nil
+		end
+local function var_054(var_001, ...)
+local var_002 = var_027();
+local var_003 = var_011:FindFirstChild("Backpack")
+if not var_002 or not var_003 or not var_001 then
+return
+			end
+local var_004 = {}
+for var_001, var_002 in ipairs(var_001) do
+var_004[var_002:lower()] = true
+			end
+for var_001, var_002 in ipairs(var_002:GetChildren()) do
+if var_002:IsA("Tool") and var_004[var_002.Name:lower()] then
+pcall(function(...)
+var_002.Parent = var_003
+					end)
+				end
+			end
+		end
+local function var_055(var_001, var_002, var_004, var_005, ...)
+var_016[var_001] = var_002 == true
+local var_006 = var_016["exerciseMovement"]
+var_006.active[var_001] = var_016[var_001] or nil
+local var_007 = "rep_" .. var_001
+if not var_016[var_001] then
+var_024(var_007);
+var_053(var_001);
+var_054(var_004);
+local var_002 = false
+for var_001 in pairs(var_006.active) do
+var_002 = true
+break
+				end
+if not var_002 then
+var_024("exerciseMovement");
+local var_001 = var_006["humanoid"]
+if var_001 and var_001.Parent then
+pcall(function(...)
+if not var_016["fastSpeed"] and var_006["walkSpeed"] then
+var_001["WalkSpeed"] = var_006["walkSpeed"]
+							end
+if var_006["jumpValue"] then
+if var_006["usesJumpPower"] then
+var_001["JumpPower"] = var_006["jumpValue"]
+								else
+var_001["JumpHeight"] = var_006["jumpValue"]
+								end
+							end
+						end)
+					end
+var_006["humanoid"] = nil
+var_006["walkSpeed"] = nil
+var_006["jumpValue"] = nil
+				end
+return
+			end
+local var_008 = var_028()
+if var_008 and var_006["humanoid"] ~= var_008 then
+var_006["humanoid"] = var_008
+var_006["walkSpeed"] = var_008["WalkSpeed"] > 0 and var_008["WalkSpeed"] or 16
+var_006["usesJumpPower"] = var_008["UseJumpPower"]
+var_006["jumpValue"] = var_006["usesJumpPower"] and var_008["JumpPower"] or var_008["JumpHeight"]
+			end
+var_025("exerciseMovement", function(...)
+while var_016["running"] and next(var_006.active) do
+local var_001 = var_028();
+local var_002 = var_029()
+if var_001 then
+if var_006["humanoid"] ~= var_001 then
+var_006["humanoid"] = var_001
+var_006["walkSpeed"] = var_001["WalkSpeed"] > 0 and var_001["WalkSpeed"] or 16
+var_006["usesJumpPower"] = var_001["UseJumpPower"]
+var_006["jumpValue"] = var_006["usesJumpPower"] and var_001["JumpPower"] or var_001["JumpHeight"]
+						end
+if not var_016["machine"] and not var_016.fly then
+if var_002 then
+var_002["Anchored"] = false
+							end
+var_001["PlatformStand"] = false
+var_001.Sit = false
+local var_003 = var_016["fastSpeed"] and 1000 or var_006["walkSpeed"]
+if var_003 and var_001["WalkSpeed"] < var_003 then
+var_001["WalkSpeed"] = var_003
+							end
+if var_006["jumpValue"] then
+if var_006["usesJumpPower"] and var_001["JumpPower"] < var_006["jumpValue"] then
+var_001["JumpPower"] = var_006["jumpValue"]
+								elseif not var_006["usesJumpPower"] and var_001["JumpHeight"] < var_006["jumpValue"] then
+var_001["JumpHeight"] = var_006["jumpValue"]
+								end
+							end
+						end
+					end
+var_003["Heartbeat"]:Wait()
+				end
+			end);
+var_025(var_007, function(...)
+while var_016["running"] and var_016[var_001] do
+pcall(function(...)
+local var_002
+if var_004 and #var_004 > 0 then
+var_002 = var_038(var_004);
+var_052(var_001, var_002)
+						end
+local var_003 = var_011:FindFirstChild("muscleEvent")
+if var_003 then
+var_003:FireServer("rep")
+						end
+if var_002 then
+var_002:Activate()
+						end
+					end);
+task.wait(var_005 or .01)
+				end
+			end)
+		end
+var_016["eatProteinEgg"] = function(...)
+local var_001 = var_027();
+local var_003 = var_011:FindFirstChild("Backpack");
+local var_004 = var_002:FindFirstChild("rEvents")
+for var_002, var_005 in ipairs({ var_003, var_001, var_011:FindFirstChild("consumablesFolder") }) do
+if var_005 then
+for var_002, var_006 in ipairs(var_014["AutoEgg"].Names) do
+local var_007 = var_005:FindFirstChild(var_006)
+if var_007 then
+pcall(function(...)
+local var_001 = var_004 and var_004:FindFirstChild("eatEvent")
+if var_001 then
+var_001:FireServer("eat", var_007)
+									end
+								end);
+pcall(function(...)
+if var_003 and (var_001 and var_007.Parent == var_003) then
+var_007.Parent = var_001
+task.wait(.05)
+									end
+if var_007["Activate"] then
+var_007:Activate()
+									end
+								end)
+return true
+							end
+						end
+					end
+				end
+return false
+			end
+do
+local function var_001(var_001, ...)
+var_001 = tostring(var_001 or "");
+local var_002 = tonumber(var_001:match("(%d+)%s*[hH]")) or 0
+local var_003 = tonumber(var_001:match("(%d+)%s*[mM]")) or 0
+local var_004 = tonumber(var_001:match("(%d+)%s*[sS]")) or 0
+local var_005 = (var_002 * 3600 + var_003 * 60) + var_004
+return var_005 > 0 and var_005 or nil
+			end
+local function var_002(...)
+for var_002, var_003 in ipairs(var_012:GetDescendants()) do
+if var_003:IsA("TextLabel") or var_003:IsA("TextButton") then
+local var_002 = tostring(var_003.Text or "");
+local var_004 = var_002:lower();
+local var_005 = (var_004:find("fuerza", 1, true) or var_004:find("strength", 1, true)) and (var_004:find("x2", 1, true) or var_004:find("2x", 1, true))
+if var_005 then
+local var_002 = var_003.Parent
+for var_003 = 1, 4, 1 do
+if not var_002 then
+break
+								end
+for var_002, var_003 in ipairs(var_002:GetDescendants()) do
+if var_003:IsA("TextLabel") or var_003:IsA("TextButton") then
+local var_002 = var_001(var_003.Text)
+if var_002 then
+return var_002
+										end
+									end
+								end
+var_002 = var_002.Parent
+							end
+						end
+					end
+				end
+for var_001, var_002 in ipairs(var_011:GetDescendants()) do
+if var_002:IsA("ValueBase") then
+local var_001 = var_002.Name:lower()
+if var_001:find("strength", 1, true) and (var_001:find("boost", 1, true) or var_001:find("timer", 1, true)) then
+local var_001 = tonumber(var_002.Value)
+if var_001 and (var_001 > 0 and var_001 <= var_014["AutoEgg"]["Interval"]) then
+return var_001
+							end
+						end
+					end
+				end
+return 0
+			end
+var_016["autoEggSources"] = { ["manual"] = false, ["fastFarm"] = false, ["rebirth"] = false };
+var_016["autoEggNextAt"] = 0
+var_016["setAutoEgg"] = function(var_001, var_003, ...)
+var_003 = var_003 or "manual"
+var_016["autoEggSources"][var_003] = var_001 == true
+local var_004 = false
+for var_001, var_002 in pairs(var_016["autoEggSources"]) do
+if var_002 then
+var_004 = true
+break
+						end
+					end
+if var_016["autoEgg"] == var_004 then
+return
+					end
+var_016["autoEgg"] = var_004
+if not var_004 then
+var_024("autoEgg")
+return
+					end
+var_025("autoEgg", function(...)
+while var_016["running"] and var_016["autoEgg"] do
+local var_001 = time();
+local var_003 = var_002()
+if var_003 > 0 then
+var_016["autoEggNextAt"] = math.max(var_016["autoEggNextAt"], var_001 + var_003)
+							end
+if var_001 >= var_016["autoEggNextAt"] then
+if var_016["eatProteinEgg"]() then
+var_016["autoEggNextAt"] = var_001 + var_014["AutoEgg"]["Interval"]
+								else
+var_016["autoEggNextAt"] = var_001 + 10
+								end
+							end
+task.wait(1)
+						end
+					end)
+				end
+		end
+local var_056 = false
+local function var_057(...)
+local var_001 = var_011:FindFirstChild("ownedGamepasses");
+local var_003 = var_002:FindFirstChild("gamepassIds")
+if not var_001 or not var_003 then
+return false
+			end
+for var_002, var_003 in ipairs(var_003:GetChildren()) do
+if var_003:IsA("ValueBase") and not var_001:FindFirstChild(var_003.Name) then
+local var_002 = Instance.new("IntValue");
+var_002.Name = var_003.Name
+var_002.Value = tonumber(var_003.Value) or 0
+var_002.Parent = var_001
+				end
+			end
+var_056 = true
+return true
+		end
+local var_058 = {};
+local var_059 = nil
+local var_060 = {};
+local var_061 = {};
+local function var_062(var_001, ...)
+if var_001 and (var_001:IsA("GuiObject") and (var_001.Name == "durabilityFrame" and var_060[var_001] == nil)) then
+var_060[var_001] = var_001["Visible"]
+var_001["Visible"] = false
+			end
+		end
+local function var_063(var_001, ...)
+var_016["hideDurability"] = var_001 == true
+for var_001, var_002 in ipairs(var_061) do
+var_002:Disconnect()
+			end
+table.clear(var_061)
+if var_016["hideDurability"] then
+for var_001, var_002 in ipairs(var_002:GetChildren()) do
+pcall(var_062, var_002)
+				end
+for var_001, var_002 in ipairs(var_012:GetDescendants()) do
+pcall(var_062, var_002)
+				end
+var_061[#var_061 + 1] = var_002["ChildAdded"]:Connect(function(var_001, ...)
+if var_016["hideDurability"] then
+task.defer(var_062, var_001)
+						end
+					end);
+var_061[#var_061 + 1] = var_012["DescendantAdded"]:Connect(function(var_001, ...)
+if var_016["hideDurability"] then
+task.defer(var_062, var_001)
+						end
+					end)
+			else
+for var_001, var_002 in pairs(var_060) do
+if var_001 and var_001.Parent then
+pcall(function(...)
+var_001["Visible"] = var_002
+						end)
+					end
+				end
+table.clear(var_060)
+			end
+		end
+local function var_064(var_001, ...)
+if var_001.Parent == var_002 and (var_001:IsA("GuiObject") and ((var_001.Name:lower()):match("frame$") and var_058[var_001] == nil)) then
+var_058[var_001] = var_001["Visible"]
+var_001["Visible"] = false
+			end
+		end
+local function var_065(var_001, ...)
+var_016["hideFrames"] = var_001 == true
+if var_059 then
+var_059:Disconnect()
+var_059 = nil
+			end
+if var_016["hideFrames"] then
+for var_001, var_002 in ipairs(var_002:GetChildren()) do
+pcall(var_064, var_002)
+				end
+var_059 = var_002["ChildAdded"]:Connect(function(var_001, ...)
+if var_016["hideFrames"] then
+task.defer(var_064, var_001)
+						end
+					end)
+			else
+for var_001, var_002 in pairs(var_058) do
+if var_001 and var_001.Parent then
+pcall(function(...)
+var_001["Visible"] = var_002
+						end)
+					end
+				end
+table.clear(var_058)
+			end
+		end
+local var_066 = 0
+local function var_067(...)
+pcall(function(...)
+var_006:SendKeyEvent(true, Enum["KeyCode"]["E"], false, game);
+task.wait(.045);
+var_006:SendKeyEvent(false, Enum["KeyCode"]["E"], false, game)
+			end)
+		end
+local function var_068(var_001, ...)
+local var_003 = var_029();
+local var_004 = var_028()
+if not var_003 or not var_004 then
+return false
+			end
+local var_005 = workspace:FindFirstChild("machinesFolder");
+local var_006 = var_005 and var_005:FindFirstChild(var_001.object);
+local var_007 = var_006 and var_006:FindFirstChild("interactSeat", true)
+if var_001.object == "Jungle Squat" and (var_007 and var_007:IsA("BasePart")) then
+var_003.CFrame = var_007.CFrame * CFrame.new(0, 2.25, 0)
+			else
+var_003.CFrame = var_001["fallback"]
+			end
+task.wait(.22);
+var_067();
+task.wait(.45)
+if var_007 and not var_004["SeatPart"] then
+pcall(function(...)
+var_002["rEvents"]["machineInteractRemote"]:InvokeServer("useMachine", var_007)
+				end)
+			end
+return true
+		end
+local function var_069(var_001, var_002, ...)
+local var_003 = var_016["machine"]
+var_066 = var_066 + 1
+local var_004 = var_066
+var_024("machine")
+if not var_002 then
+var_016["machine"] = nil
+local var_001 = var_028()
+if var_001 and var_001["SeatPart"] then
+var_001.Sit = false
+var_001:ChangeState(Enum["HumanoidStateType"]["Jumping"])
+				end
+return
+			end
+var_016["machine"] = var_001
+var_025("machine", function(...)
+if var_003 and var_003 ~= var_001 then
+local var_002 = var_028()
+if var_002 then
+var_002.Sit = false
+var_002:ChangeState(Enum["HumanoidStateType"]["Jumping"])
+					end
+for var_002 = 1, 30, 1 do
+if not var_016["running"] or var_016["machine"] ~= var_001 or var_066 ~= var_004 then
+return
+						end
+task.wait(.1)
+					end
+				end
+var_068(var_001)
+while var_016["running"] and (var_016["machine"] == var_001 and var_066 == var_004) do
+local var_002 = var_028();
+local var_003 = var_029();
+local var_004 = workspace:FindFirstChild("machinesFolder");
+local var_005 = var_004 and var_004:FindFirstChild(var_001.object);
+local var_006 = var_005 and var_005:FindFirstChild("interactSeat", true);
+local var_007 = not var_002 or not var_002["SeatPart"]
+if var_006 and (var_003 and (var_003["Position"] - var_006["Position"])["Magnitude"] > 14) then
+var_007 = true
+					end
+if var_007 then
+var_068(var_001)
+					end
+task.wait(3.1)
+				end
+			end)
+		end
+do
+var_021["generation"] = 0
+var_021["warningAccepted"] = false
+var_021.mode = nil
+var_021["startedAt"] = nil
+var_021["startStats"] = nil
+var_021["lockCFrame"] = nil
+var_021["lockCharacter"] = nil
+var_021["hideFramesOwned"] = false
+var_021["packCount"] = 0
+var_021["cachedPing"] = 0
+var_021["pingCheckedAt"] = 0
+var_021["pingPaused"] = false
+var_021["resumeSamples"] = 0
+var_021["strengthBatch"] = var_014["FastFarm"]["StrengthStartBatch"]
+var_021["lastBatchAdjust"] = 0
+var_021["sizeInvokeBusy"] = false
+var_021["lastSizeInvoke"] = 0
+var_021["sizeReleaseGeneration"] = 0
+var_021["frameReleaseGeneration"] = 0
+local function var_001(var_001, ...)
+local var_002 = var_032(var_011, var_001)
+return var_002 and tonumber(var_002.Value) or 0, var_002
+			end
+local function var_004(...)
+local var_002 = var_001({ "Rebirths", "Rebirth" });
+local var_003 = var_001({ "Strength", "Fuerza" });
+local var_004 = var_001({ "Durability", "Resistencia" })
+return { ["rebirths"] = var_002, ["strength"] = var_003, ["durability"] = var_004 }
+			end
+local function var_005(...)
+return var_002:FindFirstChild("rEvents")
+			end
+local function var_006(...)
+local var_001 = var_005();
+local var_002 = var_001 and var_001:FindFirstChild("equipPetEvent");
+local var_003 = var_011:FindFirstChild("petsFolder")
+if not var_002 or not var_003 then
+return
+				end
+for var_001, var_003 in ipairs(var_003:GetChildren()) do
+if var_003:IsA("Folder") then
+for var_001, var_003 in ipairs(var_003:GetChildren()) do
+pcall(var_002["FireServer"], var_002, "unequipPet", var_003)
+						end
+					end
+				end
+task.wait(.035)
+			end
+local function var_007(var_001, ...)
+local var_002 = var_005();
+local var_003 = var_002 and var_002:FindFirstChild("equipPetEvent");
+local var_004 = var_011:FindFirstChild("petsFolder")
+if not var_003 or not var_004 then
+return 0
+				end
+local var_006 = 0
+for var_002, var_004 in ipairs(var_004:GetChildren()) do
+if var_004:IsA("Folder") then
+for var_002, var_004 in ipairs(var_004:GetChildren()) do
+if var_004.Name == var_001 then
+pcall(var_003["FireServer"], var_003, "equipPet", var_004)
+var_006 = var_006 + 1
+if var_006 >= var_014["FastFarm"]["MaxPets"] then
+return var_006
+								end
+							end
+						end
+					end
+				end
+return var_006
+			end
+local function var_008(var_001, ...)
+local var_002 = var_011:FindFirstChild("muscleEvent")
+if not var_002 then
+return false
+				end
+for var_001 = 1, var_001 or var_014["FastFarm"]["RepsPerCycle"], 1 do
+pcall(var_002["FireServer"], var_002, "rep")
+				end
+return true
+			end
+local function var_009(var_001, ...)
+local var_002 = time();
+local var_003 = false
+if var_002 - var_021["pingCheckedAt"] >= .25 then
+var_021["cachedPing"] = var_035();
+var_021["pingCheckedAt"] = var_002
+var_003 = true
+				end
+local var_004 = var_021["cachedPing"]
+if not var_021["pingPaused"] and var_004 >= var_014["FastFarm"]["PingPause"] then
+var_021["pingPaused"] = true
+var_021["resumeSamples"] = 0
+var_021["strengthBatch"] = var_014["FastFarm"]["StrengthStartBatch"]
+var_021["lastBatchAdjust"] = var_002
+				end
+if var_021["pingPaused"] then
+if var_003 then
+if var_004 <= var_014["FastFarm"]["PingResume"] then
+var_021["resumeSamples"] = var_021["resumeSamples"] + 1
+						else
+var_021["resumeSamples"] = 0
+						end
+if var_021["resumeSamples"] >= 4 then
+var_021["pingPaused"] = false
+var_021["resumeSamples"] = 0
+						end
+					end
+if var_021["pingPaused"] then
+return .25, false
+					end
+				end
+if var_001 == "strength" then
+if var_003 then
+if var_004 >= var_014["FastFarm"]["PingSoft"] and var_002 - var_021["lastBatchAdjust"] >= .75 then
+var_021["strengthBatch"] = math.max(var_014["FastFarm"]["StrengthStartBatch"], var_021["strengthBatch"] - 4);
+var_021["lastBatchAdjust"] = var_002
+						elseif var_004 <= var_014["FastFarm"]["StrengthRampPing"] and var_002 - var_021["lastBatchAdjust"] >= var_014["FastFarm"]["StrengthRampInterval"] then
+var_021["strengthBatch"] = math.min(var_014["FastFarm"]["StrengthMaxBatch"], var_021["strengthBatch"] + 2);
+var_021["lastBatchAdjust"] = var_002
+						end
+					end
+if var_004 >= var_014["FastFarm"]["PingCritical"] then
+var_008(2)
+return .2, true
+					elseif var_004 >= var_014["FastFarm"]["PingHigh"] then
+var_008(3)
+return .13, true
+					elseif var_004 >= var_014["FastFarm"]["PingMedium"] then
+var_008(math.max(4, math.floor(var_021["strengthBatch"] * .3)))
+return .07, true
+					elseif var_004 >= var_014["FastFarm"]["PingSoft"] then
+var_008(math.max(6, math.floor(var_021["strengthBatch"] * .5)))
+return .04, true
+					end
+var_008(var_021["strengthBatch"])
+return var_014["FastFarm"]["StrengthDelay"], true
+				end
+if var_004 >= var_014["FastFarm"]["PingCritical"] then
+return .7, true
+				elseif var_004 >= var_014["FastFarm"]["PingHigh"] then
+var_008(10)
+return .18, true
+				elseif var_004 >= var_014["FastFarm"]["PingMedium"] then
+var_008(24)
+return .075, true
+				elseif var_004 >= var_014["FastFarm"]["PingSoft"] then
+var_008(45)
+return .025, true
+				end
+var_008(var_014["FastFarm"]["RepsPerCycle"])
+return var_014["FastFarm"]["RepDelay"], true
+			end
+local function var_010(...)
+local var_001 = var_011:FindFirstChild("ultimatesFolder");
+local var_002 = var_001 and var_001:FindFirstChild("Golden Rebirth")
+return var_002 and tonumber(var_002.Value) or 0
+			end
+local function var_012(var_001, ...)
+local var_002 = 10000 + 5000 * (tonumber(var_001) or 0);
+local var_003 = var_010()
+if var_003 >= 1 and var_003 <= 5 then
+var_002 = var_002 * (1 - var_003 * .1)
+				end
+return math.floor(var_002)
+			end
+local function var_013(...)
+local var_001 = var_005();
+local var_002 = var_001 and var_001:FindFirstChild("rebirthRemote")
+if var_002 then
+pcall(var_002["InvokeServer"], var_002, "rebirthRequest")
+				end
+			end
+local function var_015(...)
+local var_001 = var_028()
+if not var_001 then
+return
+				end
+for var_002, var_003 in ipairs({ "BodyDepthScale", "BodyHeightScale", "BodyWidthScale", "HeadScale" }) do
+local var_004 = var_001:FindFirstChild(var_003)
+if var_004 and var_004:IsA("NumberValue") then
+pcall(function(...)
+var_004.Value = 1
+						end)
+					end
+				end
+			end
+local function var_017(...)
+var_015();
+local var_001 = time()
+if var_021["sizeInvokeBusy"] or var_001 - var_021["lastSizeInvoke"] < var_014["FastFarm"]["SizeInvokeInterval"] then
+return
+				end
+local var_002 = var_005();
+local var_003 = var_002 and var_002:FindFirstChild("changeSpeedSizeRemote")
+if var_003 then
+var_021["sizeInvokeBusy"] = true
+var_021["lastSizeInvoke"] = var_001
+task.spawn(function(...)
+pcall(var_003["InvokeServer"], var_003, "changeSize", 1);
+var_021["sizeInvokeBusy"] = false
+					end)
+				end
+			end
+var_021["SetSizeOne"] = var_017
+local function var_018(var_001, ...)
+var_021["sizeReleaseGeneration"] = var_021["sizeReleaseGeneration"] + 1
+local var_002 = var_021["sizeReleaseGeneration"]
+task.spawn(function(...)
+local var_003 = time() + (var_001 or var_014["FastFarm"]["SizeReleaseDuration"])
+while var_016["running"] and (var_021.mode == nil and (var_021["sizeReleaseGeneration"] == var_002 and time() < var_003)) do
+var_017();
+task.wait(.1)
+					end
+				end)
+			end
+local function var_019(var_001, ...)
+for var_002, var_003 in ipairs(var_014["Machines"]) do
+if var_003.object == var_001 then
+return var_003
+					end
+				end
+return nil
+			end
+local function var_020(var_001, ...)
+local var_002 = var_019("Jungle Bar Lift")
+if not var_002 then
+return false
+				end
+for var_003 = 1, 3, 1 do
+if var_021["generation"] ~= var_001 or var_021.mode ~= "rebirth" then
+return false
+					end
+var_068(var_002);
+local var_004 = time() + 1.4
+repeat
+local var_001 = var_028()
+if var_001 and var_001["SeatPart"] then
+local var_001 = var_029()
+if var_001 then
+var_021["lockCharacter"] = var_027();
+var_021["lockCFrame"] = var_001.CFrame
+return true
+							end
+						end
+task.wait(.08)
+					until time() >= var_004
+				end
+local var_003 = var_029()
+if var_003 and (var_003["Position"] - var_002["fallback"]["Position"])["Magnitude"] <= 20 then
+var_021["lockCharacter"] = var_027();
+var_021["lockCFrame"] = var_003.CFrame
+return true
+				end
+return false
+			end
+local function var_022(...)
+var_017();
+local var_001 = workspace:FindFirstChild(var_014["FastFarm"]["RockName"]);
+local var_002 = var_029();
+local var_003 = var_005();
+local var_004 = var_003 and var_003:FindFirstChild("hitEvent")
+if var_001 and (var_002 and var_004) then
+pcall(function(...)
+var_002.CFrame = var_001.CFrame * CFrame.new(0, 0, -5);
+var_004:FireServer("hit", var_001)
+					end);
+task.delay(.08, var_017)
+				end
+			end
+local function var_023(var_001, ...)
+if var_021["HideFramesToggle"] then
+var_021["HideFramesToggle"]:Set(var_001)
+				else
+var_065(var_001)
+				end
+			end
+local function var_026(...)
+for var_001, var_002 in ipairs(var_021["RepToggles"] or {}) do
+var_002:Set(false)
+				end
+for var_001, var_002 in ipairs(var_021["MachineToggles"] or {}) do
+var_002:Set(false)
+				end
+			end
+function var_021.ReadStats(var_001, ...)
+return var_004()
+			end
+function var_021.FormatCompact(var_002, var_001, ...)
+local var_003 = tonumber(var_001) or 0
+local var_004 = math.abs(var_003);
+local var_005 = { { 1e+18, "Qi" }, { 1e+15, "Qa" }, { 1000000000000, "T" }, { 1000000000, "B" }, { 1000000, "M" }, { 1000, "K" } }
+for var_001, var_002 in ipairs(var_005) do
+if var_004 >= var_002[1] then
+return string.format("%.2f%s", var_003 / var_002[1], var_002[2])
+					end
+				end
+return var_033(var_003)
+			end
+function var_021.Stop(var_002, var_001, ...)
+local var_003 = var_002.mode ~= nil
+var_002["generation"] = var_002["generation"] + 1
+var_002.mode = nil
+var_016["fastFarmMode"] = nil
+var_002["lockCFrame"] = nil
+var_002["lockCharacter"] = nil
+var_002["startedAt"] = nil
+var_002["startStats"] = nil
+for var_001, var_002 in ipairs({ "fastFarmSize", "fastFarmLock", "fastFarmMachine", "fastFarmRebirth", "fastFarmStrength" }) do
+var_024(var_002)
+				end
+local var_004 = var_028()
+if var_004 and var_004["SeatPart"] then
+var_004.Sit = false
+var_004:ChangeState(Enum["HumanoidStateType"]["Jumping"])
+				end
+if var_003 then
+var_018(var_014["FastFarm"]["SizeReleaseDuration"]);
+var_016["setAutoEgg"](false, "fastFarm")
+				end
+if var_001 and var_002["hideFramesOwned"] then
+var_002["frameReleaseGeneration"] = var_002["frameReleaseGeneration"] + 1
+local var_001 = var_002["frameReleaseGeneration"]
+task.delay(var_014["FastFarm"]["FramesReleaseDuration"], function(...)
+if var_016["running"] and (var_002.mode == nil and (var_002["frameReleaseGeneration"] == var_001 and var_002["hideFramesOwned"])) then
+var_023(false);
+var_002["hideFramesOwned"] = false
+						end
+					end)
+				end
+			end
+function var_021.Start(var_005, var_002, ...)
+if var_002 ~= "rebirth" and var_002 ~= "strength" then
+return false
+				end
+if var_005.mode == var_002 then
+return true
+				end
+var_005:Stop(false);
+var_005["frameReleaseGeneration"] = var_005["frameReleaseGeneration"] + 1
+var_005["sizeReleaseGeneration"] = var_005["sizeReleaseGeneration"] + 1
+var_026();
+var_005.mode = var_002
+var_016["fastFarmMode"] = var_002
+var_005["generation"] = var_005["generation"] + 1
+local var_008 = var_005["generation"]
+var_005["startedAt"] = var_002 == "rebirth" and var_036() or nil
+var_005["startStats"] = var_002 == "rebirth" and var_004() or nil
+var_005["packCount"] = 0
+var_005["cachedPing"] = var_035();
+var_005["pingCheckedAt"] = time();
+var_005["pingPaused"] = false
+var_005["resumeSamples"] = 0
+var_005["strengthBatch"] = var_014["FastFarm"]["StrengthStartBatch"]
+var_005["lastBatchAdjust"] = time()
+if not var_016["hideFrames"] then
+var_005["hideFramesOwned"] = true
+				end
+var_023(true);
+var_016["setAutoEgg"](true, "fastFarm");
+var_017();
+var_025("fastFarmSize", function(...)
+while var_016["running"] and (var_005.mode == var_002 and var_005["generation"] == var_008) do
+var_017();
+task.wait(.1)
+					end
+				end)
+if var_002 == "rebirth" then
+var_025("fastFarmLock", function(...)
+while var_016["running"] and (var_005.mode == var_002 and var_005["generation"] == var_008) do
+local var_001 = var_029()
+if var_001 and (var_005["lockCFrame"] and var_005["lockCharacter"] == var_027()) then
+var_001.CFrame = var_005["lockCFrame"]
+var_001["AssemblyLinearVelocity"] = Vector3.zero
+var_001["AssemblyAngularVelocity"] = Vector3.zero
+							end
+var_003["Heartbeat"]:Wait()
+						end
+					end);
+var_025("fastFarmMachine", function(...)
+while var_016["running"] and (var_005.mode == var_002 and var_005["generation"] == var_008) do
+if not var_005["lockCFrame"] or var_005["lockCharacter"] ~= var_027() then
+var_005["lockCFrame"] = nil
+var_020(var_008)
+							end
+task.wait(.8)
+						end
+					end);
+var_025("fastFarmRebirth", function(...)
+while var_005.mode == var_002 and (var_005["generation"] == var_008 and not var_005["lockCFrame"]) do
+task.wait(.1)
+						end
+while var_016["running"] and (var_005.mode == var_002 and var_005["generation"] == var_008) do
+while var_005.mode == var_002 and (var_005["generation"] == var_008 and not var_005["lockCFrame"]) do
+task.wait(.1)
+							end
+if var_005.mode ~= var_002 or var_005["generation"] ~= var_008 then
+break
+							end
+local var_003 = time();
+local var_004, var_010 = var_001({ "Rebirths", "Rebirth" });
+local var_011, var_015 = var_001({ "Strength", "Fuerza" });
+local var_017 = var_012(var_004);
+var_006();
+var_005["packCount"] = var_007(var_014["FastFarm"]["StrengthPet"])
+while var_016["running"] and (var_005.mode == var_002 and (var_005["generation"] == var_008 and (var_015 and tonumber(var_015.Value) < var_017))) do
+local var_001 = var_009("rebirth");
+task.wait(var_001)
+							end
+if var_005.mode == var_002 and var_005["generation"] == var_008 then
+var_006();
+var_005["packCount"] = var_007(var_014["FastFarm"]["RebirthPet"]);
+local var_001 = var_010 and tonumber(var_010.Value) or var_004
+local var_003 = time()
+repeat
+var_013();
+task.wait(.025)
+								until var_005.mode ~= var_002 or var_005["generation"] ~= var_008 or var_010 and tonumber(var_010.Value) > var_001 or time() - var_003 >= var_014["FastFarm"]["RebirthRequestWindow"]
+							end
+local var_018 = var_014["FastFarm"]["RebirthCycleDelay"] - (time() - var_003);
+task.wait(math.max(var_018, 0))
+						end
+					end)
+				else
+var_025("fastFarmStrength", function(...)
+var_017();
+task.wait(.3);
+var_006();
+var_005["packCount"] = var_007(var_014["FastFarm"]["StrengthPet"]);
+local var_001 = var_004();
+local var_003 = var_019("Jungle Bench")
+if var_003 then
+var_068(var_003);
+var_017()
+						end
+local var_010 = 0
+local var_011 = 0
+local var_012 = time();
+local var_013 = var_027()
+while var_016["running"] and (var_005.mode == var_002 and var_005["generation"] == var_008) do
+if var_013 ~= var_027() then
+var_013 = var_027();
+var_005["startedAt"] = nil
+var_005["startStats"] = nil
+var_017();
+task.wait(.3);
+var_006();
+var_005["packCount"] = var_007(var_014["FastFarm"]["StrengthPet"])
+var_001 = var_004()
+if var_003 then
+var_068(var_003);
+var_017()
+var_012 = time()
+								end
+							end
+if not var_005["startedAt"] and (var_003 and time() - var_012 >= 3.2) then
+var_017();
+var_068(var_003);
+var_017()
+var_012 = time()
+							end
+local var_002, var_008 = var_009("strength")
+if var_008 and time() - var_010 >= var_014["FastFarm"]["RockInterval"] then
+var_022()
+var_010 = time()
+							end
+if not var_005["startedAt"] and time() - var_011 >= .15 then
+var_011 = time();
+local var_002 = var_004()
+if var_002["strength"] > var_001["strength"] then
+var_005["startedAt"] = var_036();
+var_005["startStats"] = var_001
+								end
+							end
+task.wait(var_002)
+						end
+					end)
+				end
+return true
+			end
+		end
+local var_070 = {};
+local var_071 = nil
+local var_072 = function(...)
+
+			end
+local var_073 = nil
+local var_074 = nil
+local function var_075(var_001, var_002, ...)
+var_070[var_001] = var_070[var_001] or {}
+if var_070[var_001][var_002] == nil then
+local var_003, var_004 = pcall(function(...)
+return var_001[var_002]
+					end)
+if var_003 then
+var_070[var_001][var_002] = var_004
+				end
+			end
+		end
+local function var_076(var_001, var_002, var_003, ...)
+var_075(var_001, var_002);
+pcall(function(...)
+var_001[var_002] = var_003
+			end)
+		end
+local function var_077(var_001, ...)
+if var_001:IsA("BasePart") then
+var_076(var_001, "Material", Enum["Material"]["SmoothPlastic"]);
+var_076(var_001, "Reflectance", 0);
+var_076(var_001, "CastShadow", false)
+if var_001:IsA("MeshPart") then
+var_076(var_001, "TextureID", "")
+				end
+			elseif var_001:IsA("Decal") or var_001:IsA("Texture") then
+var_076(var_001, "Transparency", 1)
+			elseif var_001:IsA("ParticleEmitter") or var_001:IsA("Trail") or var_001:IsA("Beam") or var_001:IsA("Smoke") or var_001:IsA("Fire") or var_001:IsA("Sparkles") then
+var_076(var_001, "Enabled", false)
+			elseif var_001:IsA("PointLight") or var_001:IsA("SpotLight") or var_001:IsA("SurfaceLight") then
+var_076(var_001, "Enabled", false)
+			elseif var_001:IsA("BloomEffect") or var_001:IsA("BlurEffect") or var_001:IsA("ColorCorrectionEffect") or var_001:IsA("DepthOfFieldEffect") or var_001:IsA("SunRaysEffect") then
+var_076(var_001, "Enabled", false)
+			elseif var_001:IsA("Explosion") then
+var_076(var_001, "BlastPressure", 0);
+var_076(var_001, "BlastRadius", 0)
+			end
+		end
+local function var_078(var_001, var_002, ...)
+local var_004 = 0
+for var_005, var_006 in pairs(var_070) do
+if var_016["antiLagGeneration"] ~= var_001 then
+return false
+				end
+if var_005 and var_005.Parent then
+for var_001, var_002 in pairs(var_006) do
+pcall(function(...)
+var_005[var_001] = var_002
+						end)
+					end
+				end
+var_004 = var_004 + 1
+if var_002 and var_004 % 260 == 0 then
+var_003["Heartbeat"]:Wait()
+				end
+			end
+var_070 = {}
+if var_073 then
+var_009["GlobalShadows"] = var_073["GlobalShadows"]
+var_009.FogEnd = var_073.FogEnd
+var_009["Brightness"] = var_073["Brightness"]
+			end
+pcall(function(...)
+if var_074 then
+(settings())["Rendering"]["QualityLevel"] = var_074
+				end
+			end);
+var_072("Desactivado")
+return true
+		end
+local function var_079(var_001, var_002, ...)
+var_016["antiLag"] = var_001 == true
+var_016["antiLagGeneration"] = var_016["antiLagGeneration"] + 1
+local var_004 = var_016["antiLagGeneration"]
+var_024("antiLag")
+if var_071 then
+var_071:Disconnect()
+var_071 = nil
+			end
+if var_016["antiLag"] then
+var_072("Optimizando...")
+var_073 = var_073 or { ["GlobalShadows"] = var_009["GlobalShadows"], ["FogEnd"] = var_009.FogEnd, ["Brightness"] = var_009["Brightness"] };
+var_009["GlobalShadows"] = false
+var_009.FogEnd = 1000000000
+var_009["Brightness"] = 0
+pcall(function(...)
+var_074 = var_074 or (settings())["Rendering"]["QualityLevel"];
+(settings())["Rendering"]["QualityLevel"] = Enum["QualityLevel"]["Level01"]
+				end);
+local var_001 = workspace:FindFirstChildOfClass("Terrain")
+if var_001 then
+var_076(var_001, "WaterWaveSize", 0);
+var_076(var_001, "WaterWaveSpeed", 0);
+var_076(var_001, "WaterReflectance", 0);
+var_076(var_001, "WaterTransparency", 1)
+				end
+var_071 = workspace["DescendantAdded"]:Connect(function(var_001, ...)
+if var_016["antiLag"] then
+task.defer(function(...)
+pcall(var_077, var_001)
+							end)
+						end
+					end);
+var_025("antiLag", function(...)
+local var_001 = { workspace, var_009 };
+local var_002 = 1
+local var_005 = 0
+while var_002 <= #var_001 and (var_016["running"] and (var_016["antiLag"] and var_016["antiLagGeneration"] == var_004)) do
+local var_004 = var_001[var_002]
+var_002 = var_002 + 1
+local var_006, var_007 = pcall(function(...)
+return var_004:GetChildren()
+							end)
+if var_006 then
+for var_002, var_004 in ipairs(var_007) do
+var_001[#var_001 + 1] = var_004
+pcall(var_077, var_004)
+var_005 = var_005 + 1
+if var_005 % 260 == 0 then
+var_003["Heartbeat"]:Wait()
+								end
+							end
+						end
+					end
+if var_016["antiLag"] and var_016["antiLagGeneration"] == var_004 then
+var_072("100% Optimizado")
+					end
+				end)
+			else
+var_072("Restaurando...")
+if var_002 then
+var_078(var_004, true)
+				else
+var_025("antiLag", function(...)
+var_078(var_004, true)
+					end)
+				end
+			end
+		end
+local var_080 = {};
+local function var_081(var_001, ...)
+var_016["walkWater"] = var_001 == true
+for var_001, var_002 in ipairs(var_080) do
+if var_002 and var_002.Parent then
+var_002:Destroy()
+				end
+			end
+table.clear(var_080)
+if not var_016["walkWater"] then
+return
+			end
+local var_002 = Vector3.new(-3072, -9.5, -3072)
+for var_001 = -4, 4, 1 do
+for var_003 = -4, 4, 1 do
+local var_004 = Instance.new("Part");
+var_004.Name = "Young0xWaterFloor"
+var_004.Size = Vector3.new(2048, 1, 2048);
+var_004["Position"] = var_002 + Vector3.new(var_001 * 2048, 0, var_003 * 2048);
+var_004["Anchored"] = true
+var_004["CanCollide"] = true
+var_004["Transparency"] = 1
+var_004["CastShadow"] = false
+var_004.Parent = workspace
+var_080[#var_080 + 1] = var_004
+				end
+var_003["Heartbeat"]:Wait()
+			end
+		end
+local function var_082(var_001, ...)
+var_016["autoSpinWheel"] = var_001 == true
+if not var_016["autoSpinWheel"] then
+var_024("fortuneWheel")
+return
+			end
+var_025("fortuneWheel", function(...)
+while var_016["running"] and var_016["autoSpinWheel"] do
+pcall(function(...)
+local var_001 = var_002:FindFirstChild("rEvents");
+local var_003 = var_001 and var_001:FindFirstChild("openFortuneWheelRemote");
+local var_004 = var_002:FindFirstChild("fortuneWheelChances");
+local var_005 = var_004 and var_004:FindFirstChild("Fortune Wheel")
+if var_003 and var_005 then
+var_003:InvokeServer("openFortuneWheel", var_005)
+						end
+					end);
+task.wait(1)
+				end
+			end)
+		end
+local var_083 = { "Magma Chest", "Mythical Chest", "Golden Chest", "Enchanted Chest", "Legends Chest" };
+local function var_084(var_001, ...)
+var_016["autoClaimChests"] = var_001 == true
+if not var_016["autoClaimChests"] then
+var_024("autoClaimChests")
+return
+			end
+var_025("autoClaimChests", function(...)
+while var_016["running"] and var_016["autoClaimChests"] do
+local var_001 = var_002:FindFirstChild("rEvents");
+local var_003 = var_001 and var_001:FindFirstChild("checkChestRemote")
+if var_003 then
+for var_001, var_002 in ipairs(var_083) do
+if not var_016["running"] or not var_016["autoClaimChests"] then
+break
+							end
+pcall(var_003["InvokeServer"], var_003, var_002);
+task.wait(.15)
+						end
+					end
+task.wait(15)
+				end
+			end)
+		end
+local var_085 = nil
+local var_086 = {};
+local function var_087(var_001, ...)
+if var_001 and (var_001.Name == "RobloxForwardPortals" and var_001.Parent) then
+var_086[#var_086 + 1] = { ["object"] = var_001, ["parent"] = var_001.Parent };
+var_001.Parent = nil
+			end
+		end
+local function var_088(var_001, ...)
+var_016["removePortals"] = var_001 == true
+var_024("removePortals")
+if var_085 then
+var_085:Disconnect()
+var_085 = nil
+			end
+if not var_016["removePortals"] then
+for var_001, var_002 in ipairs(var_086) do
+if var_002.object and not var_002.object.Parent then
+pcall(function(...)
+var_002.object.Parent = var_002.parent and (var_002.parent.Parent and var_002.parent) or workspace
+						end)
+					end
+				end
+table.clear(var_086)
+return
+			end
+if var_016["removePortals"] then
+var_085 = game["DescendantAdded"]:Connect(var_087);
+var_025("removePortals", function(...)
+local var_001 = { workspace };
+local var_002 = 1
+local var_004 = 0
+while var_002 <= #var_001 and (var_016["running"] and var_016["removePortals"]) do
+local var_005 = var_001[var_002]
+var_002 = var_002 + 1
+local var_006, var_007 = pcall(function(...)
+return var_005:GetChildren()
+							end)
+if var_006 then
+for var_002, var_005 in ipairs(var_007) do
+var_001[#var_001 + 1] = var_005
+var_087(var_005)
+var_004 = var_004 + 1
+if var_004 % 300 == 0 then
+var_003["Heartbeat"]:Wait()
+								end
+							end
+						end
+					end
+				end)
+			end
+		end
+local var_089 = nil
+local function var_090(...)
+local var_001 = var_028()
+if var_001 then
+if var_016["fastSpeed"] then
+var_001["WalkSpeed"] = 1000
+				elseif var_089 ~= nil then
+var_001["WalkSpeed"] = var_089
+				end
+			end
+		end
+local function var_091(var_001, ...)
+local var_002 = var_028()
+if var_001 and (var_002 and not var_016["fastSpeed"]) then
+var_089 = var_002["WalkSpeed"]
+			end
+local var_003 = var_016["fastSpeed"]
+var_016["fastSpeed"] = var_001 == true
+if var_016["fastSpeed"] or var_003 then
+var_090()
+			end
+if var_003 and not var_016["fastSpeed"] then
+var_089 = nil
+			end
+		end
+local var_092 = nil
+local var_093 = nil
+local var_094 = false
+local var_095 = false
+local var_096 = nil
+var_016["clearAntiKnockback"] = function(...)
+if var_016["antiKnockbackVelocity"] then
+var_016["antiKnockbackVelocity"]:Destroy();
+var_016["antiKnockbackVelocity"] = nil
+				end
+			end
+var_016["setAntiKnockback"] = function(var_001, ...)
+var_016["antiKnockback"] = var_001 == true
+if not var_016["antiKnockback"] then
+var_016["clearAntiKnockback"]()
+				end
+			end
+local function var_097(...)
+if var_092 then
+var_092:Destroy()
+var_092 = nil
+			end
+if var_093 then
+var_093:Destroy()
+var_093 = nil
+			end
+local var_001 = var_028()
+if var_001 then
+var_001["PlatformStand"] = false
+			end
+		end
+local function var_098(var_001, ...)
+var_016.fly = var_001 == true
+if var_096 then
+var_096["Visible"] = var_016.fly and var_005["TouchEnabled"]
+			end
+if not var_016.fly then
+var_097()
+			end
+		end
+local var_099 = {};
+local var_100 = nil
+local function var_101(...)
+for var_001, var_002 in pairs(var_099) do
+if var_001 and var_001.Parent then
+pcall(function(...)
+var_001["CanCollide"] = var_002
+					end)
+				end
+			end
+table.clear(var_099)
+		end
+local function var_102(var_001, ...)
+var_016.noclip = var_001 == true
+if var_100 then
+var_100:Disconnect()
+var_100 = nil
+			end
+if var_016.noclip then
+var_100 = var_003["Stepped"]:Connect(function(...)
+if not var_016["running"] or not var_016.noclip then
+return
+						end
+local var_001 = var_027()
+if var_001 then
+for var_001, var_002 in ipairs(var_001:GetDescendants()) do
+if var_002:IsA("BasePart") then
+if var_099[var_002] == nil then
+var_099[var_002] = var_002["CanCollide"]
+									end
+var_002["CanCollide"] = false
+								end
+							end
+						end
+					end)
+			end
+if not var_016.noclip then
+var_101()
+			end
+		end
+local var_103 = nil
+local var_104 = nil
+local var_105 = true
+local function var_106(...)
+if var_103 then
+local var_001 = var_103.Parent
+if var_001 and var_001:IsA("BasePart") then
+var_001["AssemblyAngularVelocity"] = Vector3.zero
+				end
+var_103:Destroy()
+var_103 = nil
+			end
+if var_104 and var_104.Parent then
+var_104["AutoRotate"] = var_105
+			end
+var_104 = nil
+		end
+local function var_107(var_001, ...)
+var_016.spin = var_001 == true
+if not var_016.spin then
+var_106()
+			end
+		end
+local function var_108(...)
+local var_001 = var_028()
+if workspace["CurrentCamera"] and var_001 then
+workspace["CurrentCamera"]["CameraSubject"] = var_001
+			end
+		end
+local function var_109(var_001, ...)
+var_016.spy = var_001 == true
+if not var_016.spy then
+var_108()
+			end
+		end
+do
+local function var_002(...)
+pcall(function(...)
+local var_001 = var_027();
+local var_002 = var_011:FindFirstChild("Backpack");
+local var_003 = var_001 and var_001:FindFirstChild("Punch")
+if var_003 and var_002 then
+var_003.Parent = var_002
+					end
+				end)
+			end
+local function var_004(...)
+local var_001 = var_027();
+local var_002 = var_028();
+local var_003 = var_011:FindFirstChild("Backpack")
+if not var_001 or not var_002 then
+return nil
+				end
+local var_004 = var_001:FindFirstChild("Punch") or var_003 and var_003:FindFirstChild("Punch")
+if var_004 and var_004.Parent == var_003 then
+var_002:EquipTool(var_004)
+				end
+local var_005 = var_011:FindFirstChild("muscleEvent")
+if var_005 then
+pcall(var_005["FireServer"], var_005, "punch", "leftHand");
+pcall(var_005["FireServer"], var_005, "punch", "rightHand")
+				end
+return var_001
+			end
+local function var_005(...)
+if #var_014.Kills["ProtectedPrivateServerIds"] == 0 then
+return false
+				end
+local var_001 = getgenv and getgenv() or _G
+local var_002 = var_001["gethiddenproperty"] or var_001["gethiddenprop"]
+if type(var_002) ~= "function" then
+return false
+				end
+local var_003, var_004 = pcall(var_002, game, "PrivateServerId");
+local var_005 = var_003 and tostring(var_004 or "") or ""
+return var_005 ~= "" and table.find(var_014.Kills["ProtectedPrivateServerIds"], var_005) ~= nil
+			end
+local function var_006(var_001, ...)
+local var_002 = (tostring(var_001 and var_001["DisplayName"] or "")):lower()
+if var_002:find("0x", 1, true) then
+return true
+				end
+if not var_016.kill["protectFriends"] then
+return false
+				end
+local var_003 = var_016.kill["friendCache"][var_001.UserId]
+if var_003 ~= nil then
+return var_003
+				end
+local var_004, var_005 = pcall(var_011["IsFriendsWith"], var_011, var_001.UserId)
+if var_004 then
+var_016.kill["friendCache"][var_001.UserId] = var_005 == true
+				else
+var_016.kill["friendCache"][var_001.UserId] = true
+				end
+return var_016.kill["friendCache"][var_001.UserId]
+			end
+local function var_007(var_001, ...)
+if not var_001 or var_001 == var_011 or var_006(var_001) then
+return false
+				end
+local var_002 = var_001["Character"]
+local var_003 = var_002 and var_002:FindFirstChildWhichIsA("Humanoid");
+local var_005 = var_002 and var_002:FindFirstChild("HumanoidRootPart")
+if not var_003 or var_003.Health <= 0 or not var_005 then
+return false
+				end
+local var_007 = var_004()
+if not var_007 or type(firetouchinterest) ~= "function" then
+return false
+				end
+local var_008 = var_007:FindFirstChild("LeftHand") or var_007:FindFirstChild("Left Arm") or var_007:FindFirstChild("RightHand") or var_007:FindFirstChild("Right Arm")
+if not var_008 then
+return false
+				end
+local var_009 = var_005.CFrame
+local var_010 = var_005["AssemblyLinearVelocity"]
+local var_012 = var_005["AssemblyAngularVelocity"]
+local function var_013(...)
+if var_005 and var_005.Parent then
+var_005.CFrame = var_009
+var_005["AssemblyLinearVelocity"] = var_010
+var_005["AssemblyAngularVelocity"] = var_012
+					end
+				end
+pcall(firetouchinterest, var_005, var_008, 0);
+pcall(var_013);
+pcall(firetouchinterest, var_005, var_008, 1);
+pcall(var_013)
+return true
+			end
+local function var_008(var_001, var_002, ...)
+if not var_002 then
+return true
+				end
+local var_003 = var_032(var_001, { "goodKarma", "Good Karma" });
+local var_004 = var_032(var_001, { "evilKarma", "Evil Karma" });
+local var_005 = tonumber(var_003 and var_003.Value) or 0
+local var_006 = tonumber(var_004 and var_004.Value) or 0
+if var_002 == "evil" then
+return var_005 > var_006
+				elseif var_002 == "good" then
+return var_006 > var_005
+				end
+return false
+			end
+local function var_009(...)
+return var_016.kill.auto or var_016.kill["karmaMode"] ~= nil
+			end
+local function var_010(...)
+var_024("killFarm")
+if not var_009() and not var_016.kill["targetMode"] then
+var_002()
+return
+				end
+var_025("killFarm", function(...)
+while var_016["running"] and (var_009() or var_016.kill["targetMode"]) do
+if var_016.kill["targetMode"] then
+var_007(var_016.kill.target and var_001:FindFirstChild(var_016.kill.target))
+						else
+local var_002 = 0
+for var_001, var_003 in ipairs(var_001:GetPlayers()) do
+if not var_016["running"] or not var_009() then
+break
+								end
+if var_008(var_003, var_016.kill["karmaMode"]) and var_007(var_003) then
+var_002 = var_002 + 1
+								end
+							end
+if var_016.kill["serverHop"] then
+if var_002 == 0 then
+var_016.kill["noTargetsSince"] = var_016.kill["noTargetsSince"] or time()
+if time() - var_016.kill["noTargetsSince"] >= var_014["ServerHop"]["NoTargetsDelay"] then
+var_016.kill.hopNow = true
+									end
+								else
+var_016.kill["noTargetsSince"] = nil
+								end
+							end
+						end
+task.wait(.05)
+					end
+var_002()
+				end)
+			end
+local function var_012(...)
+local var_001 = getgenv and getgenv() or _G
+local var_002 = var_001["queue_on_teleport"] or var_001["queueonteleport"] or queue_on_teleport or queueonteleport
+if type(var_002) == "function" then
+return var_002
+				end
+local var_003 = var_001.syn
+if type(var_003) == "table" and type(var_003["queue_on_teleport"]) == "function" then
+return var_003["queue_on_teleport"]
+				end
+local var_004 = var_001.fluxus
+if type(var_004) == "table" and type(var_004["queue_on_teleport"]) == "function" then
+return var_004["queue_on_teleport"]
+				end
+return nil
+			end
+local function var_013(var_001, ...)
+return table.find(var_016.kill["serverHistory"], var_001) ~= nil
+			end
+local function var_015(var_001, ...)
+if not var_013(var_001) then
+var_016.kill["serverHistory"][#var_016.kill["serverHistory"] + 1] = var_001
+				end
+while #var_016.kill["serverHistory"] > var_014["ServerHop"]["HistoryLimit"] do
+table.remove(var_016.kill["serverHistory"], 1)
+				end
+			end
+local function var_017(var_001, var_002, var_003, ...)
+local var_004 = game:GetService("HttpService");
+local var_005 = {};
+local var_006 = {};
+local var_007 = {};
+local var_008 = nil
+for var_009 = 1, 6, 1 do
+local var_010 = string.format(var_014["ServerHop"]["ServerApi"], game["PlaceId"])
+if var_008 then
+var_010 = var_010 .. ("&cursor=" .. var_004:UrlEncode(var_008))
+					end
+local var_011, var_012 = pcall(game["HttpGet"], game, var_010, true)
+if not var_011 or type(var_012) ~= "string" then
+break
+					end
+local var_015, var_016 = pcall(var_004["JSONDecode"], var_004, var_012)
+if not var_015 or type(var_016) ~= "table" then
+break
+					end
+for var_002, var_004 in ipairs(var_016.data or {}) do
+if type(var_004) == "table" and (type(var_004.id) == "string" and (var_004.id ~= game.JobId and ((var_003 or not var_013(var_004.id)) and (tonumber(var_004["playing"]) and (tonumber(var_004["maxPlayers"]) and ((not var_001 or tonumber(var_004["playing"]) <= var_001) and tonumber(var_004["playing"]) < tonumber(var_004["maxPlayers"]))))))) then
+local var_001 = tonumber(var_004["playing"]);
+var_007[#var_007 + 1] = var_004
+if var_001 >= var_014["ServerHop"]["PreferredPlayers"] then
+var_005[#var_005 + 1] = var_004
+							elseif var_001 >= var_014["ServerHop"]["MinimumPlayers"] then
+var_006[#var_006 + 1] = var_004
+							end
+						end
+					end
+var_008 = var_016["nextPageCursor"]
+if not var_008 or #var_005 >= (var_002 and 1 or 12) then
+break
+					end
+				end
+local var_009 = #var_005 > 0 and var_005 or var_006
+if #var_009 == 0 and var_002 then
+var_009 = var_007
+				end
+if #var_009 == 0 then
+return nil
+				end
+table.sort(var_009, function(var_001, var_002, ...)
+return tonumber(var_001["playing"]) > tonumber(var_002["playing"])
+				end);
+local var_010 = math.min(#var_009, 8)
+return var_009[math.random(1, var_010)].id
+			end
+local function var_018(var_001, var_002, var_003, ...)
+local var_004 = game:GetService("HttpService");
+var_015(var_002)
+var_003 = var_003 or {};
+var_003.script = "fg100.lua"
+var_003["serverHistory"] = var_016.kill["serverHistory"]
+var_003["serversVisited"] = var_016.kill["serversVisited"] + 1
+local var_005 = var_004:JSONEncode(var_003);
+local var_006 = table.concat({ "repeat task.wait() until game:IsLoaded()", "local env = getgenv and getgenv() or _G", "env.Young0xFG100Resume = game:GetService('HttpService'):JSONDecode(" .. (string.format("%q", var_005) .. ")"), "loadstring(game:HttpGet(" .. (string.format("%q", var_014["ServerHop"]["LoaderUrl"]) .. ", true))()") }, "\n")
+return pcall(var_001, var_006)
+			end
+local function var_019(var_001, var_002, ...)
+return var_018(var_001, var_002, { ["tab"] = "Kills", ["autoKill"] = var_016.kill.auto, ["karmaMode"] = var_016.kill["karmaMode"], ["protectFriends"] = var_016.kill["protectFriends"], ["serverHop"] = true })
+			end
+local function var_020(...)
+local var_001 = var_012()
+if not var_001 then
+return false
+				end
+local var_002 = var_017()
+if not var_002 or not var_019(var_001, var_002) then
+return false
+				end
+local var_003 = pcall(function(...)
+(game:GetService("TeleportService")):TeleportToPlaceInstance(game["PlaceId"], var_002, var_011)
+					end)
+return var_003
+			end
+local function var_022(var_001, var_002, ...)
+if type(var_016.kill["updateHopStatus"]) == "function" then
+pcall(var_016.kill["updateHopStatus"], var_001, var_002)
+				end
+			end
+var_016["setServerHop"] = function(var_001, ...)
+if var_001 and (var_016.kill["targetMode"] or var_005() or not var_012()) then
+return false
+					end
+var_016.kill["serverHop"] = var_001 == true
+var_016.kill.hopNow = false
+var_016.kill["noTargetsSince"] = nil
+var_024("killServerHop")
+if var_016.kill["serverHop"] then
+var_025("killServerHop", function(...)
+while var_016["running"] and var_016.kill["serverHop"] do
+local var_001 = var_014["ServerHop"]["Interval"]
+while var_001 > 0 and not var_016.kill.hopNow do
+if not var_016["running"] or not var_016.kill["serverHop"] then
+return
+									end
+var_022(var_001);
+task.wait(1)
+var_001 = var_001 - 1
+								end
+var_016.kill.hopNow = false
+if not var_016["running"] or not var_016.kill["serverHop"] then
+return
+								end
+var_022(0, "Buscando servidor...")
+if var_020() then
+var_022(0, "Conectando...");
+task.wait(12)
+if var_016["running"] and var_016.kill["serverHop"] then
+var_022(0, "Reintentando...");
+task.wait(var_014["ServerHop"]["RetryDelay"]);
+var_016.kill.hopNow = true
+									end
+								else
+var_022(0, "Reintentando...");
+task.wait(var_014["ServerHop"]["RetryDelay"]);
+var_016.kill.hopNow = true
+								end
+							end
+						end)
+					else
+var_022(nil)
+					end
+return true
+				end
+local function var_023(...)
+var_024("killPositionLock");
+var_016.kill["lockCFrame"] = nil
+var_016.kill["lockCharacter"] = nil
+			end
+local function var_026(...)
+var_024("killPunchAnimation")
+if var_016["fastPunch"] then
+return
+				end
+pcall(function(...)
+local var_001 = var_027();
+local var_002 = var_011:FindFirstChild("Backpack");
+local var_003 = var_001 and var_001:FindFirstChild("Punch") or var_002 and var_002:FindFirstChild("Punch");
+local var_004 = var_003 and var_003:FindFirstChild("attackTime")
+if var_004 then
+var_004.Value = .3
+					end
+				end)
+			end
+local function var_030(...)
+var_026();
+var_025("killPunchAnimation", function(...)
+while var_016["running"] and var_016.kill.auto do
+if not var_016["fastPunch"] then
+pcall(function(...)
+local var_001 = var_039()
+if var_001 then
+local var_002 = var_001:FindFirstChild("attackTime")
+if var_002 then
+var_002.Value = 0
+									end
+var_001:Activate()
+								end
+							end)
+						end
+task.wait(.01)
+					end
+				end)
+			end
+local function var_031(...)
+var_023();
+local var_001 = var_027();
+local var_002 = var_029()
+if var_001 and var_002 then
+var_016.kill["lockCharacter"] = var_001
+var_016.kill["lockCFrame"] = var_002.CFrame
+				end
+var_025("killPositionLock", function(...)
+while var_016["running"] and var_009() do
+local var_001 = var_027();
+local var_002 = var_029()
+if var_001 and var_002 then
+if var_016.kill["lockCharacter"] ~= var_001 or not var_016.kill["lockCFrame"] then
+var_016.kill["lockCharacter"] = var_001
+var_016.kill["lockCFrame"] = var_002.CFrame
+							end
+var_002.CFrame = var_016.kill["lockCFrame"]
+var_002["AssemblyLinearVelocity"] = Vector3.zero
+var_002["AssemblyAngularVelocity"] = Vector3.zero
+						end
+var_003["Heartbeat"]:Wait()
+					end
+				end)
+			end
+var_016["setAutoKill"] = function(var_001, ...)
+if var_001 and (var_005() or type(firetouchinterest) ~= "function") then
+return false
+					end
+var_016.kill.auto = var_001 == true
+if var_016.kill.auto then
+var_016.kill["targetMode"] = false
+var_016.kill["karmaMode"] = nil
+var_031();
+var_030()
+if type(var_021["SetSizeOne"]) == "function" then
+var_021["SetSizeOne"]()
+						end
+var_025("killSizeOne", function(...)
+while var_016["running"] and var_016.kill.auto do
+if type(var_021["SetSizeOne"]) == "function" then
+var_021["SetSizeOne"]()
+								end
+task.wait(.5)
+							end
+						end)
+					else
+var_024("killSizeOne");
+var_023();
+var_026()
+					end
+var_010()
+return true
+				end
+var_016["setTargetKill"] = function(var_001, ...)
+if var_001 and (var_005() or type(firetouchinterest) ~= "function" or not var_016.kill.target) then
+return false
+					end
+var_016.kill["targetMode"] = var_001 == true
+if var_016.kill["targetMode"] then
+var_016.kill.auto = false
+var_016.kill["karmaMode"] = nil
+var_023();
+var_026();
+var_016["setServerHop"](false);
+var_024("killSizeOne")
+					end
+var_010()
+return true
+				end
+var_016["setKarmaKill"] = function(var_001, var_002, ...)
+if var_001 ~= "evil" and var_001 ~= "good" then
+return false
+					end
+if var_002 and (var_005() or type(firetouchinterest) ~= "function") then
+return false
+					end
+if var_002 then
+var_016.kill["karmaMode"] = var_001
+					elseif var_016.kill["karmaMode"] == var_001 then
+var_016.kill["karmaMode"] = nil
+					end
+if var_016.kill["karmaMode"] then
+var_016.kill.auto = false
+var_026();
+var_016.kill["targetMode"] = false
+var_031()
+if type(var_021["SetSizeOne"]) == "function" then
+var_021["SetSizeOne"]()
+						end
+var_025("killSizeOne", function(...)
+while var_016["running"] and var_016.kill["karmaMode"] do
+if type(var_021["SetSizeOne"]) == "function" then
+var_021["SetSizeOne"]()
+								end
+task.wait(.5)
+							end
+						end)
+					else
+var_024("killSizeOne");
+var_023();
+var_026()
+					end
+var_010()
+return true
+				end
+var_016["setProtectFriends"] = function(var_001, ...)
+var_016.kill["protectFriends"] = var_001 == true
+if not var_016.kill["protectFriends"] then
+table.clear(var_016.kill["friendCache"])
+					end
+return true
+				end
+var_016["clearKillFriend"] = function(var_001, ...)
+if var_001 then
+var_016.kill["friendCache"][var_001.UserId] = nil
+					end
+				end
+var_016["stopKills"] = function(...)
+var_016.kill.auto = false
+var_016.kill["karmaMode"] = nil
+var_016.kill["targetMode"] = false
+var_016.kill["serverHop"] = false
+var_024("killFarm");
+var_024("killSizeOne");
+var_023();
+var_026();
+var_024("killServerHop");
+var_022(nil);
+var_002()
+				end
+		end
+var_023(function(...)
+var_021:Stop(true);
+var_050(false);
+var_055("autoWeight", false);
+var_055("autoHandstands", false);
+var_055("autoLift", false);
+var_055("autoSitups", false);
+var_016["setAutoEgg"](false);
+var_063(false);
+var_065(false);
+var_069(nil, false);
+var_079(false, true);
+var_081(false);
+var_082(false);
+var_084(false);
+var_088(false);
+var_091(false);
+var_098(false);
+var_016["setAntiKnockback"](false);
+var_102(false);
+var_107(false);
+var_109(false);
+var_016["stopKills"]();
+var_016["autoPet"] = false
+var_016["autoAura"] = false
+var_024("autoPet");
+var_024("autoAura")
+		end)
+do
+local var_001 = var_012:FindFirstChild("Young0xFG100Hub")
+if var_001 then
+var_001:Destroy()
+			end
+		end
+local function var_110(...)
+local var_001 = workspace["CurrentCamera"]
+return var_001 and var_001["ViewportSize"] or Vector2.new(1280, 720)
+		end
+local function var_111(...)
+local var_001 = var_110();
+local var_002 = var_001["X"] < 760 or var_005["TouchEnabled"] and var_001["X"] < 1100
+if var_002 then
+return math.floor(math.clamp(var_001["X"] * var_014.Size["MobileWidthScale"], var_014.Size["MinWidth"], var_014.Size["MaxMobileWidth"])), math.floor(math.clamp(var_001["Y"] * var_014.Size["MobileHeightScale"], var_014.Size["MinHeight"], var_014.Size["MaxMobileHeight"]))
+			end
+return var_014.Size["DesktopWidth"], var_014.Size["DesktopHeight"]
+		end
+local var_112, var_113 = var_111();
+local var_114 = 46
+local var_115 = 38
+local var_116 = var_114
+local var_117 = Instance.new("ScreenGui");
+var_117.Name = "Young0xFG100Hub"
+var_117["ResetOnSpawn"] = false
+var_117["IgnoreGuiInset"] = true
+var_117["DisplayOrder"] = 1000
+var_117["ZIndexBehavior"] = Enum["ZIndexBehavior"]["Sibling"]
+pcall(function(...)
+var_117["AutoLocalize"] = false
+		end);
+var_117.Parent = var_012
+local var_118 = Instance.new("CanvasGroup");
+var_118.Name = "AnimationRoot"
+var_118["AnchorPoint"] = Vector2.new(.5, .5);
+var_118.Size = UDim2["fromOffset"](var_112, var_113);
+var_118["Position"] = UDim2["fromScale"](.5, .5);
+var_118["BackgroundTransparency"] = 1
+var_118["BorderSizePixel"] = 0
+var_118["GroupTransparency"] = 1
+var_118.Parent = var_117
+local var_119 = Instance.new("Frame");
+var_119["AnchorPoint"] = Vector2.new(.5, .5);
+var_119.Size = UDim2["fromOffset"](var_112, var_113);
+var_119["Position"] = UDim2["fromScale"](.5, .5);
+var_119["BackgroundColor3"] = var_015.panel
+var_119["BackgroundTransparency"] = 1
+var_119["BorderSizePixel"] = 0
+var_119.ZIndex = 1
+var_119.Parent = var_118;
+(Instance.new("UICorner", var_119))["CornerRadius"] = UDim.new(0, 15);
+local var_120 = Instance.new("CanvasGroup");
+var_120["AnchorPoint"] = Vector2.new(.5, .5);
+var_120.Size = UDim2["fromOffset"](var_112, var_113);
+var_120["Position"] = UDim2["fromScale"](.5, .5);
+var_120["BackgroundColor3"] = var_015.base
+var_120["BackgroundTransparency"] = .42
+var_120["BorderSizePixel"] = 0
+var_120["ClipsDescendants"] = true
+var_120.ZIndex = 2
+var_120.Parent = var_118;
+(Instance.new("UICorner", var_120))["CornerRadius"] = UDim.new(0, 13)
+do
+local var_001 = Instance.new("Frame");
+var_001.Size = UDim2["fromScale"](1, 1);
+var_001["BackgroundColor3"] = var_015.panel
+var_001["BackgroundTransparency"] = .64
+var_001["BorderSizePixel"] = 0
+var_001.ZIndex = 4
+var_001.Parent = var_120
+		end
+local var_121 = Instance.new("Frame");
+var_121["AnchorPoint"] = Vector2.new(.5, .5);
+var_121.Size = UDim2["fromOffset"](var_112, var_113);
+var_121["Position"] = UDim2["fromScale"](.5, .5);
+var_121["BackgroundTransparency"] = 1
+var_121["BorderSizePixel"] = 0
+var_121.ZIndex = 80
+var_121.Parent = var_118;
+(Instance.new("UICorner", var_121))["CornerRadius"] = UDim.new(0, 13)
+do
+local var_001 = Instance.new("UIStroke", var_121);
+var_001["ApplyStrokeMode"] = Enum["ApplyStrokeMode"].Border
+var_001.Color = var_015.cyan
+var_001["Thickness"] = 2
+var_001["Transparency"] = .03
+var_001["LineJoinMode"] = Enum["LineJoinMode"].Round
+local var_002 = Instance.new("UIGradient");
+var_002.Color = ColorSequence.new({ ColorSequenceKeypoint.new(0, var_015.cyan), ColorSequenceKeypoint.new(.5, var_015.blue), ColorSequenceKeypoint.new(1, var_015.cyan) });
+var_002.Parent = var_001
+		end
+local var_122
+do
+local var_001 = Instance.new("Frame");
+var_001.Size = UDim2.new(1, 0, 0, var_114);
+var_001["BackgroundColor3"] = Color3["fromRGB"](10, 73, 94);
+var_001["BackgroundTransparency"] = .48
+var_001["BorderSizePixel"] = 0
+var_001.ZIndex = 10
+var_001.Parent = var_120
+local var_002 = Instance.new("UIGradient");
+var_002.Color = ColorSequence.new({ ColorSequenceKeypoint.new(0, Color3["fromRGB"](13, 88, 109)), ColorSequenceKeypoint.new(.5, Color3["fromRGB"](8, 60, 82)), ColorSequenceKeypoint.new(1, Color3["fromRGB"](13, 88, 109)) });
+var_002.Parent = var_001
+local var_003 = Instance.new("TextLabel");
+var_003.Size = UDim2.new(1, -18, 1, 0);
+var_003["Position"] = UDim2["fromOffset"](10, 1);
+var_003["BackgroundTransparency"] = 1
+var_003.Text = var_014.Title
+var_003["TextColor3"] = var_015.blue
+var_003["TextTransparency"] = .58
+var_003.Font = Enum.Font["FredokaOne"]
+var_003["TextSize"] = 16
+var_003["TextWrapped"] = true
+var_003.ZIndex = 11
+var_003.Parent = var_001
+local var_004 = Instance.new("TextLabel");
+var_004.Size = UDim2.new(1, -18, 1, 0);
+var_004["Position"] = UDim2["fromOffset"](9, 0);
+var_004["BackgroundTransparency"] = 1
+var_004.Text = var_014.Title
+var_004["TextColor3"] = var_015.cyan
+var_004["TextStrokeColor3"] = var_015.panel
+var_004["TextStrokeTransparency"] = .42
+var_004.Font = Enum.Font["FredokaOne"]
+var_004["TextSize"] = 16
+var_004["TextWrapped"] = true
+var_004.ZIndex = 12
+var_004.Parent = var_001
+var_122 = Instance.new("TextButton");
+var_122.Size = UDim2["fromScale"](1, 1);
+var_122["BackgroundTransparency"] = 1
+var_122.Text = ""
+var_122["AutoButtonColor"] = false
+var_122.ZIndex = 60
+var_122.Parent = var_001
+		end
+local var_123 = Instance.new("ScrollingFrame");
+var_123.Size = UDim2.new(1, 0, 0, var_115);
+var_123["Position"] = UDim2.new(0, 0, 0, var_114);
+var_123["BackgroundColor3"] = var_015.panel
+var_123["BackgroundTransparency"] = .18
+var_123["BorderSizePixel"] = 0
+var_123["ScrollBarThickness"] = 0
+var_123["ScrollingDirection"] = Enum["ScrollingDirection"]["X"]
+var_123["CanvasSize"] = UDim2.new();
+var_123.ZIndex = 10
+var_123.Parent = var_120
+local var_124 = Instance.new("UIListLayout", var_123);
+var_124["FillDirection"] = Enum["FillDirection"]["Horizontal"]
+var_124["SortOrder"] = Enum["SortOrder"]["LayoutOrder"]
+var_124["Padding"] = UDim.new(0, 4)
+do
+local var_001 = Instance.new("UIPadding", var_123);
+var_001["PaddingLeft"] = UDim.new(0, 6);
+var_001["PaddingRight"] = UDim.new(0, 6);
+var_001["PaddingTop"] = UDim.new(0, 4);
+var_001["PaddingBottom"] = UDim.new(0, 4)
+		end
+local var_125 = Instance.new("Frame");
+var_125.Size = UDim2.new(1, 0, 1, -(var_114 + var_115));
+var_125["Position"] = UDim2.new(0, 0, 0, var_114 + var_115);
+var_125["BackgroundTransparency"] = 1
+var_125["ClipsDescendants"] = true
+var_125.ZIndex = 8
+var_125.Parent = var_120
+local var_126 = {};
+local var_127 = {};
+local var_128 = {};
+local function var_129(var_001, ...)
+var_128[var_001] = (var_128[var_001] or 0) + 1
+return var_128[var_001]
+		end
+local function var_130(var_001, ...)
+for var_002, var_003 in pairs(var_127) do
+local var_005 = var_002 == var_001
+var_003:SetAttribute("Selected", var_005);
+(var_004:Create(var_003, TweenInfo.new(.14, Enum["EasingStyle"].Quad, Enum["EasingDirection"].Out), { ["BackgroundTransparency"] = var_005 and .02 or .34, ["BackgroundColor3"] = var_005 and var_015.tabOn or var_015.tab, ["TextColor3"] = var_005 and var_015.white or var_015.dim })):Play();
+local var_006 = var_003:FindFirstChildOfClass("UIStroke")
+if var_006 then
+(var_004:Create(var_006, TweenInfo.new(.14), { ["Color"] = var_005 and var_015.cyan or var_015.blue, ["Transparency"] = var_005 and .05 or .52 })):Play()
+				end
+local var_007 = var_003:FindFirstChild("ActiveLine")
+if var_007 then
+(var_004:Create(var_007, TweenInfo.new(.16, Enum["EasingStyle"].Quad), { ["Size"] = var_005 and UDim2.new(1, -14, 0, 2) or UDim2["fromOffset"](0, 2), ["BackgroundTransparency"] = var_005 and 0 or 1 })):Play()
+				end
+			end
+for var_002, var_003 in pairs(var_126) do
+if var_002 == var_001 then
+var_003["Position"] = UDim2["fromOffset"](7, 0);
+var_003["Visible"] = true;
+(var_004:Create(var_003, TweenInfo.new(.16, Enum["EasingStyle"].Quart, Enum["EasingDirection"].Out), { ["Position"] = UDim2["fromOffset"](0, 0) })):Play()
+				else
+var_003["Visible"] = false
+				end
+			end
+		end
+local function var_131(var_001, var_002, var_003, ...)
+local var_005 = Instance.new("ScrollingFrame");
+var_005.Name = var_001
+var_005.Size = UDim2["fromScale"](1, 1);
+var_005["BackgroundTransparency"] = 1
+var_005["BorderSizePixel"] = 0
+var_005["ScrollBarThickness"] = 3
+var_005["ScrollBarImageColor3"] = var_015.cyan
+var_005["ScrollBarImageTransparency"] = .08
+var_005["CanvasSize"] = UDim2.new();
+var_005["Visible"] = false
+var_005.ZIndex = 9
+var_005.Parent = var_125
+var_126[var_001] = var_005
+local var_006 = Instance.new("UIListLayout", var_005);
+var_006["SortOrder"] = Enum["SortOrder"]["LayoutOrder"]
+var_006["Padding"] = UDim.new(0, 3);
+local var_007 = Instance.new("UIPadding", var_005);
+var_007["PaddingLeft"] = UDim.new(0, 8);
+var_007["PaddingRight"] = UDim.new(0, 8);
+var_007["PaddingTop"] = UDim.new(0, 7);
+var_007["PaddingBottom"] = UDim.new(0, 8);
+var_022((var_006:GetPropertyChangedSignal("AbsoluteContentSize")):Connect(function(...)
+var_005["CanvasSize"] = UDim2["fromOffset"](0, var_006["AbsoluteContentSize"]["Y"] + (var_005:GetAttribute("TightCanvas") and 4 or 15))
+			end));
+local var_008 = Instance.new("TextButton");
+var_008.Name = var_001
+var_008.Size = UDim2["fromOffset"](var_002, var_115 - 8);
+var_008["BackgroundColor3"] = var_015.tab
+var_008["BackgroundTransparency"] = .28
+var_008["BorderSizePixel"] = 0
+var_008.Text = var_001
+var_008["TextColor3"] = var_015.soft
+var_008.Font = Enum.Font["FredokaOne"]
+var_008["TextSize"] = 11
+var_008["TextWrapped"] = true
+var_008["AutoButtonColor"] = false
+var_008["LayoutOrder"] = var_003
+var_008.ZIndex = 12
+var_008.Parent = var_123;
+(Instance.new("UICorner", var_008))["CornerRadius"] = UDim.new(0, 7);
+local var_009 = Instance.new("UIStroke", var_008);
+var_009["ApplyStrokeMode"] = Enum["ApplyStrokeMode"].Border
+var_009.Color = var_015.blue
+var_009["Thickness"] = 1
+var_009["Transparency"] = .52
+local var_010 = Instance.new("Frame");
+var_010.Name = "ActiveLine"
+var_010["AnchorPoint"] = Vector2.new(.5, 1);
+var_010.Size = UDim2["fromOffset"](0, 2);
+var_010["Position"] = UDim2.new(.5, 0, 1, -2);
+var_010["BackgroundColor3"] = var_015.cyan
+var_010["BackgroundTransparency"] = 1
+var_010["BorderSizePixel"] = 0
+var_010.ZIndex = 13
+var_010.Parent = var_008;
+(Instance.new("UICorner", var_010))["CornerRadius"] = UDim.new(1, 0);
+var_022(var_008["Activated"]:Connect(function(...)
+var_130(var_001)
+			end));
+var_022(var_008["MouseEnter"]:Connect(function(...)
+if not var_008:GetAttribute("Selected") then
+(var_004:Create(var_008, TweenInfo.new(.1), { ["BackgroundColor3"] = var_015["rowHover"], ["BackgroundTransparency"] = .18 })):Play()
+				end
+			end));
+var_022(var_008["MouseLeave"]:Connect(function(...)
+if not var_008:GetAttribute("Selected") then
+(var_004:Create(var_008, TweenInfo.new(.1), { ["BackgroundColor3"] = var_015.tab, ["BackgroundTransparency"] = .34 })):Play()
+				end
+			end));
+var_127[var_001] = var_008
+return var_005
+		end
+for var_001, var_002 in ipairs(var_014.Tabs) do
+var_131(var_002[1], var_002[2], var_001)
+		end
+var_022((var_124:GetPropertyChangedSignal("AbsoluteContentSize")):Connect(function(...)
+var_123["CanvasSize"] = UDim2["fromOffset"](var_124["AbsoluteContentSize"]["X"] + 14, 0)
+		end))
+do
+local var_001 = Instance.new("Frame");
+var_001.Size = UDim2["fromOffset"](34, var_115);
+var_001["Position"] = UDim2.new(1, -34, 0, var_114);
+var_001["BackgroundColor3"] = var_015.panel
+var_001["BackgroundTransparency"] = .04
+var_001["BorderSizePixel"] = 0
+var_001.Active = false
+var_001["Selectable"] = false
+var_001.ZIndex = 24
+var_001["Visible"] = false
+var_001.Parent = var_120
+local var_002 = Instance.new("UIGradient");
+var_002["Transparency"] = NumberSequence.new({ NumberSequenceKeypoint.new(0, 1), NumberSequenceKeypoint.new(.46, .24), NumberSequenceKeypoint.new(1, 0) });
+var_002.Parent = var_001
+local var_003 = Instance.new("TextLabel");
+var_003.Size = UDim2.new(0, 18, 1, 0);
+var_003["Position"] = UDim2.new(1, -20, 0, 0);
+var_003["BackgroundTransparency"] = 1
+var_003.Text = "›"
+var_003["TextColor3"] = var_015.cyan
+var_003["TextStrokeColor3"] = var_015.panel
+var_003["TextStrokeTransparency"] = .35
+var_003.Font = Enum.Font["FredokaOne"]
+var_003["TextSize"] = 22
+var_003.Active = false
+var_003["Selectable"] = false
+var_003.ZIndex = 25
+var_003.Parent = var_001
+local function var_004(...)
+local var_002 = math.max(0, (var_124["AbsoluteContentSize"]["X"] + 14) - var_123["AbsoluteSize"]["X"]);
+var_001["Visible"] = var_002 > 5 and var_123["CanvasPosition"]["X"] < var_002 - 4
+			end
+var_022((var_123:GetPropertyChangedSignal("CanvasPosition")):Connect(var_004));
+var_022((var_123:GetPropertyChangedSignal("AbsoluteSize")):Connect(var_004));
+var_022((var_124:GetPropertyChangedSignal("AbsoluteContentSize")):Connect(function(...)
+task.defer(var_004)
+			end));
+task.defer(var_004)
+		end
+local function var_132(var_001, var_002, ...)
+local var_003 = Instance.new("Frame");
+var_003.Size = UDim2.new(1, 0, 0, 22);
+var_003["BackgroundTransparency"] = 1
+var_003["BorderSizePixel"] = 0
+var_003["LayoutOrder"] = var_129(var_001);
+var_003.ZIndex = 11
+var_003.Parent = var_001
+local var_004 = Instance.new("TextLabel");
+var_004["AutomaticSize"] = Enum["AutomaticSize"]["X"]
+var_004.Size = UDim2["fromOffset"](0, 22);
+var_004["BackgroundTransparency"] = 1
+var_004.Text = var_002
+var_004["TextColor3"] = var_015.cyan
+var_004.Font = Enum.Font["FredokaOne"]
+var_004["TextSize"] = 13
+var_004["TextXAlignment"] = Enum["TextXAlignment"].Left
+var_004.ZIndex = 11
+var_004.Parent = var_003
+local var_005 = Instance.new("Frame");
+var_005["AnchorPoint"] = Vector2.new(0, .5);
+var_005["BackgroundColor3"] = var_015.cyan
+var_005["BackgroundTransparency"] = .46
+var_005["BorderSizePixel"] = 0
+var_005.ZIndex = 11
+var_005.Parent = var_003
+local var_006 = Instance.new("UIGradient");
+var_006["Transparency"] = NumberSequence.new({ NumberSequenceKeypoint.new(0, .12), NumberSequenceKeypoint.new(1, 1) });
+var_006.Parent = var_005
+task.defer(function(...)
+if var_003.Parent and var_004.Parent then
+local var_001 = math.ceil(var_004["TextBounds"]["X"]) + 10
+var_005["Position"] = UDim2["fromOffset"](var_001, 11);
+var_005.Size = UDim2.new(1, -var_001 - 2, 0, 1)
+				end
+			end)
+return var_004
+		end
+local function var_133(var_001, var_002, ...)
+var_001.Size = UDim2.new(1, 0, 0, var_002 or 38);
+var_001["BackgroundColor3"] = var_015.row
+var_001["BackgroundTransparency"] = .1
+var_001["BorderSizePixel"] = 0
+var_001.ZIndex = 11;
+(Instance.new("UICorner", var_001))["CornerRadius"] = UDim.new(0, 8);
+local var_003 = Instance.new("UIStroke", var_001);
+var_003["ApplyStrokeMode"] = Enum["ApplyStrokeMode"].Border
+var_003.Color = var_015.blue
+var_003["Thickness"] = 1
+var_003["Transparency"] = .4
+return var_003
+		end
+local function var_134(var_001, var_002, var_003, var_004, var_005, var_006, ...)
+local var_007 = Instance.new("Frame");
+var_007["LayoutOrder"] = var_129(var_001);
+var_007.Parent = var_001
+var_133(var_007, 34)
+if var_006 then
+local var_001 = Instance.new("Frame");
+var_001.Size = UDim2["fromOffset"](3, 20);
+var_001["Position"] = UDim2.new(0, 8, .5, -10);
+var_001["BackgroundColor3"] = var_015.cyan
+var_001["BackgroundTransparency"] = .1
+var_001["BorderSizePixel"] = 0
+var_001.ZIndex = 12
+var_001.Parent = var_007;
+(Instance.new("UICorner", var_001))["CornerRadius"] = UDim.new(1, 0)
+			end
+local var_008 = Instance.new("TextLabel");
+var_008.Size = UDim2.new(.42, -10, 1, 0);
+var_008["Position"] = UDim2["fromOffset"](var_006 and 20 or 11, 0);
+var_008["BackgroundTransparency"] = 1
+var_008.Text = var_002
+var_008["TextColor3"] = var_015.dim
+var_008.Font = Enum.Font["FredokaOne"]
+var_008["TextSize"] = 11
+var_008["TextXAlignment"] = Enum["TextXAlignment"].Left
+var_008.ZIndex = 12
+var_008.Parent = var_007
+local var_009 = Instance.new("TextLabel");
+var_009.Size = UDim2.new(.58, -12, 1, 0);
+var_009["Position"] = UDim2.new(.42, 0, 0, 0)
+if var_005 then
+var_009.Size = UDim2.new(.58, -30, 1, 0)
+			end
+var_009["BackgroundTransparency"] = 1
+var_009.Text = tostring(var_003 or "-");
+var_009["TextColor3"] = var_004 or var_015.white
+var_009.Font = Enum.Font["FredokaOne"]
+var_009["TextSize"] = 11
+var_009["TextWrapped"] = true
+var_009["TextXAlignment"] = Enum["TextXAlignment"].Right
+var_009.ZIndex = 12
+var_009.Parent = var_007
+local var_010
+if var_005 then
+var_010 = Instance.new("Frame");
+var_010.Name = "StatusDot"
+var_010["AnchorPoint"] = Vector2.new(.5, .5);
+var_010.Size = UDim2["fromOffset"](7, 7);
+var_010["Position"] = UDim2.new(1, -13, .5, 0);
+var_010["BackgroundColor3"] = var_004 or var_015.green
+var_010["BorderSizePixel"] = 0
+var_010.ZIndex = 13
+var_010.Parent = var_007;
+(Instance.new("UICorner", var_010))["CornerRadius"] = UDim.new(1, 0);
+local var_001 = Instance.new("UIStroke", var_010);
+var_001.Color = var_004 or var_015.green
+var_001["Thickness"] = 2
+var_001["Transparency"] = .58
+			end
+return var_009, var_007, var_008, var_010
+		end
+local function var_135(var_001, var_002, ...)
+local var_003 = var_134(var_001, "Estado", var_002, var_015.green)
+return var_003
+		end
+local function var_136(var_001, var_002, var_003, var_005, var_006, ...)
+local var_007 = Instance.new("TextButton");
+var_007["LayoutOrder"] = var_129(var_001);
+var_007.Text = var_002
+var_007["TextColor3"] = var_015.white
+var_007.Font = Enum.Font["FredokaOne"]
+var_007["TextSize"] = 12
+var_007["AutoButtonColor"] = false
+var_007.Parent = var_001
+local var_008 = var_133(var_007, 38);
+var_007["BackgroundColor3"] = var_005 or var_015.row
+var_022(var_007["Activated"]:Connect(function(...)
+if var_006 then
+var_007["BackgroundColor3"] = var_006
+				end
+pcall(var_003, var_007)
+			end));
+var_022(var_007["MouseEnter"]:Connect(function(...)
+(var_004:Create(var_007, TweenInfo.new(.1), { ["BackgroundColor3"] = var_006 or var_015["rowHover"] })):Play();
+(var_004:Create(var_008, TweenInfo.new(.1), { ["Transparency"] = .18, ["Color"] = var_015.cyan })):Play()
+			end));
+var_022(var_007["MouseLeave"]:Connect(function(...)
+(var_004:Create(var_007, TweenInfo.new(.1), { ["BackgroundColor3"] = var_005 or var_015.row })):Play();
+(var_004:Create(var_008, TweenInfo.new(.1), { ["Transparency"] = .4, ["Color"] = var_015.blue })):Play()
+			end))
+return var_007
+		end
+local function var_137(var_001, var_002, var_003, ...)
+local var_005 = Instance.new("TextButton");
+var_005["LayoutOrder"] = var_129(var_001);
+var_005.Text = ""
+var_005["AutoButtonColor"] = false
+var_005.Parent = var_001
+local var_006 = var_133(var_005, 40);
+local var_007 = Instance.new("Frame");
+var_007.Size = UDim2["fromOffset"](3, 24);
+var_007["Position"] = UDim2.new(0, 8, .5, -12);
+var_007["BackgroundColor3"] = var_015.cyan
+var_007["BackgroundTransparency"] = .1
+var_007["BorderSizePixel"] = 0
+var_007.ZIndex = 12
+var_007.Parent = var_005;
+(Instance.new("UICorner", var_007))["CornerRadius"] = UDim.new(1, 0);
+local var_008 = Instance.new("TextLabel");
+var_008.Size = UDim2.new(1, -72, 1, 0);
+var_008["Position"] = UDim2["fromOffset"](20, 0);
+var_008["BackgroundTransparency"] = 1
+var_008.Text = var_002
+var_008["TextColor3"] = var_015.white
+var_008.Font = Enum.Font["FredokaOne"]
+var_008["TextSize"] = 12
+var_008["TextWrapped"] = true
+var_008["TextXAlignment"] = Enum["TextXAlignment"].Left
+var_008.ZIndex = 12
+var_008.Parent = var_005
+local var_009 = Instance.new("Frame");
+var_009.Size = UDim2["fromOffset"](40, 20);
+var_009["Position"] = UDim2.new(1, -50, .5, -10);
+var_009["BackgroundColor3"] = Color3["fromRGB"](14, 51, 78);
+var_009["BackgroundTransparency"] = .12
+var_009["BorderSizePixel"] = 0
+var_009.ZIndex = 12
+var_009.Parent = var_005;
+(Instance.new("UICorner", var_009))["CornerRadius"] = UDim.new(1, 0);
+local var_010 = Instance.new("Frame");
+var_010.Size = UDim2["fromOffset"](14, 14);
+var_010["Position"] = UDim2["fromOffset"](3, 3);
+var_010["BackgroundColor3"] = var_015.soft
+var_010["BorderSizePixel"] = 0
+var_010.ZIndex = 13
+var_010.Parent = var_009;
+(Instance.new("UICorner", var_010))["CornerRadius"] = UDim.new(1, 0);
+local var_011 = false
+local var_012 = false
+local var_013 = {};
+var_013.Button = var_005
+local function var_014(...)
+(var_004:Create(var_009, TweenInfo.new(.14, Enum["EasingStyle"].Quad), { ["BackgroundColor3"] = var_012 and Color3["fromRGB"](28, 42, 55) or var_011 and var_015.blue or Color3["fromRGB"](14, 51, 78) })):Play();
+(var_004:Create(var_010, TweenInfo.new(.14, Enum["EasingStyle"].Quad), { ["Position"] = var_011 and UDim2["fromOffset"](23, 3) or UDim2["fromOffset"](3, 3), ["BackgroundColor3"] = var_011 and var_015.white or var_015.soft, ["BackgroundTransparency"] = var_012 and .48 or 0 })):Play();
+(var_004:Create(var_006, TweenInfo.new(.14), { ["Color"] = var_012 and var_015.dim or var_011 and var_015.cyan or var_015.blue, ["Transparency"] = var_012 and .82 or var_011 and .08 or .4 })):Play();
+(var_004:Create(var_008, TweenInfo.new(.14), { ["TextColor3"] = var_012 and var_015.dim or var_015.white, ["TextTransparency"] = var_012 and .42 or 0 })):Play();
+(var_004:Create(var_007, TweenInfo.new(.14), { ["BackgroundTransparency"] = var_012 and .72 or .1 })):Play();
+(var_004:Create(var_005, TweenInfo.new(.14), { ["BackgroundTransparency"] = var_012 and .48 or .1 })):Play()
+			end
+function var_013.Set(var_004, var_001, var_002, ...)
+var_001 = var_001 == true
+if var_012 and var_001 then
+return false
+				end
+if var_011 == var_001 then
+return var_011
+				end
+var_011 = var_001
+if not var_002 then
+local var_001, var_002 = pcall(var_003, var_011)
+if not var_001 or var_002 == false then
+var_011 = not var_011
+					end
+				end
+var_014()
+return var_011
+			end
+function var_013.Get(var_001, ...)
+return var_011
+			end
+function var_013.SetLocked(var_002, var_001, ...)
+var_012 = var_001 == true
+if var_012 and var_011 then
+var_011 = false
+pcall(var_003, false)
+				end
+var_014()
+			end
+function var_013.IsLocked(var_001, ...)
+return var_012
+			end
+var_022(var_005["Activated"]:Connect(function(...)
+if not var_012 then
+var_013:Set(not var_011)
+				end
+			end));
+var_022(var_005["MouseEnter"]:Connect(function(...)
+if not var_012 then
+(var_004:Create(var_005, TweenInfo.new(.1), { ["BackgroundColor3"] = var_015["rowHover"] })):Play()
+				end
+			end));
+var_022(var_005["MouseLeave"]:Connect(function(...)
+(var_004:Create(var_005, TweenInfo.new(.1), { ["BackgroundColor3"] = var_015.row })):Play()
+			end));
+var_014()
+return var_013, var_005
+		end
+local function var_138(var_001, var_002, var_003, var_005, var_006, ...)
+local var_007 = Instance.new("Frame");
+var_007["LayoutOrder"] = var_129(var_001);
+var_007.Parent = var_001
+var_007["ClipsDescendants"] = true
+var_133(var_007, 46);
+local var_008 = Instance.new("TextButton");
+var_008.Size = UDim2.new(1, 0, 0, 46);
+var_008["BackgroundTransparency"] = 1
+var_008["BorderSizePixel"] = 0
+var_008.Text = ""
+var_008["AutoButtonColor"] = false
+var_008.ZIndex = 13
+var_008.Parent = var_007
+local var_009 = Instance.new("TextLabel");
+var_009.Size = UDim2.new(.42, -12, 1, 0);
+var_009["Position"] = UDim2["fromOffset"](11, 0);
+var_009["BackgroundTransparency"] = 1
+var_009.Text = var_002
+var_009["TextColor3"] = var_015.soft
+var_009.Font = Enum.Font["FredokaOne"]
+var_009["TextSize"] = 11
+var_009["TextXAlignment"] = Enum["TextXAlignment"].Left
+var_009.ZIndex = 14
+var_009.Parent = var_008
+local var_010 = Instance.new("TextLabel");
+var_010.Size = UDim2.new(.58, -34, 1, 0);
+var_010["Position"] = UDim2.new(.42, 0, 0, 0);
+var_010["BackgroundTransparency"] = 1
+var_010["TextColor3"] = var_015.white
+var_010.Font = Enum.Font["FredokaOne"]
+var_010["TextSize"] = 11
+var_010["TextWrapped"] = true
+var_010["TextXAlignment"] = Enum["TextXAlignment"].Right
+var_010.ZIndex = 14
+var_010.Parent = var_008
+local var_011 = Instance.new("TextLabel");
+var_011.Size = UDim2["fromOffset"](24, 46);
+var_011["Position"] = UDim2.new(1, -28, 0, 0);
+var_011["BackgroundTransparency"] = 1
+var_011.Text = "⌄"
+var_011["TextColor3"] = var_015.cyan
+var_011.Font = Enum.Font["FredokaOne"]
+var_011["TextSize"] = 16
+var_011.ZIndex = 14
+var_011.Parent = var_008
+local var_012 = Instance.new("ScrollingFrame");
+var_012.Size = UDim2.new(1, -12, 0, 0);
+var_012["Position"] = UDim2["fromOffset"](6, 46);
+var_012["BackgroundColor3"] = var_015.base
+var_012["BackgroundTransparency"] = .12
+var_012["BorderSizePixel"] = 0
+var_012["ScrollBarThickness"] = 2
+var_012["ScrollBarImageColor3"] = var_015.cyan
+var_012["CanvasSize"] = UDim2.new();
+var_012["Visible"] = false
+var_012.ZIndex = 14
+var_012.Parent = var_007;
+(Instance.new("UICorner", var_012))["CornerRadius"] = UDim.new(0, 6);
+local var_013 = Instance.new("UIListLayout", var_012);
+var_013["SortOrder"] = Enum["SortOrder"]["LayoutOrder"]
+var_013["Padding"] = UDim.new(0, 2);
+local var_014 = Instance.new("UIPadding", var_012);
+var_014["PaddingTop"] = UDim.new(0, 3);
+var_014["PaddingBottom"] = UDim.new(0, 3);
+var_014["PaddingLeft"] = UDim.new(0, 3);
+var_014["PaddingRight"] = UDim.new(0, 3);
+local var_016 = { ["values"] = var_003 or {}, ["index"] = 1, ["open"] = false };
+local function var_017(var_001, ...)
+return var_001 and tostring(type(var_001) == "table" and (var_001.label or var_001.name or var_001[1]) or var_001) or "Sin opciones"
+			end
+local function var_018(...)
+return var_016.values[var_016.index]
+			end
+local function var_019(var_001, ...)
+local var_002 = var_018();
+var_010.Text = var_017(var_002)
+if var_001 and var_005 then
+pcall(var_005, var_002)
+				end
+			end
+local function var_020(var_001, ...)
+var_016.open = var_001 == true and #var_016.values > 0
+local var_002 = math.min(#var_016.values, 5) * 30 + 6
+var_012["Visible"] = var_016.open
+var_012.Size = UDim2.new(1, -12, 0, var_016.open and var_002 or 0);
+var_007.Size = UDim2.new(1, 0, 0, 46 + (var_016.open and var_002 or 0))
+if var_016.open and var_006 then
+task.defer(var_006, var_007)
+				end
+var_011.Text = var_016.open and "⌃" or "⌄"
+			end
+local function var_021(...)
+for var_001, var_002 in ipairs(var_012:GetChildren()) do
+if var_002:IsA("TextButton") then
+var_002:Destroy()
+					end
+				end
+for var_001, var_002 in ipairs(var_016.values) do
+local var_003 = Instance.new("TextButton");
+var_003.Size = UDim2.new(1, -6, 0, 28);
+var_003["BackgroundColor3"] = var_001 == var_016.index and var_015.tabOn or var_015.row
+var_003["BackgroundTransparency"] = var_001 == var_016.index and .08 or .22
+var_003["BorderSizePixel"] = 0
+var_003.Text = var_017(var_002);
+var_003["TextColor3"] = var_015.white
+var_003.Font = Enum.Font["FredokaOne"]
+var_003["TextSize"] = 11
+var_003["TextWrapped"] = true
+var_003["AutoButtonColor"] = false
+var_003["LayoutOrder"] = var_001
+var_003.ZIndex = 15
+var_003.Parent = var_012;
+(Instance.new("UICorner", var_003))["CornerRadius"] = UDim.new(0, 5);
+var_022(var_003["Activated"]:Connect(function(...)
+var_016.index = var_001
+var_019(true);
+var_020(false);
+var_021()
+					end));
+var_022(var_003["MouseEnter"]:Connect(function(...)
+(var_004:Create(var_003, TweenInfo.new(.08), { ["BackgroundColor3"] = var_001 == var_016.index and var_015.tabOn or var_015["rowHover"], ["BackgroundTransparency"] = .06 })):Play()
+					end));
+var_022(var_003["MouseLeave"]:Connect(function(...)
+(var_004:Create(var_003, TweenInfo.new(.08), { ["BackgroundColor3"] = var_001 == var_016.index and var_015.tabOn or var_015.row, ["BackgroundTransparency"] = var_001 == var_016.index and .08 or .22 })):Play()
+					end))
+				end
+var_012["CanvasSize"] = UDim2["fromOffset"](0, #var_016.values * 30 + 6)
+			end
+function var_016.Get(var_001, ...)
+return var_018()
+			end
+function var_016.SetValues(var_003, var_001, var_002, ...)
+local var_004 = var_002 and var_018() or nil
+var_016.values = var_001 or {};
+var_016.index = 1
+if var_004 then
+for var_001, var_002 in ipairs(var_016.values) do
+local var_003 = var_002 == var_004
+if type(var_002) == "table" and type(var_004) == "table" then
+var_003 = var_002.userId and var_002.userId == var_004.userId or var_002.name and var_002.name == var_004.name
+						end
+if var_003 then
+var_016.index = var_001
+break
+						end
+					end
+				end
+var_021();
+var_020(false);
+var_019(true)
+			end
+function var_016.SetIndex(var_002, var_001, ...)
+if #var_016.values == 0 then
+var_016.index = 1
+				else
+var_016.index = (var_001 - 1) % #var_016.values + 1
+				end
+var_021();
+var_020(false);
+var_019(true)
+			end
+var_022(var_008["Activated"]:Connect(function(...)
+var_020(not var_016.open)
+			end));
+var_022(var_008["MouseEnter"]:Connect(function(...)
+(var_004:Create(var_007, TweenInfo.new(.1), { ["BackgroundColor3"] = var_015["rowHover"] })):Play()
+			end));
+var_022(var_008["MouseLeave"]:Connect(function(...)
+(var_004:Create(var_007, TweenInfo.new(.1), { ["BackgroundColor3"] = var_015.row })):Play()
+			end));
+var_021();
+var_019(true)
+return var_016, var_010
+		end
+local function var_139(var_001, var_002, var_003, var_004, ...)
+local var_005 = Instance.new("Frame");
+var_005["LayoutOrder"] = var_129(var_001);
+var_005.Parent = var_001
+var_133(var_005, 48);
+local var_006 = Instance.new("TextLabel");
+var_006.Size = UDim2.new(.42, -12, 1, 0);
+var_006["Position"] = UDim2["fromOffset"](11, 0);
+var_006["BackgroundTransparency"] = 1
+var_006.Text = var_002
+var_006["TextColor3"] = var_015.soft
+var_006.Font = Enum.Font["FredokaOne"]
+var_006["TextSize"] = 11
+var_006["TextXAlignment"] = Enum["TextXAlignment"].Left
+var_006.ZIndex = 12
+var_006.Parent = var_005
+local var_007 = Instance.new("TextBox");
+var_007.Size = UDim2.new(.58, -12, 0, 30);
+var_007["Position"] = UDim2.new(.42, 0, .5, -15);
+var_007["BackgroundColor3"] = var_015.panel
+var_007["BackgroundTransparency"] = .08
+var_007["BorderSizePixel"] = 0
+var_007["PlaceholderText"] = var_003
+var_007["PlaceholderColor3"] = var_015.dim
+var_007.Text = ""
+var_007["TextColor3"] = var_015.white
+var_007.Font = Enum.Font["FredokaOne"]
+var_007["TextSize"] = 11
+var_007["ClearTextOnFocus"] = false
+var_007.ZIndex = 12
+var_007.Parent = var_005;
+(Instance.new("UICorner", var_007))["CornerRadius"] = UDim.new(0, 6);
+var_022(var_007["FocusLost"]:Connect(function(...)
+pcall(var_004, var_007.Text)
+			end))
+return var_007
+		end
+local function var_140(var_001, var_002, var_003, var_006, var_007, var_008, ...)
+local var_009 = Instance.new("Frame");
+var_009["LayoutOrder"] = var_129(var_001);
+var_009.Parent = var_001
+var_133(var_009, 50);
+local var_010 = Instance.new("TextLabel");
+var_010.Size = UDim2.new(1, -20, 0, 20);
+var_010["Position"] = UDim2["fromOffset"](10, 2);
+var_010["BackgroundTransparency"] = 1
+var_010["TextColor3"] = var_015.white
+var_010.Font = Enum.Font["FredokaOne"]
+var_010["TextSize"] = 11
+var_010["TextXAlignment"] = Enum["TextXAlignment"].Left
+var_010.ZIndex = 12
+var_010.Parent = var_009
+local var_011 = Instance.new("TextButton");
+var_011.Size = UDim2.new(1, -20, 0, 10);
+var_011["Position"] = UDim2["fromOffset"](10, 31);
+var_011["BackgroundColor3"] = Color3["fromRGB"](8, 53, 84);
+var_011["BorderSizePixel"] = 0
+var_011.Text = ""
+var_011["AutoButtonColor"] = false
+var_011.ZIndex = 12
+var_011.Parent = var_009;
+(Instance.new("UICorner", var_011))["CornerRadius"] = UDim.new(1, 0);
+local var_012 = Instance.new("Frame");
+var_012.Size = UDim2["fromScale"](0, 1);
+var_012["BackgroundColor3"] = var_015.cyan
+var_012["BorderSizePixel"] = 0
+var_012.ZIndex = 13
+var_012.Parent = var_011;
+(Instance.new("UICorner", var_012))["CornerRadius"] = UDim.new(1, 0);
+local var_013 = math.clamp(math.floor(var_007), var_003, var_006);
+local var_014 = false
+local function var_016(var_001, ...)
+var_013 = math.clamp(math.floor(var_001 + .5), var_003, var_006);
+local var_005 = (var_013 - var_003) / (var_006 - var_003);
+var_010.Text = var_002 .. (": " .. (var_013 .. ("/" .. var_006)));
+(var_004:Create(var_012, TweenInfo.new(.08), { ["Size"] = UDim2["fromScale"](var_005, 1) })):Play();
+pcall(var_008, var_013)
+			end
+local function var_017(var_001, ...)
+local var_002 = math.clamp((var_001 - var_011["AbsolutePosition"]["X"]) / math.max(var_011["AbsoluteSize"]["X"], 1), 0, 1);
+var_016(var_003 + (var_006 - var_003) * var_002)
+			end
+var_022(var_011["InputBegan"]:Connect(function(var_001, ...)
+if var_001["UserInputType"] == Enum["UserInputType"]["MouseButton1"] or var_001["UserInputType"] == Enum["UserInputType"].Touch then
+var_014 = true
+var_017(var_001["Position"]["X"])
+				end
+			end));
+var_022(var_005["InputChanged"]:Connect(function(var_001, ...)
+if var_014 and (var_001["UserInputType"] == Enum["UserInputType"]["MouseMovement"] or var_001["UserInputType"] == Enum["UserInputType"].Touch) then
+var_017(var_001["Position"]["X"])
+				end
+			end));
+var_022(var_005["InputEnded"]:Connect(function(var_001, ...)
+if var_001["UserInputType"] == Enum["UserInputType"]["MouseButton1"] or var_001["UserInputType"] == Enum["UserInputType"].Touch then
+var_014 = false
+				end
+			end));
+var_016(var_013)
+return { ["Get"] = function(...)
+return var_013
+				end, ["Set"] = var_016 }
+		end
+do
+local var_002 = var_126.Info
+var_132(var_002, "👤 Info Player 👤");
+var_134(var_002, "User:", var_011["DisplayName"], var_015.white);
+local var_004, var_005 = var_134(var_002, "FPS:", "0", var_015.green, true);
+local var_006 = var_005:FindFirstChild("StatusDot");
+local var_007 = var_035();
+local var_008 = var_007 <= 70 and var_015.green or var_007 <= 160 and var_015.orange or var_015.red
+local var_009, var_010 = var_134(var_002, "Ping:", tostring(var_007) .. " ms", var_008, true);
+local var_012 = var_010:FindFirstChild("StatusDot");
+var_132(var_002, "🌐 Info Server 🌐");
+var_134(var_002, "Juego:", "Muscle Legends", var_015.cyan);
+local var_013 = var_134(var_002, "Server Players:", "0/0", var_015.white);
+var_132(var_002, "⚡ Info Young0x Hub ⚡");
+var_134(var_002, "Script:", "Fast Glitch 100%", var_015.cyan);
+var_134(var_002, "Autor:", "Young0x", var_015.white);
+var_136(var_002, "Discord", function(var_001, ...)
+local var_002 = var_001.Text
+var_001.Text = var_037(var_014["Discord"]) and "Link copiado" or var_002
+task.delay(1.1, function(...)
+if var_001 and var_001.Parent then
+var_001.Text = var_002
+					end
+				end)
+			end);
+var_136(var_002, "YouTube", function(var_001, ...)
+local var_002 = var_001.Text
+var_001.Text = var_037(var_014["YouTube"]) and "Link copiado" or var_002
+task.delay(1.1, function(...)
+if var_001 and var_001.Parent then
+var_001.Text = var_002
+					end
+				end)
+			end);
+local var_017 = 0
+var_022(var_003["RenderStepped"]:Connect(function(...)
+var_017 = var_017 + 1
+			end));
+var_025("infoUpdater", function(...)
+local var_002 = tick()
+while var_016["running"] do
+task.wait(1);
+local var_003 = tick();
+local var_005 = var_017
+var_017 = 0
+local var_007 = math.floor(var_005 / math.max(var_003 - var_002, .001) + .5);
+local var_008 = var_007 >= 55 and var_015.green or var_007 >= 30 and var_015.orange or var_015.red
+var_004.Text = tostring(var_007);
+var_004["TextColor3"] = var_008
+if var_006 then
+var_006["BackgroundColor3"] = var_008
+local var_001 = var_006:FindFirstChildOfClass("UIStroke")
+if var_001 then
+var_001.Color = var_008
+						end
+					end
+var_002 = var_003
+local var_010 = var_035();
+local var_011 = var_010 <= 70 and var_015.green or var_010 <= 160 and var_015.orange or var_015.red
+var_009.Text = tostring(var_010) .. " ms"
+var_009["TextColor3"] = var_011
+if var_012 then
+var_012["BackgroundColor3"] = var_011
+local var_001 = var_012:FindFirstChildOfClass("UIStroke")
+if var_001 then
+var_001.Color = var_011
+						end
+					end
+var_013.Text = tostring(#var_001:GetPlayers()) .. ("/" .. tostring(var_001["MaxPlayers"]))
+				end
+			end)
+		end
+do
+local var_001 = var_126.Main
+var_132(var_001, "MAIN");
+local var_006
+local var_007
+local var_008 = false
+local var_010 = 0
+local function var_011(...)
+local var_001 = (tostring(var_006 and var_006.Text or var_016["mainSize"])):gsub(",", ".");
+local var_002 = tonumber(var_001);
+local var_003 = math.clamp(math.floor((var_002 or var_016["mainSize"] or 1) + .5), 1, 100);
+var_016["mainSize"] = var_003
+if var_006 then
+var_006.Text = tostring(var_003)
+				end
+return var_003
+			end
+local function var_012(...)
+local var_001 = var_002:FindFirstChild("rEvents");
+local var_003 = var_001 and var_001:FindFirstChild("changeSpeedSizeRemote")
+if not var_003 or var_008 then
+return
+				end
+local var_004 = var_011()
+var_008 = true
+var_010 = var_010 + 1
+local var_005 = var_010
+task.spawn(function(...)
+if var_003:IsA("RemoteEvent") then
+pcall(var_003["FireServer"], var_003, "changeSize", var_004)
+					else
+pcall(var_003["InvokeServer"], var_003, "changeSize", var_004)
+					end
+if var_010 == var_005 then
+var_008 = false
+					end
+				end);
+task.delay(.8, function(...)
+if var_010 == var_005 then
+var_008 = false
+					end
+				end)
+			end
+var_006 = var_139(var_001, "Set Size (Máximo 100)", "Ejemplo: 2", function(...)
+var_011()
+if var_016["mainAutoSize"] then
+var_012()
+					end
+				end);
+var_006.Text = "2"
+var_137(var_001, "Auto Set Size", function(var_001, ...)
+var_011();
+var_016["mainAutoSize"] = var_001 == true
+var_024("mainAutoSize")
+if var_016["mainAutoSize"] then
+var_012();
+var_025("mainAutoSize", function(...)
+while var_016["running"] and var_016["mainAutoSize"] do
+var_012();
+task.wait(.1)
+						end
+					end)
+				else
+var_010 = var_010 + 1
+var_008 = false
+				end
+return true
+			end);
+local var_013 = setmetatable({}, { ["__mode"] = "k" });
+local var_014 = nil
+local var_015 = nil
+local var_017 = false
+local function var_018(...)
+local var_001 = (tostring(var_007 and var_007.Text or var_016["mainSpeed"])):gsub(",", ".");
+local var_002 = tonumber(var_001);
+local var_003 = math.max(0, math.floor((var_002 or var_016["mainSpeed"] or 125) + .5));
+var_016["mainSpeed"] = var_003
+if var_007 then
+var_007.Text = tostring(var_003)
+				end
+return var_003
+			end
+local function var_019(...)
+local var_001 = var_028()
+if not var_001 then
+return
+				end
+if var_013[var_001] == nil then
+var_013[var_001] = var_001["WalkSpeed"]
+				end
+if var_014 ~= var_001 then
+if var_015 then
+var_015:Disconnect()
+var_015 = nil
+					end
+var_014 = var_001
+var_015 = (var_001:GetPropertyChangedSignal("WalkSpeed")):Connect(function(...)
+if var_016["mainAutoSpeed"] and (not var_017 and (var_001.Parent and var_001["WalkSpeed"] ~= var_016["mainSpeed"])) then
+var_017 = true
+var_001["WalkSpeed"] = var_016["mainSpeed"]
+var_017 = false
+							end
+						end)
+				end
+if var_001["WalkSpeed"] ~= var_016["mainSpeed"] then
+var_017 = true
+var_001["WalkSpeed"] = var_016["mainSpeed"]
+var_017 = false
+				end
+			end
+local function var_020(...)
+if var_015 then
+var_015:Disconnect()
+var_015 = nil
+				end
+var_014 = nil
+for var_001, var_002 in pairs(var_013) do
+if var_001 and (var_001.Parent and not var_016["fastSpeed"]) then
+var_001["WalkSpeed"] = var_002
+					end
+				end
+			end
+var_007 = var_139(var_001, "Set Speed", "Ejemplo: 125", function(...)
+var_018()
+if var_016["mainAutoSpeed"] then
+var_019()
+					end
+				end);
+var_007.Text = "125"
+var_137(var_001, "Auto Set Speed", function(var_001, ...)
+var_018();
+var_016["mainAutoSpeed"] = var_001 == true
+var_024("mainAutoSpeed")
+if var_016["mainAutoSpeed"] then
+var_019();
+var_025("mainAutoSpeed", function(...)
+while var_016["running"] and var_016["mainAutoSpeed"] do
+var_019();
+var_003["Stepped"]:Wait();
+var_019();
+var_003["RenderStepped"]:Wait()
+						end
+					end)
+				else
+var_020()
+				end
+return true
+			end);
+var_138(var_001, "Set Time", { "Day", "Night" }, function(var_001, ...)
+var_009["ClockTime"] = var_001 == "Night" and 0 or 14
+			end, function(var_002, ...)
+var_003["Heartbeat"]:Wait();
+var_003["Heartbeat"]:Wait();
+local var_005 = math.max(0, var_001["AbsoluteCanvasSize"]["Y"] - var_001["AbsoluteSize"]["Y"]);
+local var_006 = ((var_002["AbsolutePosition"]["Y"] - var_001["AbsolutePosition"]["Y"]) + var_001["CanvasPosition"]["Y"]) - 3;
+(var_004:Create(var_001, TweenInfo.new(.18, Enum["EasingStyle"].Quart, Enum["EasingDirection"].Out), { ["CanvasPosition"] = Vector2.new(0, math.clamp(var_006, 0, var_005)) })):Play()
+			end);
+var_137(var_001, "Infinite Jump", function(var_001, ...)
+var_016["infiniteJump"] = var_001 == true
+return true
+			end);
+var_022(var_005["JumpRequest"]:Connect(function(...)
+if var_016["infiniteJump"] then
+local var_001 = var_028()
+if var_001 then
+var_001:ChangeState(Enum["HumanoidStateType"]["Jumping"])
+					end
+				end
+			end));
+var_023(function(...)
+var_016["mainAutoSize"] = false
+var_016["mainAutoSpeed"] = false
+var_016["infiniteJump"] = false
+var_010 = var_010 + 1
+var_008 = false
+var_024("mainAutoSize");
+var_024("mainAutoSpeed");
+var_020()
+			end)
+		end
+do
+local var_001 = var_126["Fast Glitch 100%"]
+var_132(var_001, "FAST GLITCH 100%");
+local var_002 = {};
+local var_003 = false
+var_137(var_001, "Fast Punch ", function(var_001, ...)
+var_050(var_001)
+var_003 = true
+for var_002, var_003 in ipairs(var_002) do
+if not var_001 then
+var_003:Set(false, true)
+					end
+var_003:SetLocked(not var_001)
+				end
+var_003 = false
+if not var_001 then
+var_046()
+				end
+			end);
+local var_004, var_005, var_006 = var_134(var_001, "Glitch Time:", "0d 0h 0m 0s", var_015.cyan);
+var_006["TextColor3"] = var_015.white
+var_006["TextSize"] = 12
+var_004["TextSize"] = 12
+var_025("rockSessionTimer", function(...)
+while var_016["running"] do
+local var_001 = var_016["rockSessionStartedAt"]
+local var_002 = var_016["fastPunch"] and (var_016["selectedRock"] ~= nil and var_001 ~= nil)
+if var_002 then
+local var_002 = math.max(0, math.floor(var_036() - var_001));
+local var_003 = math.floor(var_002 / 86400);
+local var_005 = math.floor((var_002 % 86400) / 3600);
+local var_006 = math.floor((var_002 % 3600) / 60);
+local var_007 = var_002 % 60
+var_004.Text = string.format("%dd %dh %dm %ds", var_003, var_005, var_006, var_007)
+					else
+var_004.Text = "0d 0h 0m 0s"
+					end
+task.wait(.2)
+				end
+			end);
+var_137(var_001, "Ocultar Durabilidad", function(var_001, ...)
+var_063(var_001)
+			end);
+var_132(var_001, "Rocks")
+for var_004, var_005 in ipairs(var_014.Rocks) do
+local var_006 = var_005
+local var_007
+var_007 = var_137(var_001, var_006.name, function(var_001, ...)
+if var_003 then
+return
+						end
+if var_001 and not var_016["fastPunch"] then
+return false
+						end
+if var_001 then
+var_046()
+var_003 = true
+for var_001, var_002 in ipairs(var_002) do
+if var_002 ~= var_007 then
+var_002:Set(false, true)
+								end
+							end
+var_003 = false
+var_016["selectedRock"] = var_006
+var_016["rockSessionStartedAt"] = var_036()
+						elseif var_016["selectedRock"] == var_006 then
+var_046()
+						end
+					end);
+var_007:SetLocked(true);
+var_002[#var_002 + 1] = var_007
+			end
+		end
+do
+local var_001 = var_126["Auto Farm"]
+var_132(var_001, "AUTO FARM");
+var_136(var_001, "👽 Activar AutoLift Gamepass GRATIS 👽", function(var_001, ...)
+if var_056 then
+return
+				end
+if var_057() then
+var_001.Text = "✅ AutoLift Gamepass ACTIVADO ✅"
+var_001["TextColor3"] = var_015.green
+				end
+			end);
+local var_002 = {};
+local function var_003(var_003, var_004, var_005, var_006, ...)
+local var_007
+var_007 = var_137(var_001, var_003, function(var_001, ...)
+if var_001 then
+for var_001, var_002 in ipairs(var_002) do
+if var_002 ~= var_007 then
+var_002:Set(false)
+								end
+							end
+						end
+var_055(var_004, var_001, var_005, var_006)
+					end);
+var_002[#var_002 + 1] = var_007
+			end
+var_003("🏋️ Auto Weight 🏋️", "autoWeight", { "Weight" }, .01);
+var_003("🤸 Auto Handstands 🤸", "autoHandstands", { "Handstands", "Handstand" }, .01);
+var_003("⚡ Auto Lift ⚡", "autoLift", { "Pushup", "Pushups" }, .01);
+var_003("🧘 Auto Situps 🧘", "autoSitups", { "Situps", "Situp" }, .01);
+var_021["RepToggles"] = var_002
+var_137(var_001, "🥚 Auto Egg (30mins) 🥚", function(var_001, ...)
+var_016["setAutoEgg"](var_001)
+			end);
+var_021["HideFramesToggle"] = var_137(var_001, "🙈 Ocultar Frames 🙈", function(var_001, ...)
+var_065(var_001)
+				end);
+var_132(var_001, "Machines");
+local var_004 = {};
+local var_005 = false
+for var_002, var_003 in ipairs(var_014["Machines"]) do
+local var_006 = var_003
+local var_007
+var_007 = var_137(var_001, var_006.label, function(var_001, ...)
+if var_005 then
+return
+						end
+if var_001 then
+var_005 = true
+for var_001, var_002 in pairs(var_004) do
+if var_002 ~= var_007 then
+var_002:Set(false)
+								end
+							end
+var_005 = false
+var_069(var_006, true)
+						elseif var_016["machine"] == var_006 then
+var_069(var_006, false)
+						end
+					end);
+var_004[#var_004 + 1] = var_007
+			end
+var_021["MachineToggles"] = var_004
+		end
+do
+local var_001 = var_126["Fast Farm"]
+local var_002 = var_132(var_001, "FAST FARM");
+var_002.Parent.Size = UDim2.new(1, 0, 0, 16);
+var_002.Size = UDim2["fromOffset"](0, 16);
+local var_003 = Instance.new("Frame");
+var_003.Size = UDim2["fromScale"](1, 1);
+var_003["BackgroundColor3"] = var_015.black
+var_003["BackgroundTransparency"] = .22
+var_003["BorderSizePixel"] = 0
+var_003["Visible"] = false
+var_003.ZIndex = 120
+var_003.Parent = var_120
+local var_005 = Instance.new("Frame");
+var_005["AnchorPoint"] = Vector2.new(.5, .5);
+var_005.Size = UDim2.new(1, -54, 0, 188);
+var_005["Position"] = UDim2["fromScale"](.5, .5);
+var_005["BackgroundColor3"] = var_015.panel
+var_005["BackgroundTransparency"] = .02
+var_005["BorderSizePixel"] = 0
+var_005.ZIndex = 121
+var_005.Parent = var_003;
+(Instance.new("UICorner", var_005))["CornerRadius"] = UDim.new(0, 12);
+local var_006 = Instance.new("UISizeConstraint", var_005);
+var_006["MaxSize"] = Vector2.new(390, 188);
+local var_007 = Instance.new("UIStroke", var_005);
+var_007["ApplyStrokeMode"] = Enum["ApplyStrokeMode"].Border
+var_007.Color = var_015.cyan
+var_007["Thickness"] = 2
+var_007["Transparency"] = .04
+local var_008 = Instance.new("TextLabel");
+var_008.Size = UDim2.new(1, -24, 0, 42);
+var_008["Position"] = UDim2["fromOffset"](12, 10);
+var_008["BackgroundTransparency"] = 1
+var_008.Text = "FAST FARM"
+var_008["TextColor3"] = var_015.cyan
+var_008.Font = Enum.Font["FredokaOne"]
+var_008["TextSize"] = 18
+var_008.ZIndex = 122
+var_008.Parent = var_005
+local var_009 = Instance.new("TextLabel");
+var_009.Size = UDim2.new(1, -34, 0, 70);
+var_009["Position"] = UDim2["fromOffset"](17, 48);
+var_009["BackgroundTransparency"] = 1
+var_009.Text = "Necesitás 7 u 8 packs para usar estas opciones.\nSi no los tenés, lo mejor es no activarlas."
+var_009["TextColor3"] = var_015.white
+var_009.Font = Enum.Font["FredokaOne"]
+var_009["TextSize"] = 13
+var_009["TextWrapped"] = true
+var_009.ZIndex = 122
+var_009.Parent = var_005
+local var_010 = Instance.new("UIScale", var_005);
+var_010.Scale = .94
+local var_011 = Instance.new("TextButton");
+var_011.Size = UDim2.new(.5, -20, 0, 42);
+var_011["Position"] = UDim2.new(0, 14, 1, -54);
+var_011["BackgroundColor3"] = var_015.tabOn
+var_011["BorderSizePixel"] = 0
+var_011.Text = "Continuar"
+var_011["TextColor3"] = var_015.white
+var_011.Font = Enum.Font["FredokaOne"]
+var_011["TextSize"] = 13
+var_011["AutoButtonColor"] = false
+var_011.ZIndex = 123
+var_011.Parent = var_005;
+(Instance.new("UICorner", var_011))["CornerRadius"] = UDim.new(0, 8);
+local var_012 = Instance.new("UIStroke", var_011);
+var_012.Color = var_015.cyan
+var_012["Transparency"] = .15
+local var_013 = Instance.new("TextButton");
+var_013.Size = UDim2.new(.5, -20, 0, 42);
+var_013["Position"] = UDim2.new(.5, 6, 1, -54);
+var_013["BackgroundColor3"] = var_015.row
+var_013["BorderSizePixel"] = 0
+var_013.Text = "Salir"
+var_013["TextColor3"] = var_015.white
+var_013.Font = Enum.Font["FredokaOne"]
+var_013["TextSize"] = 13
+var_013["AutoButtonColor"] = false
+var_013.ZIndex = 123
+var_013.Parent = var_005;
+(Instance.new("UICorner", var_013))["CornerRadius"] = UDim.new(0, 8);
+local var_014 = Instance.new("UIStroke", var_013);
+var_014.Color = var_015.blue
+var_014["Transparency"] = .35
+local var_017 = nil
+local function var_018(...)
+var_017 = nil;
+(var_004:Create(var_010, TweenInfo.new(.12, Enum["EasingStyle"].Quad, Enum["EasingDirection"].In), { ["Scale"] = .94 })):Play();
+task.delay(.12, function(...)
+if not var_017 then
+var_003["Visible"] = false
+					end
+				end)
+			end
+local function var_019(var_001, ...)
+var_017 = var_001
+var_003["Visible"] = true
+var_010.Scale = .94;
+(var_004:Create(var_010, TweenInfo.new(.18, Enum["EasingStyle"].Back, Enum["EasingDirection"].Out), { ["Scale"] = 1 })):Play()
+			end
+var_022(var_011["Activated"]:Connect(function(...)
+local var_001 = var_017
+if not var_001 then
+return
+				end
+var_021["warningAccepted"] = true
+var_018();
+task.defer(var_001)
+			end));
+var_022(var_013["Activated"]:Connect(var_018));
+var_022(var_011["MouseEnter"]:Connect(function(...)
+(var_004:Create(var_011, TweenInfo.new(.1), { ["BackgroundColor3"] = var_015.blue })):Play()
+			end));
+var_022(var_011["MouseLeave"]:Connect(function(...)
+(var_004:Create(var_011, TweenInfo.new(.1), { ["BackgroundColor3"] = var_015.tabOn })):Play()
+			end));
+var_022(var_013["MouseEnter"]:Connect(function(...)
+(var_004:Create(var_013, TweenInfo.new(.1), { ["BackgroundColor3"] = var_015["rowHover"] })):Play()
+			end));
+var_022(var_013["MouseLeave"]:Connect(function(...)
+(var_004:Create(var_013, TweenInfo.new(.1), { ["BackgroundColor3"] = var_015.row })):Play()
+			end));
+local var_020
+local var_023
+local function var_024(var_001, var_002, var_003, ...)
+if not var_021["warningAccepted"] then
+var_019(function(...)
+if var_001 and var_001:Get() == false then
+var_001:Set(true)
+						end
+					end)
+return false
+				end
+if var_002 then
+var_002:Set(false)
+				end
+return var_021:Start(var_003)
+			end
+var_020 = var_137(var_001, "Fast Rebirth", function(var_001, ...)
+if var_001 then
+return var_024(var_020, var_023, "rebirth")
+					elseif var_021.mode == "rebirth" then
+var_021:Stop(true)
+					end
+				end);
+var_020.Button.Size = UDim2.new(1, 0, 0, 40)
+var_023 = var_137(var_001, "Fast Strenght", function(var_001, ...)
+if var_001 then
+return var_024(var_023, var_020, "strength")
+					elseif var_021.mode == "strength" then
+var_021:Stop(true)
+					end
+				end);
+var_023.Button.Size = UDim2.new(1, 0, 0, 40);
+local var_026, var_027, var_028 = var_134(var_001, "Tiempo:", "0d 0h 0m 0s", var_015.white);
+var_027.Size = UDim2.new(1, 0, 0, 34);
+var_028["TextColor3"] = var_015.white
+var_028["TextSize"] = 12
+var_026["TextSize"] = 12
+local var_029, var_030, var_031 = var_134(var_001, "Calculadora:", "0/h  •  0/d  •  0/w", var_015.white);
+var_030.Size = UDim2.new(1, 0, 0, 34);
+var_030["BackgroundTransparency"] = .02
+var_031["TextColor3"] = var_015.white
+var_031["TextSize"] = 13
+var_029["TextSize"] = 13
+var_029["TextColor3"] = var_015.white
+var_029["TextStrokeColor3"] = var_015.panel
+var_029["TextStrokeTransparency"] = .28
+local var_032 = var_030:FindFirstChildOfClass("UIStroke")
+if var_032 then
+var_032.Color = var_015.cyan
+var_032["Transparency"] = .28
+			end
+local var_034 = Instance.new("Frame");
+var_034["LayoutOrder"] = var_129(var_001);
+var_034.Parent = var_001
+var_133(var_034, 70);
+local var_035 = Instance.new("TextLabel");
+var_035.Size = UDim2.new(1, -20, 0, 22);
+var_035["Position"] = UDim2["fromOffset"](10, 3);
+var_035["BackgroundTransparency"] = 1
+var_035.Text = "RENACIMIENTOS"
+var_035["TextColor3"] = var_015.cyan
+var_035.Font = Enum.Font["FredokaOne"]
+var_035["TextSize"] = 12
+var_035.ZIndex = 12
+var_035.Parent = var_034
+local var_037 = Instance.new("TextLabel");
+var_037.Size = UDim2.new(1, -20, 1, -25);
+var_037["Position"] = UDim2["fromOffset"](10, 23);
+var_037["BackgroundTransparency"] = 1
+var_037.Text = "0  (+0)"
+var_037["TextColor3"] = var_015.white
+var_037.Font = Enum.Font["FredokaOne"]
+var_037["TextScaled"] = true
+var_037["TextWrapped"] = true
+var_037.ZIndex = 12
+var_037.Parent = var_034
+local var_038 = Instance.new("UITextSizeConstraint", var_037);
+var_038["MinTextSize"] = 14
+var_038["MaxTextSize"] = 32
+local function var_039(var_001, ...)
+var_001 = math.max(0, math.floor(var_001 or 0));
+local var_002 = math.floor(var_001 / 86400);
+local var_003 = math.floor((var_001 % 86400) / 3600);
+local var_004 = math.floor((var_001 % 3600) / 60);
+local var_005 = var_001 % 60
+return string.format("%dd %dh %dm %ds", var_002, var_003, var_004, var_005)
+			end
+var_025("fastFarmStatsUI", function(...)
+while var_016["running"] do
+local var_001 = var_021:ReadStats();
+local var_002 = var_021["startStats"] or var_001
+local var_003 = math.max(0, var_001["rebirths"] - (var_002["rebirths"] or var_001["rebirths"]));
+var_037.Text = var_033(var_001["rebirths"]) .. ("  (+" .. (var_033(var_003) .. ")"))
+if var_021.mode == "strength" and not var_021["startedAt"] then
+var_026.Text = "0d 0h 0m 0s"
+var_029.Text = "0/h  •  0/d  •  0/w"
+					elseif var_021.mode and var_021["startedAt"] then
+local var_003 = math.max(var_036() - var_021["startedAt"], 0);
+local var_004
+if var_021["pingPaused"] then
+var_004 = " Pausado por ping"
+						else
+var_004 = var_021.mode == "rebirth" and "" or " Entrenando"
+						end
+var_026.Text = var_039(var_003) .. var_004
+local var_005
+if var_021.mode == "rebirth" then
+var_005 = (math.clamp(tonumber(var_021["packCount"]) or 0, 0, 8) * 2) * 600
+						else
+local var_004 = math.max(0, var_001["strength"] - (var_002["strength"] or var_001["strength"]))
+var_005 = var_003 >= .5 and (var_004 * 3600) / var_003 or 0
+						end
+var_029.Text = var_021:FormatCompact(var_005) .. ("/h  •  " .. (var_021:FormatCompact(var_005 * 24) .. ("/d  •  " .. (var_021:FormatCompact(var_005 * 168) .. "/w"))))
+					else
+var_026.Text = "0d 0h 0m 0s"
+var_029.Text = "0/h  •  0/d  •  0/w"
+					end
+task.wait(.25)
+				end
+			end)
+		end
+do
+local var_001 = var_126["Teleports"]
+var_132(var_001, "Teleports")
+for var_002, var_003 in ipairs(var_014["Teleports"]) do
+local var_004 = var_003
+var_136(var_001, var_004[1], function(...)
+local var_001 = var_029()
+if var_001 then
+var_001.CFrame = CFrame.new(var_004[2])
+					end
+				end)
+			end
+		end
+local function var_141(...)
+local var_002 = {}
+for var_001, var_003 in ipairs(var_001:GetPlayers()) do
+if var_003 ~= var_011 then
+var_002[#var_002 + 1] = { ["label"] = var_003["DisplayName"], ["name"] = var_003.Name, ["userId"] = var_003.UserId }
+				end
+			end
+table.sort(var_002, function(var_001, var_002, ...)
+return var_001.label:lower() < var_002.label:lower()
+			end)
+return var_002
+		end
+do
+local var_005 = var_126["Rebirths"]
+local var_006 = Vector3.new(-8646, 13.25, -5738);
+local var_007 = 42
+local var_008 = { { ["name"] = "+1 Daily Spin", ["max"] = 5 }, { ["name"] = "+1 Pet Slot", ["max"] = 3 }, { ["name"] = "+10 Item Capacity", ["max"] = 6 }, { ["name"] = "+5% Rep Speed", ["max"] = 10 }, { ["name"] = "Demon Damage", ["max"] = 5 }, { ["name"] = "Galaxy Gains", ["max"] = 5 }, { ["name"] = "Golden Rebirth", ["max"] = 5 }, { ["name"] = "Jungle Swift", ["max"] = 5 }, { ["name"] = "Muscle Mind", ["max"] = 5 }, { ["name"] = "Infernal Health", ["remote"] = "InfernalHealth", ["max"] = 5 }, { ["name"] = "x2 Chest Rewards", ["max"] = 5 }, { ["name"] = "x2 Quest Rewards", ["max"] = 3 } };
+local function var_009(...)
+local var_001 = var_002:FindFirstChild("rEvents")
+return var_001 and var_001:FindFirstChild("rebirthRemote")
+			end
+local function var_010(...)
+local var_001 = var_002:FindFirstChild("rEvents");
+local var_003 = var_001 and var_001:FindFirstChild("changeSpeedSizeRemote")
+if var_003 then
+pcall(var_003["InvokeServer"], var_003, "changeSize", 1)
+				end
+			end
+local function var_012(var_001, ...)
+local var_002 = (tostring(var_001 or "")):gsub("[^%d]", "");
+local var_003 = tonumber(var_002)
+if not var_003 then
+return nil
+				end
+return math.clamp(math.floor(var_003), 0, 9.007199254741e+15)
+			end
+local function var_013(var_001, ...)
+if not var_001 or var_001 ~= var_001 or var_001 == math.huge then
+return "Calculando..."
+				end
+var_001 = math.max(0, math.floor(var_001 + .5));
+local var_002 = math.floor(var_001 / 86400);
+local var_003 = math.floor((var_001 % 86400) / 3600);
+local var_004 = math.floor((var_001 % 3600) / 60);
+local var_005 = var_001 % 60
+if var_002 > 0 then
+return string.format("%dd %02dh %02dm", var_002, var_003, var_004)
+				elseif var_003 > 0 then
+return string.format("%dh %02dm %02ds", var_003, var_004, var_005)
+				end
+return string.format("%dm %02ds", var_004, var_005)
+			end
+local function var_014(var_001, ...)
+if #var_001 == 0 then
+return nil
+				end
+local var_002 = table.clone(var_001);
+table.sort(var_002);
+local var_003 = math.floor((#var_002 + 1) / 2)
+if #var_002 % 2 == 1 then
+return var_002[var_003]
+				end
+return (var_002[var_003] + var_002[var_003 + 1]) / 2
+			end
+var_132(var_005, "REBIRTHS");
+local var_017 = Instance.new("Frame");
+var_017["LayoutOrder"] = var_129(var_005);
+var_017.Parent = var_005
+var_133(var_017, 62);
+local var_018 = Instance.new("TextLabel");
+var_018.Size = UDim2.new(1, -20, 0, 22);
+var_018["Position"] = UDim2["fromOffset"](10, 3);
+var_018["BackgroundTransparency"] = 1
+var_018.Text = "CONTADOR DE RENAS"
+var_018["TextColor3"] = var_015.cyan
+var_018.Font = Enum.Font["FredokaOne"]
+var_018["TextSize"] = 12
+var_018.ZIndex = 12
+var_018.Parent = var_017
+local var_019 = Instance.new("TextLabel");
+var_019.Size = UDim2.new(.5, -12, 0, 25);
+var_019["Position"] = UDim2["fromOffset"](11, 27);
+var_019["BackgroundTransparency"] = 1
+var_019.Text = "Rebirths: 0"
+var_019["TextColor3"] = var_015.white
+var_019.Font = Enum.Font["FredokaOne"]
+var_019["TextSize"] = 14
+var_019["TextXAlignment"] = Enum["TextXAlignment"].Left
+var_019.ZIndex = 12
+var_019.Parent = var_017
+local var_020 = var_019:Clone();
+var_020.Size = UDim2.new(.5, -12, 0, 25);
+var_020["Position"] = UDim2.new(.5, 1, 0, 27);
+var_020.Text = ""
+var_020["TextXAlignment"] = Enum["TextXAlignment"].Right
+var_020["Visible"] = false
+var_020.Parent = var_017
+local var_021 = var_019:Clone();
+var_021["Position"] = UDim2["fromOffset"](11, 54);
+var_021.Text = ""
+var_021["Visible"] = false
+var_021.Parent = var_017
+local var_022 = var_020:Clone();
+var_022["Position"] = UDim2.new(.5, 1, 0, 54);
+var_022.Text = ""
+var_022["Visible"] = false
+var_022.Parent = var_017
+local var_026 = Instance.new("TextLabel");
+var_026.Size = UDim2.new(1, -22, 0, 22);
+var_026["Position"] = UDim2["fromOffset"](11, 79);
+var_026["BackgroundTransparency"] = 1
+var_026.Text = ""
+var_026["TextColor3"] = var_015.dim
+var_026.Font = Enum.Font["FredokaOne"]
+var_026["TextSize"] = 12
+var_026["TextXAlignment"] = Enum["TextXAlignment"].Center
+var_026["Visible"] = false
+var_026.ZIndex = 12
+var_026.Parent = var_017
+local var_027 = { ["samples"] = {}, ["lastValue"] = nil, ["burstGain"] = 0, ["burstStartedAt"] = nil, ["lastPositiveAt"] = nil, ["previousBurstAt"] = nil, ["smoothedEta"] = nil, ["lastEtaUpdate"] = 0, ["rebirthSpendSerial"] = 0 };
+local function var_028(var_001, ...)
+table.clear(var_027["samples"]);
+var_027["lastValue"] = var_001
+var_027["burstGain"] = 0
+var_027["burstStartedAt"] = nil
+var_027["lastPositiveAt"] = nil
+var_027["previousBurstAt"] = nil
+var_027["smoothedEta"] = nil
+var_027["lastEtaUpdate"] = 0
+			end
+local function var_030(...)
+if var_027["burstGain"] <= 0 or not var_027["burstStartedAt"] then
+return
+				end
+if var_027["previousBurstAt"] then
+local var_001 = var_027["burstStartedAt"] - var_027["previousBurstAt"]
+if var_001 >= .08 and var_001 <= 3600 then
+var_027["samples"][#var_027["samples"] + 1] = { ["interval"] = var_001, ["gain"] = var_027["burstGain"] }
+while #var_027["samples"] > 20 do
+table.remove(var_027["samples"], 1)
+						end
+					end
+				end
+var_027["previousBurstAt"] = var_027["burstStartedAt"]
+var_027["burstGain"] = 0
+var_027["burstStartedAt"] = nil
+var_027["lastPositiveAt"] = nil
+			end
+local function var_031(var_001, var_002, ...)
+if var_027["lastValue"] == nil then
+var_027["lastValue"] = var_001
+return
+				end
+local var_003 = var_001 - var_027["lastValue"]
+var_027["lastValue"] = var_001
+if var_003 > 0 then
+if var_027["burstGain"] == 0 then
+var_027["burstStartedAt"] = var_002
+					end
+var_027["burstGain"] = var_027["burstGain"] + var_003
+var_027["lastPositiveAt"] = var_002
+				elseif var_003 < 0 then
+var_027["rebirthSpendSerial"] = var_027["rebirthSpendSerial"] + 1
+var_027["burstGain"] = 0
+var_027["burstStartedAt"] = nil
+var_027["lastPositiveAt"] = nil
+var_027["previousBurstAt"] = nil
+				end
+if var_027["lastPositiveAt"] and var_002 - var_027["lastPositiveAt"] >= .85 then
+var_030()
+				end
+			end
+local function var_034(...)
+if #var_027["samples"] < 3 then
+return nil, nil, nil
+				end
+local var_001, var_002 = {}, {}
+for var_003, var_004 in ipairs(var_027["samples"]) do
+var_001[#var_001 + 1] = var_004["interval"]
+var_002[#var_002 + 1] = var_004.gain
+				end
+local var_003 = var_014(var_001);
+local var_004 = var_014(var_002);
+local var_005, var_006, var_007 = 0, 0, 0
+for var_001, var_002 in ipairs(var_027["samples"]) do
+local var_008 = var_002["interval"] >= var_003 * .45 and var_002["interval"] <= var_003 * 2.2
+local var_009 = var_002.gain >= var_004 * .4 and var_002.gain <= var_004 * 2.5
+if var_008 and var_009 then
+local var_003 = .45 + var_001 / #var_027["samples"]
+var_005 = var_005 + var_002.gain * var_003
+var_006 = var_006 + var_002["interval"] * var_003
+var_007 = var_007 + 1
+					end
+				end
+if var_007 < 3 or var_006 <= 0 then
+return nil, var_003, var_004
+				end
+return var_005 / var_006, var_003, var_004
+			end
+local var_035
+local var_037
+local var_038
+var_132(var_005, "HERRAMIENTAS");
+var_137(var_005, "Set Size 1", function(var_001, ...)
+var_016["rebirth"]["sizeOne"] = var_001 == true
+var_024("rebirthSizeOne")
+if var_016["rebirth"]["sizeOne"] then
+var_010();
+var_025("rebirthSizeOne", function(...)
+while var_016["running"] and var_016["rebirth"]["sizeOne"] do
+var_010();
+task.wait(.75)
+						end
+					end)
+				end
+return true
+			end);
+var_137(var_005, "Pesa rápida", function(var_001, ...)
+var_016["rebirth"]["fastWeight"] = var_001 == true
+var_055("rebirthFastWeight", var_016["rebirth"]["fastWeight"], { "Weight", "Heavy Weight" }, .005)
+return true
+			end);
+var_137(var_005, "King", function(var_002, ...)
+var_016["rebirth"].king = var_002 == true
+var_024("rebirthKing")
+if var_016["rebirth"].king then
+var_025("rebirthKing", function(...)
+while var_016["running"] and var_016["rebirth"].king do
+local var_002 = var_029()
+if var_002 and (var_002["Position"] - var_006)["Magnitude"] > var_007 then
+local var_003 = RaycastParams.new();
+var_003["FilterType"] = Enum["RaycastFilterType"]["Exclude"]
+local var_004 = {}
+for var_001, var_002 in ipairs(var_001:GetPlayers()) do
+if var_002["Character"] then
+var_004[#var_004 + 1] = var_002["Character"]
+									end
+								end
+var_003["FilterDescendantsInstances"] = var_004
+var_003["IgnoreWater"] = true
+local var_005 = var_006
+local var_007 = workspace:Raycast(var_006 + Vector3.new(0, 35, 0), Vector3.new(0, -80, 0), var_003)
+if var_007 then
+var_005 = Vector3.new(var_006["X"], var_007["Position"]["Y"] + 3.1, var_006["Z"])
+								end
+local var_008 = CFrame.new(var_005)
+if var_016["rebirth"]["lockPosition"] then
+var_016["rebirth"]["lockCFrame"] = var_008
+								end
+var_002.CFrame = var_008
+var_002["AssemblyLinearVelocity"] = Vector3.zero
+var_002["AssemblyAngularVelocity"] = Vector3.zero
+							end
+task.wait(.25)
+						end
+					end)
+				end
+return true
+			end);
+var_137(var_005, "Lock Position", function(var_001, ...)
+var_016["rebirth"]["lockPosition"] = var_001 == true
+local var_002 = var_029();
+var_016["rebirth"]["lockCFrame"] = var_016["rebirth"]["lockPosition"] and (var_002 and var_002.CFrame) or nil
+var_024("rebirthLock")
+if var_016["rebirth"]["lockPosition"] and var_016["rebirth"]["lockCFrame"] then
+var_025("rebirthLock", function(...)
+while var_016["running"] and var_016["rebirth"]["lockPosition"] do
+local var_001 = var_029()
+if var_001 and var_016["rebirth"]["lockCFrame"] then
+var_001.CFrame = var_016["rebirth"]["lockCFrame"]
+var_001["AssemblyLinearVelocity"] = Vector3.zero
+var_001["AssemblyAngularVelocity"] = Vector3.zero
+							end
+var_003["Heartbeat"]:Wait()
+						end
+					end)
+				end
+return true
+			end);
+var_137(var_005, "Egg cada 30 minutos", function(var_001, ...)
+var_016["setAutoEgg"](var_001, "rebirth")
+return true
+			end)
+var_035 = var_139(var_005, "Objetivo de renacimientos", "Ejemplo: 18,980", function(var_001, ...)
+local var_002 = var_012(var_001)
+if var_002 and var_002 > 0 then
+var_016["rebirth"].target = var_002
+var_035.Text = (var_033(var_002)):gsub("%.", ",")
+					elseif (tostring(var_001 or "")):gsub("%s+", "") == "" then
+var_016["rebirth"].target = nil
+var_035.Text = ""
+					else
+var_035.Text = var_016["rebirth"].target and (var_033(var_016["rebirth"].target)):gsub("%.", ",") or ""
+					end
+				end);
+var_035.Text = ""
+local function var_039(var_001, var_002, ...)
+if var_001 == "target" then
+if var_002 and not var_016["rebirth"].target then
+return false
+					end
+var_016["rebirth"]["autoTarget"] = var_002 == true
+if var_016["rebirth"]["autoTarget"] then
+var_016["rebirth"]["infinite"] = false
+if var_038 and var_038:Get() then
+var_038:Set(false, true)
+						end
+local var_001 = var_032(var_011, { "Rebirths", "Rebirth" });
+var_028(tonumber(var_001 and var_001.Value) or 0);
+task.defer(function(...)
+var_003["Heartbeat"]:Wait();
+(var_004:Create(var_005, TweenInfo.new(.2, Enum["EasingStyle"].Quart, Enum["EasingDirection"].Out), { ["CanvasPosition"] = Vector2.zero })):Play()
+						end)
+					end
+				elseif var_001 == "infinite" then
+var_016["rebirth"]["infinite"] = var_002 == true
+if var_016["rebirth"]["infinite"] then
+var_016["rebirth"]["autoTarget"] = false
+if var_037 and var_037:Get() then
+var_037:Set(false, true)
+						end
+					end
+				end
+var_024("rebirthLoop")
+if not var_016["rebirth"]["autoTarget"] and not var_016["rebirth"]["infinite"] then
+return true
+				end
+var_025("rebirthLoop", function(...)
+while var_016["running"] and (var_016["rebirth"]["autoTarget"] or var_016["rebirth"]["infinite"]) do
+local var_001 = var_032(var_011, { "Rebirths", "Rebirth" });
+local var_002 = tonumber(var_001 and var_001.Value) or 0
+if var_016["rebirth"]["autoTarget"] and (var_016["rebirth"].target and var_002 >= var_016["rebirth"].target) then
+var_016["rebirth"]["autoTarget"] = false
+if var_037 then
+var_037:Set(false, true)
+							end
+break
+						end
+local var_003 = var_009()
+if var_003 then
+pcall(var_003["InvokeServer"], var_003, "rebirthRequest")
+						end
+task.wait(.1)
+					end
+				end)
+return true
+			end
+var_037 = var_137(var_005, "Renacer hasta el objetivo", function(var_001, ...)
+return var_039("target", var_001)
+				end)
+var_038 = var_137(var_005, "Renacimientos infinitos", function(var_001, ...)
+return var_039("infinite", var_001)
+				end);
+var_132(var_005, "ULTIMATES");
+local var_040 = {}
+for var_001, var_002 in ipairs(var_008) do
+var_040[#var_040 + 1] = { ["label"] = var_002.name, ["name"] = var_002.name, ["data"] = var_002 }
+			end
+local var_041
+local var_042
+local var_043
+local var_044
+local var_045
+local var_046 = nil
+local var_047 = 0
+local function var_048(var_001, var_002, var_003, ...)
+if not var_044 then
+return
+				end
+var_047 = var_047 + 1
+local var_004 = var_047
+if var_044 then
+var_044.Text = var_001
+				end
+if var_002 then
+task.delay(var_002, function(...)
+if var_004 == var_047 and (not var_016["rebirth"]["ultimateRunning"] and (var_044 and var_044.Parent)) then
+var_044.Text = var_003 or "Esperando selección"
+						end
+					end)
+				end
+			end
+local function var_049(var_001, ...)
+local var_002 = var_011:FindFirstChild("ultimatesFolder");
+local var_003 = var_002 and (var_001 and var_002:FindFirstChild(var_001.name))
+return tonumber(var_003 and var_003.Value) or 0
+			end
+local function var_050(...)
+local var_001 = var_041 and var_041:Get()
+return type(var_001) == "table" and var_001.data or nil
+			end
+local function var_051(var_001, ...)
+local var_002 = math.max(0, (var_001 and var_001.max or 0) - var_049(var_001))
+if var_002 <= 0 then
+return { { ["label"] = "Máximo", ["amount"] = 0 } }
+				end
+local var_003 = {}
+for var_001 = 1, var_002, 1 do
+var_003[#var_003 + 1] = var_001
+				end
+return var_003
+			end
+local var_052 = false
+local function var_053(...)
+local var_001 = var_050()
+if not var_001 then
+return
+				end
+local var_002 = var_049(var_001)
+if var_043 then
+var_043.Text = var_033(var_002) .. (" / " .. var_033(var_001.max))
+				end
+if var_042 then
+var_052 = true
+var_042:SetValues(var_051(var_001), false)
+var_052 = false
+				end
+var_046 = var_002
+			end
+var_041 = var_138(var_005, "Seleccionar Ultimate", var_040, function(...)
+if var_042 then
+var_053()
+if not var_016["rebirth"]["ultimateRunning"] then
+local var_001 = var_050();
+var_048(var_001 and "Seleccionado: " .. var_001.name or "Esperando selección", 5, "Esperando compra")
+						end
+					end
+				end, function(var_001, ...)
+var_003["Heartbeat"]:Wait();
+local var_002 = math.max(0, var_005["AbsoluteCanvasSize"]["Y"] - var_005["AbsoluteSize"]["Y"]);
+local var_004 = ((var_001["AbsolutePosition"]["Y"] - var_005["AbsolutePosition"]["Y"]) + var_005["CanvasPosition"]["Y"]) - 3
+var_005["CanvasPosition"] = Vector2.new(0, math.clamp(var_004, 0, var_002))
+				end)
+var_042 = var_138(var_005, "Cantidad a comprar", { 1, 2, 3 }, function(var_001, ...)
+if var_052 then
+return
+					end
+if not var_016["rebirth"]["ultimateRunning"] then
+local var_002 = type(var_001) == "table" and var_001.amount or tonumber(var_001)
+if var_002 and var_002 > 0 then
+var_048("Cantidad seleccionada: " .. var_033(var_002), 5, "Esperando compra")
+						end
+					end
+				end)
+var_043 = var_134(var_005, "Nivel seleccionado", "0 / 0", var_015.cyan)
+var_044 = var_135(var_005, "Esperando selección");
+var_053()
+var_045 = var_136(var_005, "Comprar Ultimate", function(var_001, ...)
+if var_016["rebirth"]["ultimateRunning"] then
+var_016["rebirth"]["ultimateRunning"] = false
+var_024("ultimateBuyer");
+var_001.Text = "Comprar Ultimate"
+var_048("Compra cancelada", 7, "Esperando selección")
+return
+					end
+local var_003 = var_050();
+local var_004 = var_042:Get();
+local var_005 = type(var_004) == "table" and var_004.amount or tonumber(var_004)
+if not var_003 or not var_005 or var_005 <= 0 then
+var_048("Ultimate al máximo", 7, "Esperando selección")
+return
+					end
+var_005 = math.min(var_005, math.max(0, var_003.max - var_049(var_003)));
+var_016["rebirth"]["ultimateRunning"] = true
+var_001.Text = "Cancelar compra"
+var_025("ultimateBuyer", function(...)
+local var_004 = 0
+local var_006 = nil
+while var_016["running"] and (var_016["rebirth"]["ultimateRunning"] and var_004 < var_005) do
+local var_001 = var_002:FindFirstChild("rEvents");
+local var_007 = var_001 and var_001:FindFirstChild("ultimatesRemote")
+if not var_007 then
+var_006 = "Remote de Ultimates no disponible"
+break
+							end
+local var_008 = var_049(var_003)
+if var_008 >= var_003.max then
+var_006 = "Ultimate al máximo"
+break
+							end
+local var_009 = var_027["rebirthSpendSerial"]
+var_048("Comprando " .. (var_003.name .. (" (" .. (var_004 + 1  .. ("/" .. (var_005 .. ")"))))));
+pcall(var_007["InvokeServer"], var_007, "upgradeUltimate", var_003.remote or var_003.name);
+local var_010 = var_036() + 8
+local var_011 = false
+while var_016["running"] and (var_016["rebirth"]["ultimateRunning"] and var_036() < var_010) do
+if var_049(var_003) > var_008 or var_027["rebirthSpendSerial"] > var_009 then
+var_011 = true
+break
+								end
+task.wait(.15)
+							end
+if var_011 then
+var_004 = var_004 + 1
+							else
+var_048("Esperando renacimientos suficientes...");
+task.wait(.8)
+							end
+						end
+var_016["rebirth"]["ultimateRunning"] = false
+if var_001 and var_001.Parent then
+var_001.Text = "Comprar Ultimate"
+						end
+var_053();
+local var_007 = var_006 or var_004 > 0 and "Compra completada: " .. var_004 or "Sin cambios"
+var_048(var_007, 7, "Esperando selección")
+					end)
+				end, var_015.row, Color3["fromRGB"](16, 78, 92));
+var_025("rebirthCounter", function(...)
+while var_016["running"] and var_017.Parent do
+local var_001 = var_036();
+local var_002 = var_032(var_011, { "Rebirths", "Rebirth" });
+local var_003 = tonumber(var_002 and var_002.Value) or 0
+if var_016["rebirth"]["autoTarget"] then
+var_031(var_003, var_001)
+if var_027["lastPositiveAt"] and var_001 - var_027["lastPositiveAt"] >= .85 then
+var_030()
+						end
+					else
+if var_027["lastValue"] and var_003 < var_027["lastValue"] then
+var_027["rebirthSpendSerial"] = var_027["rebirthSpendSerial"] + 1
+						end
+var_027["lastValue"] = var_003
+var_027["burstGain"] = 0
+var_027["burstStartedAt"] = nil
+var_027["lastPositiveAt"] = nil
+					end
+var_019.Text = "Rebirths: " .. var_033(var_003);
+local var_004 = var_016["rebirth"]["autoTarget"] and var_016["rebirth"].target ~= nil
+local var_005 = var_016["rebirth"]["infinite"]
+var_020["Visible"] = var_016["rebirth"].target ~= nil and not var_005
+var_020.Text = var_016["rebirth"].target and "Objetivo: " .. var_033(var_016["rebirth"].target) or ""
+var_021["Visible"] = var_004
+var_022["Visible"] = var_004
+var_026["Visible"] = var_004
+var_017.Size = UDim2.new(1, 0, 0, var_004 and 106 or 62)
+if var_004 then
+local var_002 = math.max(0, var_016["rebirth"].target - var_003);
+local var_004, var_005, var_006 = var_034();
+local var_007 = var_002 <= 0 and "Objetivo alcanzado" or "Calculando..."
+if var_004 and var_002 > 0 then
+local var_003 = var_002 / var_004
+if not var_027["smoothedEta"] then
+var_027["smoothedEta"] = var_003
+var_027["lastEtaUpdate"] = var_001
+							elseif var_001 - var_027["lastEtaUpdate"] >= 2 then
+local var_002 = math.abs(var_003 - var_027["smoothedEta"]) / math.max(1, var_027["smoothedEta"]);
+local var_004 = var_002 > .3 and .35 or .18
+var_027["smoothedEta"] = var_027["smoothedEta"] * (1 - var_004) + var_003 * var_004
+var_027["lastEtaUpdate"] = var_001
+							end
+var_007 = var_013(var_027["smoothedEta"])
+						end
+var_021.Text = "Faltan: " .. var_033(var_002);
+var_022.Text = "Tiempo: " .. var_007
+if var_005 and var_006 then
+var_026.Text = "Ciclo: " .. (string.format("%.2fs", var_005) .. ("   •   +" .. (var_033(math.floor(var_006 + .5)) .. ("   •   Muestras: " .. #var_027["samples"]))))
+						else
+var_026.Text = "Calculando ciclos: " .. (#var_027["samples"] .. "/3")
+						end
+					else
+var_021.Text = ""
+var_022.Text = ""
+var_026.Text = ""
+					end
+local var_006 = var_050()
+if var_006 then
+local var_001 = var_049(var_006)
+if var_001 ~= var_046 then
+var_053()
+						end
+					end
+task.wait(.25)
+				end
+			end);
+var_023(function(...)
+var_016["rebirth"]["autoTarget"] = false
+var_016["rebirth"]["infinite"] = false
+var_016["rebirth"]["sizeOne"] = false
+var_016["rebirth"].king = false
+var_016["rebirth"]["lockPosition"] = false
+var_016["rebirth"]["ultimateRunning"] = false
+var_055("rebirthFastWeight", false, { "Weight", "Heavy Weight" });
+var_016["setAutoEgg"](false, "rebirth");
+var_024("rebirthLoop");
+var_024("rebirthSizeOne");
+var_024("rebirthKing");
+var_024("rebirthLock");
+var_024("ultimateBuyer")
+			end)
+		end
+do
+local var_001 = var_126["Glitch Timer"]
+local var_002 = 1.1
+local var_005 = { { ["label"] = "Roca Blanca", ["name"] = "white", ["values"] = { [480] = 5, [1480] = 10, [2980] = 15, [4980] = 20, [7480] = 25, [10480] = 30, [13980] = 35, [17980] = 40, [22480] = 45, [27480] = 50, [32980] = 55, [38980] = 60, [45480] = 65, [52480] = 70, [59980] = 75, [67980] = 80, [76480] = 85, [85480] = 90, [94980] = 95 } }, { ["label"] = "Jungle Rock", ["name"] = "jungle", ["values"] = { [52] = 5, [208] = 10, [440] = 15, [748] = 20, [1132] = 25, [1592] = 30, [2132] = 35, [2748] = 40, [3440] = 45, [4208] = 50, [5056] = 55, [5980] = 60, [6980] = 65, [8056] = 70, [9208] = 75, [10440] = 80, [11748] = 85, [13132] = 90, [14592] = 95 } }, { ["label"] = "Roca Verde", ["name"] = "green", ["values"] = { [80] = 5, [280] = 10, [580] = 15, [980] = 20, [1480] = 25, [2080] = 30, [2780] = 35, [3580] = 40, [4480] = 45, [5480] = 50, [6580] = 55, [7780] = 60, [9080] = 65, [10480] = 70, [11980] = 75, [13580] = 80, [15280] = 85, [17080] = 90, [18980] = 95 } } };
+local var_006 = {}
+for var_001 = 1, 20, 1 do
+var_006[#var_006 + 1] = { ["label"] = var_001 .. "M", ["value"] = var_001 * 1000000 }
+			end
+local function var_007(var_001, ...)
+var_001 = math.max(0, math.floor(var_001 + .5));
+local var_002 = math.floor(var_001 / 86400);
+local var_003 = math.floor((var_001 % 86400) / 3600);
+local var_004 = math.floor((var_001 % 3600) / 60);
+local var_005 = var_001 % 60
+if var_002 > 0 then
+return string.format("%dd %02dh %02dm %02ds", var_002, var_003, var_004, var_005)
+				end
+return string.format("%dh %02dm %02ds", var_003, var_004, var_005)
+			end
+local function var_008(var_001, var_002, ...)
+local var_003, var_004 = nil, math.huge
+for var_001 in pairs(var_001.values) do
+local var_005 = math.abs(var_001 - var_002)
+if var_005 < var_004 then
+var_003, var_004 = var_001, var_005
+					end
+				end
+return var_003
+			end
+var_132(var_001, "CALCULADORA DE BUGS");
+local var_009 = var_138(var_001, "Seleccionar roca", var_005, function(...)
+
+				end);
+local var_010 = var_138(var_001, "Objetivo de la pet", var_006, function(...)
+
+				end, function(...)
+var_003["Heartbeat"]:Wait();
+var_003["Heartbeat"]:Wait();
+local var_002 = math.max(0, var_001["AbsoluteCanvasSize"]["Y"] - var_001["AbsoluteSize"]["Y"]);
+(var_004:Create(var_001, TweenInfo.new(.18, Enum["EasingStyle"].Quart, Enum["EasingDirection"].Out), { ["CanvasPosition"] = Vector2.new(0, var_002) })):Play()
+				end);
+var_009:SetIndex(3);
+local var_012 = var_134(var_001, "Tiempo aproximado", "--", var_015.green);
+var_025("bugCalculator", function(...)
+while var_016["running"] and var_001.Parent do
+local var_001 = var_032(var_011, { "Rebirths", "Rebirth" });
+local var_003 = math.floor(tonumber(var_001 and var_001.Value) or 0);
+local var_004 = var_009:Get();
+local var_005 = var_010:Get();
+local var_006 = type(var_005) == "table" and var_005.value or 1000000
+local var_013 = type(var_004) == "table" and var_004.values[var_003] or nil
+if var_013 then
+local var_001 = math.ceil(var_006 / var_013);
+local var_003 = var_001 * var_002
+var_012.Text = var_007(var_003);
+var_012["TextColor3"] = var_015.green
+					else
+local var_001 = type(var_004) == "table" and var_008(var_004, var_003) or nil
+var_012.Text = var_001 and "Rena válido: " .. var_033(var_001) or "--"
+var_012["TextColor3"] = var_015.orange
+					end
+task.wait(.5)
+				end
+			end)
+		end
+do
+local var_001 = var_126.Kills
+var_132(var_001, "KILLS");
+local var_002 = var_134(var_001, "Kills:", "0", var_015.cyan);
+local var_005
+local var_006
+local var_007
+local var_008
+local var_009
+local var_010
+local function var_012(var_001, ...)
+for var_002, var_003 in ipairs({ var_005, var_006, var_007, var_008 }) do
+if var_003 and (var_003 ~= var_001 and var_003:Get()) then
+var_003:Set(false)
+					end
+				end
+			end
+var_005 = var_137(var_001, "Matar a todos", function(var_001, ...)
+if var_001 then
+var_012(var_005)
+					end
+return var_016["setAutoKill"](var_001)
+				end)
+var_006 = var_137(var_001, "Evil Karma", function(var_001, ...)
+if var_001 then
+var_012(var_006)
+					end
+return var_016["setKarmaKill"]("evil", var_001)
+				end)
+var_007 = var_137(var_001, "Good Karma", function(var_001, ...)
+if var_001 then
+var_012(var_007)
+					end
+return var_016["setKarmaKill"]("good", var_001)
+				end)
+var_010 = var_137(var_001, "Cambiar servidor (Cada 2 Minutos)", function(var_001, ...)
+if var_001 and (var_008 and var_008:Get()) then
+return false
+					end
+return var_016["setServerHop"](var_001)
+				end);
+local var_013, var_014 = var_134(var_001, "Próximo servidor:", "2m 00s", var_015.cyan);
+var_014["Visible"] = false
+var_016.kill["updateHopStatus"] = function(var_001, var_002, ...)
+if not var_014 or not var_014.Parent then
+return
+					end
+if var_001 == nil then
+var_014["Visible"] = false
+return
+					end
+var_014["Visible"] = true
+local var_003 = var_016.kill["serversVisited"]
+local var_004 = "  •  " .. (var_003 .. (var_003 == 1 and " servidor" or " servidores"))
+if var_002 then
+var_013.Text = var_002 .. var_004
+					else
+local var_002 = math.max(0, math.floor(tonumber(var_001) or 0));
+var_013.Text = string.format("%dm %02ds", math.floor(var_002 / 60), var_002 % 60) .. var_004
+					end
+				end
+var_009 = var_137(var_001, "No matar a mis amigos", function(var_001, ...)
+return var_016["setProtectFriends"](var_001)
+				end);
+local var_017 = var_138(var_001, "Seleccionar jugador", var_141(), function(var_001, ...)
+var_016.kill.target = type(var_001) == "table" and var_001.name or var_001
+				end, function(var_002, ...)
+var_003["Heartbeat"]:Wait();
+var_003["Heartbeat"]:Wait();
+local var_005 = math.max(0, var_001["AbsoluteCanvasSize"]["Y"] - var_001["AbsoluteSize"]["Y"]);
+local var_006 = ((var_002["AbsolutePosition"]["Y"] - var_001["AbsolutePosition"]["Y"]) + var_001["CanvasPosition"]["Y"]) - 3;
+(var_004:Create(var_001, TweenInfo.new(.18, Enum["EasingStyle"].Quart, Enum["EasingDirection"].Out), { ["CanvasPosition"] = Vector2.new(0, math.clamp(var_006, 0, var_005)) })):Play()
+				end)
+var_008 = var_137(var_001, "Matar jugador", function(var_001, ...)
+if var_001 then
+var_012(var_008)
+if var_010 and var_010:Get() then
+var_010:Set(false)
+						end
+					end
+return var_016["setTargetKill"](var_001)
+				end);
+var_016["killSelector"] = var_017
+var_016["killAutoToggle"] = var_005
+var_016["killEvilToggle"] = var_006
+var_016["killGoodToggle"] = var_007
+var_016["killTargetToggle"] = var_008
+var_016["killProtectToggle"] = var_009
+var_016["killServerHopToggle"] = var_010
+var_025("killCounter", function(...)
+while var_016["running"] and var_002.Parent do
+local var_001 = var_032(var_011, { "Kills" });
+var_002.Text = var_033(var_001 and var_001.Value or 0);
+task.wait(.5)
+				end
+			end)
+		end
+if var_016.resume and var_016.resume.script == "fg100.lua" then
+var_130(type(var_016.resume.tab) == "string" and (var_126[var_016.resume.tab] and var_016.resume.tab) or "Info")
+if var_016.resume["protectFriends"] and var_016["killProtectToggle"] then
+var_016["killProtectToggle"]:Set(true)
+			end
+if var_016.resume["autoKill"] and var_016["killAutoToggle"] then
+var_016["killAutoToggle"]:Set(true)
+			end
+if var_016.resume["karmaMode"] == "evil" and var_016["killEvilToggle"] then
+var_016["killEvilToggle"]:Set(true)
+			elseif var_016.resume["karmaMode"] == "good" and var_016["killGoodToggle"] then
+var_016["killGoodToggle"]:Set(true)
+			end
+if var_016.resume["serverHop"] and var_016["killServerHopToggle"] then
+var_016["killServerHopToggle"]:Set(true)
+			end
+		else
+var_130("Info")
+		end
+do
+local var_005 = var_126["Fast Trade"]
+var_005:SetAttribute("TightCanvas", true);
+var_132(var_005, "FAST TRADE");
+local function var_006(var_001, ...)
+var_003["Heartbeat"]:Wait();
+local var_002 = math.max(0, var_005["AbsoluteCanvasSize"]["Y"] - var_005["AbsoluteSize"]["Y"]);
+local var_006 = ((var_001["AbsolutePosition"]["Y"] - var_005["AbsolutePosition"]["Y"]) + var_005["CanvasPosition"]["Y"]) - 3;
+(var_004:Create(var_005, TweenInfo.new(.18, Enum["EasingStyle"].Quart, Enum["EasingDirection"].Out), { ["CanvasPosition"] = Vector2.new(0, math.clamp(var_006, 0, var_002)) })):Play()
+			end
+local function var_007(...)
+local var_001 = {};
+local var_002 = var_011:FindFirstChild("petsFolder")
+if var_002 then
+for var_002, var_003 in ipairs(var_002:GetChildren()) do
+if var_003:IsA("Folder") then
+for var_002, var_003 in ipairs(var_003:GetChildren()) do
+var_001[var_003.Name] = (var_001[var_003.Name] or 0) + 1
+							end
+						end
+					end
+				end
+local var_003 = {}
+for var_001 in pairs(var_001) do
+var_003[#var_003 + 1] = var_001
+				end
+table.sort(var_003, function(var_001, var_002, ...)
+return var_001:lower() < var_002:lower()
+				end);
+local var_004 = {}
+for var_002, var_003 in ipairs(var_003) do
+var_004[#var_004 + 1] = { ["label"] = var_003 .. ("  x" .. var_033(var_001[var_003])), ["name"] = var_003, ["count"] = var_001[var_003] }
+				end
+return var_004
+			end
+local function var_008(var_001, var_002, ...)
+local var_003 = {};
+local var_004 = var_011:FindFirstChild("petsFolder")
+if not var_004 or type(var_001) ~= "string" then
+return var_003
+				end
+for var_004, var_005 in ipairs(var_004:GetChildren()) do
+if var_005:IsA("Folder") then
+for var_004, var_005 in ipairs(var_005:GetChildren()) do
+if var_005.Name == var_001 then
+var_003[#var_003 + 1] = var_005
+if #var_003 >= var_002 then
+return var_003
+								end
+							end
+						end
+					end
+				end
+return var_003
+			end
+local function var_009(var_001, ...)
+return #var_008(var_001, math.huge)
+			end
+local function var_010(var_001, ...)
+local var_002 = var_001
+while var_002 and var_002 ~= var_012 do
+if var_002:IsA("GuiObject") and not var_002["Visible"] then
+return false
+					end
+var_002 = var_002.Parent
+				end
+return var_002 == var_012
+			end
+local function var_013(...)
+local var_001, var_002 = nil, 0
+for var_003, var_004 in ipairs(var_012:GetDescendants()) do
+if var_004:IsA("GuiObject") and (not var_004:IsDescendantOf(var_117) and var_010(var_004)) then
+local var_003 = var_004.Name:lower()
+if (var_003:find("trade", 1, true) or var_003:find("trading", 1, true)) and (var_004["AbsoluteSize"]["X"] >= 160 and var_004["AbsoluteSize"]["Y"] >= 110) then
+local var_003 = var_004["AbsoluteSize"]["X"] * var_004["AbsoluteSize"]["Y"]
+if var_003 > var_002 then
+var_001, var_002 = var_004, var_003
+							end
+						end
+					end
+				end
+return var_001
+			end
+local function var_014(var_001, ...)
+local var_002 = (tostring(var_001 or "")):lower()
+return var_002:find("accepted", 1, true) or var_002:find("ready", 1, true) or var_002:find("aceptado", 1, true) or var_002:find("aceptó", 1, true) or var_002:find("listo", 1, true) or var_002:find("confirmado", 1, true)
+			end
+local function var_017(var_001, var_002, ...)
+local var_003 = var_002.Name:lower();
+local var_004 = var_002["DisplayName"]:lower()
+for var_001, var_002 in ipairs(var_001:GetDescendants()) do
+if var_002:IsA("TextLabel") or var_002:IsA("TextButton") then
+local var_001 = (tostring(var_002.Text or "")):lower()
+if var_001:find(var_003, 1, true) or var_001:find(var_004, 1, true) then
+return true
+						end
+					end
+				end
+return false
+			end
+local function var_018(var_001, var_002, ...)
+local var_003 = false
+for var_004, var_005 in ipairs(var_001:GetDescendants()) do
+if (var_005:IsA("TextLabel") or var_005:IsA("TextButton")) and (var_010(var_005) and var_014(var_005.Text)) then
+local var_004 = var_005.Parent
+for var_003 = 1, 4, 1 do
+if not var_004 or var_004 == var_001.Parent then
+break
+							end
+if var_017(var_004, var_002) then
+return true
+							end
+var_004 = var_004.Parent
+						end
+local var_006 = (var_005:GetFullName()):lower()
+if var_006:find("other", 1, true) or var_006:find("opponent", 1, true) or var_006:find("player2", 1, true) or var_006:find("recipient", 1, true) then
+return true
+						end
+if var_005:IsA("TextLabel") then
+var_003 = true
+						end
+					end
+				end
+return var_003
+			end
+local function var_019(...)
+local var_001 = var_002:FindFirstChild("rEvents")
+return var_001 and (var_001:FindFirstChild("tradingEvent") or var_001:FindFirstChild("tradeRemote"))
+			end
+local function var_020(var_001, var_002, var_003, ...)
+if not var_001 then
+return false
+				end
+if var_001:IsA("RemoteFunction") then
+return pcall(var_001["InvokeServer"], var_001, var_002, var_003)
+				end
+return pcall(var_001["FireServer"], var_001, var_002, var_003)
+			end
+local var_021
+local var_026 = 6
+local var_027 = 0
+local function var_028(var_001, var_002, var_003, ...)
+if var_002 ~= nil then
+var_016.trade["delivered"] = var_002
+				end
+if var_003 ~= nil then
+var_016.trade.total = var_003
+				end
+if var_021 and (var_021.Parent and var_001) then
+var_027 = var_027 + 1
+local var_002 = var_027
+var_021.Text = tostring(var_001)
+if not var_016.trade.busy then
+task.delay(1.4, function(...)
+if var_021 and (var_021.Parent and (not var_016.trade.busy and var_027 == var_002)) then
+var_021.Text = "Iniciar Fast Trade"
+							end
+						end)
+					end
+				end
+			end
+local function var_029(var_001, ...)
+var_016.trade["requestGeneration"] = var_016.trade["requestGeneration"] + 1
+var_016.trade.busy = false
+var_016.trade["activePlayer"] = nil
+var_016.trade["activePet"] = nil
+var_024("fastTrade")
+if var_021 and var_021.Parent then
+var_021.Text = "Iniciar Fast Trade"
+				end
+if var_001 then
+var_028(var_001)
+				end
+			end
+local var_030 = false
+local var_031 = var_138(var_005, "Seleccionar jugador", var_141(), function(var_001, ...)
+local var_002 = type(var_001) == "table" and var_001.name or var_001
+if not var_030 and (var_016.trade.busy and (var_016.trade["activePlayer"] and var_002 ~= var_016.trade["activePlayer"])) then
+var_029("Cancelado: cambió el jugador")
+					end
+				end, var_006);
+local var_032 = var_138(var_005, "Seleccionar pet", var_007(), function(var_001, ...)
+local var_002 = type(var_001) == "table" and var_001.name or var_001
+if not var_030 and (var_016.trade.busy and (var_016.trade["activePet"] and var_002 ~= var_016.trade["activePet"])) then
+var_029("Cancelado: cambió la pet")
+					end
+				end, var_006);
+local var_034 = var_138(var_005, "Cantidad", { 6, 5, 4, 3, 2, 1 }, function(var_001, ...)
+var_026 = math.clamp(math.floor(tonumber(var_001) or 6), 1, 6)
+				end, var_006);
+local function var_035(var_001, ...)
+return type(var_001) == "table" and var_001.name or var_001
+			end
+local function var_036(var_001, var_002, var_003, ...)
+local var_004 = 0
+while var_016["running"] and (var_016.trade.busy and (var_016.trade["requestGeneration"] == var_003 and var_002.Parent)) do
+local var_003 = var_013()
+if var_003 then
+return var_003
+					end
+if time() >= var_004 then
+var_020(var_001, "sendTradeRequest", var_002)
+var_004 = time() + 1.25
+var_028("Enviando solicitud hasta que acepte...")
+					end
+task.wait(.1)
+				end
+return nil
+			end
+var_021 = var_136(var_005, "Iniciar Fast Trade", function(var_002, ...)
+if var_016.trade.busy then
+var_029("Cancelado por el usuario")
+return
+					end
+if var_013() then
+var_028("Cerrá el trade actual antes de iniciar")
+return
+					end
+local var_003 = var_035(var_031:Get());
+local var_004 = var_035(var_032:Get());
+local var_005 = var_003 and var_001:FindFirstChild(var_003);
+local var_006 = var_019();
+local var_007 = math.clamp(math.floor(tonumber(var_034:Get()) or var_026), 1, 6)
+if not var_005 or var_005 == var_011 then
+var_028("Seleccioná un jugador válido")
+return
+					end
+if not var_004 then
+var_028("Seleccioná una pet")
+return
+					end
+if not var_006 then
+var_028("El remote de trade no está disponible")
+return
+					end
+if var_009(var_004) < var_007 then
+var_028("No tenés esa cantidad de pets")
+return
+					end
+var_016.trade["requestGeneration"] = var_016.trade["requestGeneration"] + 1
+local var_010 = var_016.trade["requestGeneration"]
+var_016.trade.busy = true
+var_016.trade["activePlayer"] = var_003
+var_016.trade["activePet"] = var_004
+var_016.trade["delivered"] = 0
+var_016.trade.total = var_007
+var_002.Text = "Cancelar Fast Trade"
+var_028("Preparando primer lote...", 0, var_007);
+var_025("fastTrade", function(...)
+while var_016["running"] and (var_016.trade.busy and (var_016.trade["requestGeneration"] == var_010 and var_016.trade["delivered"] < var_007)) do
+if not var_005.Parent then
+var_029("El jugador salió del servidor")
+return
+							end
+local var_001 = var_007 - var_016.trade["delivered"]
+local var_002 = var_008(var_004, math.min(6, var_001))
+if #var_002 == 0 then
+var_029("Ya no quedan pets disponibles")
+return
+							end
+local var_003 = #var_002
+local var_011 = var_009(var_004);
+local var_012 = var_036(var_006, var_005, var_010)
+if not var_012 then
+return
+							end
+var_028("Seleccionando lote de " .. (var_003 .. " pets..."))
+for var_001, var_002 in ipairs(var_002) do
+if not var_016.trade.busy or var_016.trade["requestGeneration"] ~= var_010 then
+return
+								end
+if var_002.Parent then
+var_020(var_006, "offerItem", var_002);
+task.wait(.08)
+								end
+							end
+var_028("Esperando que la otra cuenta acepte...");
+local var_014 = false
+while var_016["running"] and (var_016.trade.busy and (var_016.trade["requestGeneration"] == var_010 and (var_005.Parent and not var_014))) do
+var_012 = var_013()
+if not var_012 then
+break
+								end
+var_014 = var_018(var_012, var_005);
+task.wait(.12)
+							end
+if not var_016.trade.busy or var_016.trade["requestGeneration"] ~= var_010 then
+return
+							end
+if not var_005.Parent then
+var_029("El jugador salió del servidor")
+return
+							end
+if not var_014 then
+var_028("Trade cerrado; reintentando el mismo lote...");
+task.wait(.8)
+							else
+var_028("Aceptando y verificando entrega...");
+var_020(var_006, "acceptTrade");
+local var_001 = time() + 30
+local var_002 = 0
+while var_016["running"] and (var_016.trade.busy and (var_016.trade["requestGeneration"] == var_010 and time() < var_001)) do
+var_002 = math.clamp(var_011 - var_009(var_004), 0, var_003)
+if var_002 > 0 then
+break
+									end
+task.wait(.2)
+								end
+if var_002 > 0 then
+var_016.trade["delivered"] = math.min(var_007, var_016.trade["delivered"] + var_002);
+var_028(var_016.trade["delivered"] >= var_007 and "Entrega completada" or "Lote entregado; preparando el siguiente...", var_016.trade["delivered"], var_007);
+task.wait(.8)
+								else
+var_028("No se confirmó la entrega; reintentando...")
+while var_016["running"] and (var_016.trade.busy and (var_016.trade["requestGeneration"] == var_010 and var_013())) do
+task.wait(.25)
+									end
+task.wait(.5)
+								end
+							end
+						end
+if var_016.trade["requestGeneration"] == var_010 and var_016.trade["delivered"] >= var_007 then
+var_016.trade.busy = false
+var_016.trade["activePlayer"] = nil
+var_016.trade["activePet"] = nil
+var_002.Text = "Iniciar Fast Trade"
+var_028("Completado: " .. (var_033(var_007) .. " pets entregadas"), var_007, var_007)
+						end
+					end)
+				end, var_015.row, Color3["fromRGB"](16, 78, 92));
+local function var_037(...)
+var_030 = true
+var_031:SetValues(var_141(), true)
+var_030 = false
+			end
+local var_038 = false
+local function var_039(...)
+if var_038 then
+return
+				end
+var_038 = true
+task.delay(.15, function(...)
+var_038 = false
+if var_016["running"] then
+var_030 = true
+var_032:SetValues(var_007(), true)
+var_030 = false
+					end
+				end)
+			end
+var_022(var_001["PlayerAdded"]:Connect(var_037));
+var_022(var_001["PlayerRemoving"]:Connect(var_037));
+var_022(var_011["DescendantAdded"]:Connect(function(var_001, ...)
+local var_002 = var_011:FindFirstChild("petsFolder")
+if var_002 and var_001:IsDescendantOf(var_002) then
+var_039()
+				end
+			end));
+var_022(var_011["DescendantRemoving"]:Connect(function(var_001, ...)
+local var_002 = var_011:FindFirstChild("petsFolder")
+if var_002 and var_001:IsDescendantOf(var_002) then
+var_039()
+				end
+			end));
+var_023(function(...)
+var_029()
+			end)
+		end
+local var_142 = var_126.Gifts
+var_132(var_142, "Regalos");
+local var_143 = var_134(var_142, "Eggs", "0", var_015.cyan);
+local var_144 = var_134(var_142, "Tropical Shakes", "0", var_015.cyan);
+var_132(var_142, "Enviar Regalos");
+local var_145 = var_138(var_142, "Jugador", var_141(), function(...)
+
+			end);
+local var_146 = 1
+local var_147 = 1
+local var_148 = nil
+local var_149 = nil
+var_139(var_142, "Cantidad de Eggs", "1", function(var_001, ...)
+var_146 = math.clamp(math.floor(tonumber(var_001) or 1), 1, 9999)
+if var_148 then
+var_148.Text = "🥚 Enviar " .. (var_146 .. (" Protein Egg" .. ((var_146 == 1 and "" or "s") .. " 🥚")))
+			end
+		end);
+local function var_150(var_001, ...)
+return type(var_001) == "table" and var_001 or { var_001 }
+		end
+local function var_151(var_001, var_002, ...)
+if not var_001 then
+return nil
+			end
+for var_002, var_003 in ipairs(var_150(var_002)) do
+local var_004 = var_001:FindFirstChild(var_003)
+if var_004 then
+return var_004
+				end
+			end
+return nil
+		end
+local function var_152(var_001, ...)
+local var_002 = var_011:FindFirstChild("consumablesFolder")
+if not var_002 then
+return 0
+			end
+local var_003 = {}
+for var_001, var_002 in ipairs(var_150(var_001)) do
+var_003[var_002] = true
+			end
+local var_004 = 0
+for var_001, var_002 in ipairs(var_002:GetChildren()) do
+if var_003[var_002.Name] then
+var_004 = var_004 + 1
+				end
+			end
+return var_004
+		end
+local function var_153(var_003, var_004, var_005, var_006, var_007, var_008, ...)
+local var_009 = var_145:Get();
+local var_010 = type(var_009) == "table" and var_009.name or var_009
+local var_012 = var_010 and var_001:FindFirstChild(var_010);
+local var_013 = var_011:FindFirstChild("consumablesFolder");
+local var_015 = var_002:FindFirstChild("rEvents");
+local var_017 = var_015 and var_015:FindFirstChild("giftRemote");
+local var_018 = var_007 .. (" Enviar " .. (var_005 .. (" " .. (var_004 .. ((var_005 == 1 and "" or "s") .. (" " .. var_007))))))
+if not var_012 or not var_013 or not var_017 then
+var_006.Text = "Seleccioná un jugador"
+task.delay(.9, function(...)
+if var_006 and var_006.Parent then
+var_006.Text = var_018
+					end
+				end)
+return
+			end
+var_025("giftSender", function(...)
+local var_001 = 0
+local var_002 = 0
+local var_004 = math.max(tonumber(var_008) or .1, .08)
+for var_008 = 1, var_005, 1 do
+if not var_016["running"] then
+break
+					end
+local var_009 = var_151(var_013, var_003)
+if not var_009 then
+break
+					end
+local var_010 = var_035()
+while var_016["running"] and var_010 >= 650 do
+task.wait(.25)
+var_010 = var_035()
+					end
+if not var_016["running"] then
+break
+					end
+local var_011 = pcall(function(...)
+var_017:InvokeServer("giftRequest", var_012, var_009)
+						end)
+if var_011 then
+var_001 = var_001 + 1
+					end
+if time() - var_002 >= .25 then
+var_006.Text = var_007 .. (" Enviando " .. (var_001 .. ("/" .. (var_005 .. (" " .. var_007)))))
+var_002 = time()
+					end
+local var_014 = var_004
+if var_010 >= 400 then
+var_014 = math.max(var_014, .4)
+					elseif var_010 >= 250 then
+var_014 = math.max(var_014, .28)
+					elseif var_010 >= 150 then
+var_014 = math.max(var_014, .2)
+					end
+task.wait(var_014)
+				end
+if var_006 and var_006.Parent then
+var_006.Text = var_018
+				end
+var_143.Text = var_033(var_152(var_014["AutoEgg"].Names));
+var_144.Text = var_033(var_152("Tropical Shake"))
+			end)
+		end
+var_148 = var_136(var_142, "🥚 Enviar 1 Protein Egg 🥚", function(var_001, ...)
+var_153(var_014["AutoEgg"].Names, "Protein Egg", var_146, var_001, "🥚", .16)
+			end);
+var_139(var_142, "Cantidad de Shakes", "1", function(var_001, ...)
+var_147 = math.clamp(math.floor(tonumber(var_001) or 1), 1, 9999)
+if var_149 then
+var_149.Text = "🥤 Enviar " .. (var_147 .. (" Tropical Shake" .. ((var_147 == 1 and "" or "s") .. " 🥤")))
+			end
+		end)
+var_149 = var_136(var_142, "🥤 Enviar 1 Tropical Shake 🥤", function(var_001, ...)
+var_153("Tropical Shake", "Tropical Shake", var_147, var_001, "🥤", .16)
+			end);
+var_025("giftUpdater", function(...)
+while var_016["running"] do
+if not var_018["giftSender"] then
+var_143.Text = var_033(var_152(var_014["AutoEgg"].Names));
+var_144.Text = var_033(var_152("Tropical Shake"))
+				end
+task.wait(2)
+			end
+		end);
+local function var_154(...)
+local var_001 = {};
+local var_003 = {};
+local var_004 = var_002:FindFirstChild("cPetShopFolder")
+if var_004 then
+for var_002, var_003 in ipairs(var_014["UniquePets"]) do
+if var_004:FindFirstChild(var_003) then
+var_001[#var_001 + 1] = var_003
+					end
+				end
+for var_001, var_002 in ipairs(var_014["UniqueAuras"]) do
+if var_004:FindFirstChild(var_002) then
+var_003[#var_003 + 1] = var_002
+					end
+				end
+			else
+for var_002, var_003 in ipairs(var_014["UniquePets"]) do
+var_001[#var_001 + 1] = var_003
+				end
+for var_001, var_002 in ipairs(var_014["UniqueAuras"]) do
+var_003[#var_003 + 1] = var_002
+				end
+			end
+return var_001, var_003
+		end
+local var_155, var_156 = var_154();
+local var_157 = var_126["Pet Shop"]
+var_132(var_157, "🐾 Pets 🐾");
+local var_158 = var_138(var_157, "Seleccionar Pet", var_155, function(...)
+
+			end);
+local function var_159(var_001, ...)
+local var_003 = var_002:FindFirstChild("cPetShopFolder");
+local var_004 = var_002:FindFirstChild("cPetShopRemote");
+local var_005 = var_003 and (var_001 and var_003:FindFirstChild(var_001))
+if not var_005 or not var_004 then
+return false
+			end
+local var_006 = pcall(function(...)
+var_004:InvokeServer(var_005)
+				end)
+return var_006
+		end
+var_136(var_157, "🐾 Comprar Pets 🐾", function(...)
+var_159(var_158:Get())
+		end);
+var_137(var_157, "🔁 Auto Comprar Pet 🔁", function(var_001, ...)
+var_016["autoPet"] = var_001
+if not var_001 then
+var_024("autoPet")
+return
+			end
+var_025("autoPet", function(...)
+while var_016["running"] and var_016["autoPet"] do
+var_159(var_158:Get());
+task.wait(.18)
+				end
+			end)
+		end);
+var_132(var_157, "🌌 Auras 🌌");
+local var_160 = var_138(var_157, "Seleccionar Aura", var_156, function(...)
+
+			end);
+var_136(var_157, "🌌 Comprar Aura 🌌", function(...)
+var_159(var_160:Get())
+		end);
+var_137(var_157, "🔁 Auto Comprar Aura 🔁", function(var_001, ...)
+var_016["autoAura"] = var_001
+if not var_001 then
+var_024("autoAura")
+return
+			end
+var_025("autoAura", function(...)
+while var_016["running"] and var_016["autoAura"] do
+var_159(var_160:Get());
+task.wait(.18)
+				end
+			end)
+		end);
+local function var_161(...)
+local var_001, var_002 = var_154();
+var_158:SetValues(var_001, true);
+var_160:SetValues(var_002, true)
+		end
+local var_162 = var_002:FindFirstChild("cPetShopFolder")
+if var_162 then
+var_022(var_162["ChildAdded"]:Connect(function(...)
+task.defer(var_161)
+			end));
+var_022(var_162["ChildRemoved"]:Connect(function(...)
+task.defer(var_161)
+			end))
+		else
+var_022(var_002["ChildAdded"]:Connect(function(var_001, ...)
+if var_001.Name == "cPetShopFolder" then
+task.defer(var_161)
+				end
+			end))
+		end
+local var_163 = var_126.Stats
+var_132(var_163, "⏱️ Sesión ⏱️");
+local var_164 = var_134(var_163, "Ejecutado hace:", "0d 0h 0m 0s", var_015.cyan);
+var_132(var_163, "📊 STATS 📊");
+local var_165 = { { ["label"] = "💪 Fuerza 💪", ["names"] = { "Strength", "Fuerza" } }, { ["label"] = "🛡️ Durabilidad 🛡️", ["names"] = { "Durability", "Durabilidad" } }, { ["label"] = "🔄 Rebirths 🔄", ["names"] = { "Rebirths", "Renacimientos" } }, { ["label"] = "⚔️ Kills ⚔️", ["names"] = { "Kills" } }, { ["label"] = "😈 Evil Karma 😈", ["names"] = { "evilKarma", "Evil Karma" } }, { ["label"] = "😇 Good Karma 😇", ["names"] = { "goodKarma", "Good Karma" } } };
+local var_166 = {}
+for var_001, var_002 in ipairs(var_165) do
+var_002["valueLabel"] = var_134(var_163, var_002.label, "0 (+0)", var_015.white);
+local var_003 = var_032(var_011, var_002.names);
+var_166[var_002] = var_003 and tonumber(var_003.Value) or 0
+		end
+local var_167 = os.time();
+var_025("statsUpdater", function(...)
+while var_016["running"] do
+local var_001 = os.time() - var_167
+var_164.Text = math.floor(var_001 / 86400) .. ("d " .. (math.floor((var_001 % 86400) / 3600) .. ("h " .. (math.floor((var_001 % 3600) / 60) .. ("m " .. (var_001 % 60 .. "s"))))))
+for var_001, var_002 in ipairs(var_165) do
+local var_003 = var_032(var_011, var_002.names);
+local var_004 = var_003 and tonumber(var_003.Value) or 0
+local var_005 = var_004 - (var_166[var_002] or 0);
+var_002["valueLabel"].Text = var_033(var_004) .. (" (" .. (var_034(var_005) .. ")"))
+				end
+task.wait(.5)
+			end
+		end);
+local var_168 = nil
+local var_169 = var_126.Misc
+var_132(var_169, "🖥️ RENDIMIENTO 🖥️");
+var_137(var_169, "Anti Lag 100%", function(var_001, ...)
+var_079(var_001)
+		end);
+local var_170 = var_135(var_169, "Desactivado")
+var_072 = function(var_001, ...)
+if var_170 and var_170.Parent then
+var_170.Text = var_001
+				end
+			end
+var_132(var_169, "🚀 FLY 🚀");
+var_137(var_169, " Fly ", function(var_001, ...)
+var_098(var_001)
+		end);
+var_140(var_169, "Velocidad del Fly", 1, 30, var_016["flyLevel"], function(var_001, ...)
+var_016["flyLevel"] = var_001
+		end);
+var_132(var_169, "⚙️ MISC ⚙️");
+var_137(var_169, "🌀 Spin 🌀", function(var_001, ...)
+var_107(var_001)
+		end);
+var_137(var_169, "⚡ Fast Speed ⚡", function(var_001, ...)
+var_091(var_001)
+		end);
+var_137(var_169, "🌊 Walk on Water 🌊", function(var_001, ...)
+var_025("walkWater", function(...)
+var_081(var_001)
+			end)
+		end);
+var_137(var_169, "👻 No Clip 👻", function(var_001, ...)
+var_102(var_001)
+		end);
+var_137(var_169, "🛡️ Anti Knockback 🛡️", function(var_001, ...)
+var_016["setAntiKnockback"](var_001)
+		end);
+var_137(var_169, "🎡 Auto Spin Fortune Wheel 🎡", function(var_001, ...)
+var_082(var_001)
+		end);
+var_137(var_169, "🎁 Auto Claim Chests 🎁", function(var_001, ...)
+var_084(var_001)
+		end);
+var_137(var_169, "🚫 Remove AD Portal 🚫", function(var_001, ...)
+var_088(var_001)
+		end);
+var_132(var_169, "📹 SPY 📹");
+local var_171 = var_138(var_169, "Seleccionar jugador", var_141(), function(var_001, ...)
+var_016["spyTarget"] = type(var_001) == "table" and var_001.name or var_001
+			end);
+var_137(var_169, "Spy", function(var_001, ...)
+if var_001 and not var_016["spyTarget"] then
+return false
+			end
+var_109(var_001)
+		end);
+var_136(var_169, "❌ Cerrar Script ❌", function(...)
+if var_168 then
+var_168(false)
+			end
+		end, var_015.row, Color3["fromRGB"](72, 34, 52));
+local function var_172(...)
+local var_002 = var_141();
+local var_003 = var_016.kill.target
+var_145:SetValues(var_002, true);
+var_171:SetValues(var_002, true)
+if var_016["killSelector"] then
+var_016["killSelector"]:SetValues(var_002, true)
+			end
+if var_016.spy and (var_016["spyTarget"] and not var_001:FindFirstChild(var_016["spyTarget"])) then
+var_109(false)
+			end
+if var_016.kill["targetMode"] and (var_003 and not var_001:FindFirstChild(var_003)) then
+var_016["setTargetKill"](false)
+if var_016["killTargetToggle"] then
+var_016["killTargetToggle"]:Set(false, true)
+				end
+			end
+		end
+var_022(var_001["PlayerAdded"]:Connect(function(var_001, ...)
+var_016["clearKillFriend"](var_001);
+var_172()
+		end));
+var_022(var_001["PlayerRemoving"]:Connect(function(var_001, ...)
+var_016["clearKillFriend"](var_001);
+task.defer(var_172)
+		end))
+var_096 = Instance.new("Frame");
+var_096.Name = "FlyControls"
+var_096.Size = UDim2["fromOffset"](106, 48);
+var_096["Position"] = UDim2.new(1, -120, 1, -70);
+var_096["BackgroundTransparency"] = 1
+var_096["Visible"] = false
+var_096.ZIndex = 100
+var_096.Parent = var_117
+local function var_173(var_001, var_002, ...)
+local var_003 = Instance.new("TextButton");
+var_003.Size = UDim2["fromOffset"](48, 48);
+var_003["Position"] = UDim2["fromOffset"](var_002, 0);
+var_003["BackgroundColor3"] = var_015.tabOn
+var_003["BackgroundTransparency"] = .18
+var_003["BorderSizePixel"] = 0
+var_003.Text = var_001
+var_003["TextColor3"] = var_015.white
+var_003.Font = Enum.Font["FredokaOne"]
+var_003["TextSize"] = 20
+var_003["AutoButtonColor"] = false
+var_003.ZIndex = 101
+var_003.Parent = var_096;
+(Instance.new("UICorner", var_003))["CornerRadius"] = UDim.new(0, 10);
+local var_004 = Instance.new("UIStroke", var_003);
+var_004.Color = var_015.cyan
+var_004["Thickness"] = 1
+var_004["Transparency"] = .2
+return var_003
+		end
+local var_174 = var_173("▲", 0);
+local var_175 = var_173("▼", 58);
+var_022(var_174["InputBegan"]:Connect(function(var_001, ...)
+if var_001["UserInputType"] == Enum["UserInputType"].Touch or var_001["UserInputType"] == Enum["UserInputType"]["MouseButton1"] then
+var_094 = true
+			end
+		end));
+var_022(var_174["InputEnded"]:Connect(function(var_001, ...)
+if var_001["UserInputType"] == Enum["UserInputType"].Touch or var_001["UserInputType"] == Enum["UserInputType"]["MouseButton1"] then
+var_094 = false
+			end
+		end));
+var_022(var_175["InputBegan"]:Connect(function(var_001, ...)
+if var_001["UserInputType"] == Enum["UserInputType"].Touch or var_001["UserInputType"] == Enum["UserInputType"]["MouseButton1"] then
+var_095 = true
+			end
+		end));
+var_022(var_175["InputEnded"]:Connect(function(var_001, ...)
+if var_001["UserInputType"] == Enum["UserInputType"].Touch or var_001["UserInputType"] == Enum["UserInputType"]["MouseButton1"] then
+var_095 = false
+			end
+		end));
+var_022(var_003["Heartbeat"]:Connect(function(...)
+if not var_016["running"] then
+return
+			end
+local var_002 = var_027();
+local var_003 = var_028();
+local var_004 = var_029()
+if var_016["fastSpeed"] and var_003 then
+var_003["WalkSpeed"] = 1000
+			end
+if var_016.fly and (var_003 and (var_004 and workspace["CurrentCamera"])) then
+if not var_092 or var_092.Parent ~= var_004 then
+var_097()
+var_092 = Instance.new("BodyGyro");
+var_092.Name = "Young0xFlyGyro"
+var_092["P"] = 12000
+var_092["MaxTorque"] = Vector3.new(9000000000, 9000000000, 9000000000);
+var_092.Parent = var_004
+var_093 = Instance.new("BodyVelocity");
+var_093.Name = "Young0xFlyVelocity"
+var_093["P"] = 15000
+var_093["MaxForce"] = Vector3.new(9000000000, 9000000000, 9000000000);
+var_093.Parent = var_004
+				end
+local var_001 = workspace["CurrentCamera"]
+local var_002 = 160 + (math.clamp(var_016["flyLevel"], 1, 30) - 1) * 24
+local var_006 = var_002 + (var_016["fastSpeed"] and 1000 or 0);
+local var_007 = Vector3.zero
+if var_005:IsKeyDown(Enum["KeyCode"]["W"]) then
+var_007 = var_007 + var_001.CFrame["LookVector"]
+				end
+if var_005:IsKeyDown(Enum["KeyCode"]["S"]) then
+var_007 = var_007 - var_001.CFrame["LookVector"]
+				end
+if var_005:IsKeyDown(Enum["KeyCode"]["D"]) then
+var_007 = var_007 + var_001.CFrame["RightVector"]
+				end
+if var_005:IsKeyDown(Enum["KeyCode"]["A"]) then
+var_007 = var_007 - var_001.CFrame["RightVector"]
+				end
+if var_007["Magnitude"] < .05 and var_003["MoveDirection"]["Magnitude"] > .05 then
+var_007 = var_003["MoveDirection"]
+				end
+if var_007["Magnitude"] > 0 then
+var_007 = var_007.Unit
+				end
+local var_008 = 0
+if var_005:IsKeyDown(Enum["KeyCode"].Space) or var_003.Jump or var_094 then
+var_008 = 1
+				elseif var_005:IsKeyDown(Enum["KeyCode"]["LeftControl"]) or var_095 then
+var_008 = -1
+				end
+var_003["PlatformStand"] = true
+var_092["MaxTorque"] = var_016.spin and Vector3.new(9000000000, 0, 9000000000) or Vector3.new(9000000000, 9000000000, 9000000000);
+var_092.CFrame = var_001.CFrame
+local var_009 = var_008 * var_006
+local var_010 = var_007 * var_006 + Vector3.new(0, var_009, 0);
+var_093["Velocity"] = var_010
+			elseif not var_016.fly and (var_092 or var_093) then
+var_097()
+			end
+if var_016["antiKnockback"] and (var_004 and (var_003 and not var_016.fly)) then
+if not var_016["antiKnockbackVelocity"] or var_016["antiKnockbackVelocity"].Parent ~= var_004 then
+var_016["clearAntiKnockback"]();
+var_016["antiKnockbackVelocity"] = Instance.new("BodyVelocity");
+var_016["antiKnockbackVelocity"].Name = "Young0xAntiKnockback"
+var_016["antiKnockbackVelocity"]["P"] = 25000
+var_016["antiKnockbackVelocity"]["MaxForce"] = Vector3.new(1000000000, 0, 1000000000);
+var_016["antiKnockbackVelocity"].Parent = var_004
+				end
+local var_001 = var_003["MoveDirection"]
+local var_002 = var_016["fastSpeed"] and 1000 or math.max(var_003["WalkSpeed"], 16);
+var_016["antiKnockbackVelocity"]["Velocity"] = Vector3.new(var_001["X"] * var_002, 0, var_001["Z"] * var_002);
+var_004["AssemblyLinearVelocity"] = Vector3.new(var_001["X"] * var_002, math.clamp(var_004["AssemblyLinearVelocity"]["Y"], -90, 90), var_001["Z"] * var_002);
+var_004["AssemblyAngularVelocity"] = Vector3.zero
+			elseif var_016["antiKnockbackVelocity"] then
+var_016["clearAntiKnockback"]()
+			end
+if var_016.noclip and (var_002 and var_004) then
+if not var_016.fly then
+local var_001 = RaycastParams.new();
+var_001["FilterType"] = Enum["RaycastFilterType"]["Exclude"]
+var_001["FilterDescendantsInstances"] = { var_002 };
+pcall(function(...)
+var_001["RespectCanCollide"] = true
+					end);
+local var_005 = workspace:Raycast(var_004["Position"], Vector3.new(0, -18, 0), var_001)
+if var_005 and var_005.Normal["Y"] >= .55 then
+local var_001 = (var_003 and var_003["HipHeight"] or 2) + var_004.Size["Y"] * .5
+local var_002 = var_005["Position"]["Y"] + var_001
+if var_004["Position"]["Y"] < var_002 + .08 then
+var_004.CFrame = CFrame.new(var_004["Position"]["X"], var_002, var_004["Position"]["Z"]) * var_004.CFrame["Rotation"]
+var_004["AssemblyLinearVelocity"] = Vector3.new(var_004["AssemblyLinearVelocity"]["X"], 0, var_004["AssemblyLinearVelocity"]["Z"])
+						end
+					end
+				end
+			end
+if var_016.spin and (var_004 and var_003) then
+if not var_103 or var_103.Parent ~= var_004 then
+var_106()
+var_104 = var_003
+var_105 = var_003["AutoRotate"]
+var_003["AutoRotate"] = false
+var_103 = Instance.new("BodyAngularVelocity");
+var_103.Name = "Young0xSpin"
+var_103["AngularVelocity"] = Vector3.new(0, 7, 0);
+var_103["MaxTorque"] = Vector3.new(0, 9000000000, 0);
+var_103["P"] = 6000
+var_103.Parent = var_004
+				end
+			elseif var_103 then
+var_106()
+			end
+if var_016.spy and workspace["CurrentCamera"] then
+local var_002 = var_016["spyTarget"] and var_001:FindFirstChild(var_016["spyTarget"]);
+local var_003 = var_002 and (var_002["Character"] and var_002["Character"]:FindFirstChildWhichIsA("Humanoid"))
+if var_003 then
+workspace["CurrentCamera"]["CameraSubject"] = var_003
+				end
+			end
+		end));
+var_022(var_011["CharacterAdded"]:Connect(function(...)
+task.wait(.6)
+if var_016["fastSpeed"] then
+var_090()
+			end
+if var_016["fastPunch"] then
+var_050(true)
+			end
+if not var_016.spy then
+var_108()
+			end
+		end));
+local var_176 = { ["minimized"] = false, ["dragging"] = false, ["dragStart"] = nil, ["startPosition"] = nil, ["dragDistance"] = 0, ["entranceRootTween"] = nil, ["entranceFrameTweens"] = {}, ["minimizeTweens"] = {}, ["shuttingDown"] = false };
+local function var_177(var_001, ...)
+for var_002, var_003 in ipairs(var_001) do
+pcall(var_003.Cancel, var_003);
+var_001[var_002] = nil
+			end
+		end
+local function var_178(var_001, ...)
+var_118["Position"] = var_001
+		end
+local function var_179(var_001, ...)
+if var_176["minimized"] == var_001 then
+return
+			end
+var_176["minimized"] = var_001
+if not var_001 then
+var_123["Visible"] = true
+var_125["Visible"] = true
+			end
+var_177(var_176["entranceFrameTweens"]);
+var_177(var_176["minimizeTweens"]);
+local var_002 = var_001 and var_116 or var_113
+local var_003 = (var_113 - var_116) / 2
+local var_005 = var_001 and UDim2.new(.5, 0, .5, -var_003) or UDim2["fromScale"](.5, .5);
+local var_006 = TweenInfo.new(.22, Enum["EasingStyle"].Quart, Enum["EasingDirection"].Out);
+var_176["minimizeTweens"] = { var_004:Create(var_120, var_006, { ["Size"] = UDim2["fromOffset"](var_112, var_002), ["Position"] = var_005 }), var_004:Create(var_121, var_006, { ["Size"] = UDim2["fromOffset"](var_112, var_002), ["Position"] = var_005 }), var_004:Create(var_119, var_006, { ["Size"] = UDim2["fromOffset"](var_112, var_002), ["Position"] = var_005, ["BackgroundTransparency"] = 1 }) }
+for var_001, var_002 in ipairs(var_176["minimizeTweens"]) do
+var_002:Play()
+			end
+if var_001 then
+task.delay(.18, function(...)
+if var_176["minimized"] then
+var_123["Visible"] = false
+var_125["Visible"] = false
+					end
+				end)
+			end
+		end
+var_022(var_122["InputBegan"]:Connect(function(var_001, ...)
+if var_001["UserInputType"] == Enum["UserInputType"]["MouseButton1"] or var_001["UserInputType"] == Enum["UserInputType"].Touch then
+var_176["dragging"] = true
+var_176["dragStart"] = var_001["Position"]
+var_176["startPosition"] = var_118["Position"]
+var_176["dragDistance"] = 0
+			end
+		end));
+var_022(var_005["InputChanged"]:Connect(function(var_001, ...)
+if not var_176["dragging"] or not var_176["dragStart"] or not var_176["startPosition"] then
+return
+			end
+if var_001["UserInputType"] ~= Enum["UserInputType"]["MouseMovement"] and var_001["UserInputType"] ~= Enum["UserInputType"].Touch then
+return
+			end
+local var_002 = var_001["Position"] - var_176["dragStart"]
+var_176["dragDistance"] = var_002["Magnitude"]
+local var_003 = var_110();
+local var_004 = (var_003["X"] * var_176["startPosition"]["X"].Scale + var_176["startPosition"]["X"].Offset) + var_002["X"]
+local var_005 = (var_003["Y"] * var_176["startPosition"]["Y"].Scale + var_176["startPosition"]["Y"].Offset) + var_002["Y"]
+var_178(UDim2["fromOffset"](var_004, var_005))
+		end));
+var_022(var_005["InputEnded"]:Connect(function(var_001, ...)
+if var_001["UserInputType"] == Enum["UserInputType"]["MouseButton1"] or var_001["UserInputType"] == Enum["UserInputType"].Touch then
+var_176["dragging"] = false
+			end
+		end));
+var_022(var_122["Activated"]:Connect(function(...)
+if var_176["dragDistance"] < 8 then
+var_179(not var_176["minimized"])
+			end
+		end))
+var_168 = function(var_001, ...)
+if var_176["shuttingDown"] then
+return
+				end
+var_176["shuttingDown"] = true
+if var_176["entranceRootTween"] then
+pcall(var_176["entranceRootTween"].Cancel, var_176["entranceRootTween"]);
+var_176["entranceRootTween"] = nil
+				end
+var_177(var_176["entranceFrameTweens"]);
+var_177(var_176["minimizeTweens"]);
+var_016["running"] = false
+for var_001, var_002 in ipairs(var_019) do
+pcall(var_002)
+				end
+var_026()
+if var_013["Young0xFG100"] == var_020 then
+var_013["Young0xFG100"] = nil
+				end
+if var_001 then
+if var_117 and var_117.Parent then
+var_117:Destroy()
+					end
+return
+				end
+local var_002 = TweenInfo.new(.3, Enum["EasingStyle"].Quart, Enum["EasingDirection"].In);
+local var_003 = var_120["AbsoluteSize"]["X"]
+local var_005 = var_120["AbsoluteSize"]["Y"]
+local var_006 = math.floor(var_003 * .9);
+local var_007 = math.floor(var_005 * .9);
+local var_008 = var_118["Position"]
+local var_009 = UDim2.new(var_008["X"].Scale, var_008["X"].Offset, var_008["Y"].Scale, var_008["Y"].Offset + 14);
+(var_004:Create(var_118, var_002, { ["Position"] = var_009, ["GroupTransparency"] = 1 })):Play();
+(var_004:Create(var_120, var_002, { ["Size"] = UDim2["fromOffset"](var_006, var_007) })):Play();
+(var_004:Create(var_121, var_002, { ["Size"] = UDim2["fromOffset"](var_006, var_007) })):Play();
+(var_004:Create(var_119, var_002, { ["Size"] = UDim2["fromOffset"](var_006, var_007) })):Play();
+task.delay(.32, function(...)
+if var_117 and var_117.Parent then
+var_117:Destroy()
+					end
+				end)
+			end
+var_020["Shutdown"] = var_168
+var_020.State = var_016
+var_020.Config = var_014
+var_020.Pages = var_126
+var_020.Tabs = var_127
+var_020["SetMinimized"] = var_179
+var_013["Young0xFG100"] = var_020
+var_118["Position"] = UDim2.new(.5, 0, .5, 18);
+var_120.Size = UDim2["fromOffset"](math.floor(var_112 * .9), math.floor(var_113 * .9));
+var_121.Size = UDim2["fromOffset"](math.floor(var_112 * .9), math.floor(var_113 * .9));
+var_119.Size = UDim2["fromOffset"](math.floor(var_112 * .9), math.floor(var_113 * .9));
+var_003["Heartbeat"]:Wait();
+var_123["CanvasSize"] = UDim2["fromOffset"](var_124["AbsoluteContentSize"]["X"] + 14, 0)
+if var_016.resume and var_016.resume.script == "fg100.lua" then
+var_130(type(var_016.resume.tab) == "string" and (var_126[var_016.resume.tab] and var_016.resume.tab) or "Info")
+if var_016.resume["protectFriends"] and var_016["killProtectToggle"] then
+var_016["killProtectToggle"]:Set(true)
+			end
+if var_016.resume["autoKill"] and var_016["killAutoToggle"] then
+var_016["killAutoToggle"]:Set(true)
+			end
+if var_016.resume["karmaMode"] == "evil" and var_016["killEvilToggle"] then
+var_016["killEvilToggle"]:Set(true)
+			elseif var_016.resume["karmaMode"] == "good" and var_016["killGoodToggle"] then
+var_016["killGoodToggle"]:Set(true)
+			end
+if var_016.resume["serverHop"] and var_016["killServerHopToggle"] then
+var_016["killServerHopToggle"]:Set(true)
+			end
+		else
+var_130("Info")
+		end
+var_016.resume = nil
+var_176["entranceRootTween"] = var_004:Create(var_118, TweenInfo.new(.42, Enum["EasingStyle"].Quart, Enum["EasingDirection"].Out), { ["Position"] = UDim2["fromScale"](.5, .5), ["GroupTransparency"] = 0 });
+var_176["entranceFrameTweens"] = { var_004:Create(var_120, TweenInfo.new(.42, Enum["EasingStyle"].Back, Enum["EasingDirection"].Out), { ["Size"] = UDim2["fromOffset"](var_112, var_113) }), var_004:Create(var_121, TweenInfo.new(.42, Enum["EasingStyle"].Back, Enum["EasingDirection"].Out), { ["Size"] = UDim2["fromOffset"](var_112, var_113) }), var_004:Create(var_119, TweenInfo.new(.42, Enum["EasingStyle"].Back, Enum["EasingDirection"].Out), { ["Size"] = UDim2["fromOffset"](var_112, var_113) }) };
+var_176["entranceRootTween"]:Play();
+var_176["entranceFrameTweens"][1]:Play();
+var_176["entranceFrameTweens"][2]:Play();
+var_176["entranceFrameTweens"][3]:Play()
+	end)(...))}
