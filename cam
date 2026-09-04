@@ -1,1 +1,297 @@
+local Players = game:GetService("Players")
+local RunService = game:GetService("RunService")
+local UIS = game:GetService("UserInputService")
 
+local Player = Players.LocalPlayer
+local Camera = workspace.CurrentCamera
+
+local Active = false
+local Speed = 1
+local FOV = 70
+local SavedType
+local SavedSubject
+local CamPosition = Camera.CFrame.Position
+local RotationX = 0
+local RotationY = 0
+
+local Speeds = {1, 2, 5, 10, 20, 0.5}
+local SpeedIndex = 1
+
+local Gui = Instance.new("ScreenGui")
+Gui.Name = "FreecamGui"
+Gui.ResetOnSpawn = false
+Gui.Parent = game.CoreGui
+
+local Main = Instance.new("Frame")
+Main.Size = UDim2.fromOffset(180, 235)
+Main.Position = UDim2.new(0.05, 0, 0.3, 0)
+Main.BackgroundColor3 = Color3.fromRGB(15, 15, 15)
+Main.BorderSizePixel = 0
+Main.Active = true
+Main.Draggable = true
+Main.Parent = Gui
+
+Instance.new("UICorner", Main).CornerRadius = UDim.new(0, 12)
+
+local Title = Instance.new("TextLabel")
+Title.Size = UDim2.fromOffset(80, 30)
+Title.Position = UDim2.fromOffset(10, 5)
+Title.BackgroundTransparency = 1
+Title.Text = "FREECAM"
+Title.TextColor3 = Color3.new(1, 1, 1)
+Title.Font = Enum.Font.SourceSansBold
+Title.TextSize = 16
+Title.TextXAlignment = Enum.TextXAlignment.Left
+Title.Parent = Main
+
+local Hide = Instance.new("TextButton")
+Hide.Size = UDim2.fromOffset(40, 30)
+Hide.Position = UDim2.new(1, -75, 0, 5)
+Hide.BackgroundTransparency = 1
+Hide.Text = "ẨN"
+Hide.TextColor3 = Color3.fromRGB(120, 120, 120)
+Hide.Font = Enum.Font.SourceSansBold
+Hide.TextSize = 13
+Hide.Parent = Main
+
+local Dot = Instance.new("TextButton")
+Dot.Size = UDim2.fromOffset(16, 16)
+Dot.Position = UDim2.new(1, -26, 0, 12)
+Dot.BackgroundColor3 = Color3.fromRGB(255, 50, 50)
+Dot.BorderSizePixel = 0
+Dot.Text = ""
+Dot.Parent = Main
+
+Instance.new("UICorner", Dot).CornerRadius = UDim.new(1, 0)
+
+local FOVLabel = Instance.new("TextLabel")
+FOVLabel.Size = UDim2.new(1, 0, 0, 20)
+FOVLabel.Position = UDim2.fromOffset(0, 40)
+FOVLabel.BackgroundTransparency = 1
+FOVLabel.Text = "FOV: 70"
+FOVLabel.TextColor3 = Color3.fromRGB(0, 120, 255)
+FOVLabel.Font = Enum.Font.SourceSansBold
+FOVLabel.TextSize = 14
+FOVLabel.Parent = Main
+
+local FOVSlider = Instance.new("TextButton")
+FOVSlider.Size = UDim2.fromOffset(140, 4)
+FOVSlider.Position = UDim2.fromOffset(20, 65)
+FOVSlider.BackgroundColor3 = Color3.fromRGB(50, 50, 50)
+FOVSlider.BorderSizePixel = 0
+FOVSlider.Text = ""
+FOVSlider.Parent = Main
+
+local FOVProgress = Instance.new("Frame")
+FOVProgress.Size = UDim2.new(0.5, 0, 1, 0)
+FOVProgress.BackgroundColor3 = Color3.fromRGB(0, 120, 255)
+FOVProgress.BorderSizePixel = 0
+FOVProgress.Parent = FOVSlider
+
+local Status = Instance.new("TextButton")
+Status.Size = UDim2.fromOffset(150, 38)
+Status.Position = UDim2.fromOffset(15, 85)
+Status.BackgroundColor3 = Color3.fromRGB(30, 30, 30)
+Status.Text = "TRẠNG THÁI: TẮT"
+Status.TextColor3 = Color3.new(1, 1, 1)
+Status.Font = Enum.Font.SourceSansBold
+Status.TextSize = 15
+Status.Parent = Main
+
+Instance.new("UICorner", Status).CornerRadius = UDim.new(0, 6)
+
+local SpeedButton = Instance.new("TextButton")
+SpeedButton.Size = UDim2.fromOffset(150, 38)
+SpeedButton.Position = UDim2.fromOffset(15, 130)
+SpeedButton.BackgroundColor3 = Color3.fromRGB(30, 30, 30)
+SpeedButton.Text = "TỐC ĐỘ: 1x"
+SpeedButton.TextColor3 = Color3.new(1, 1, 1)
+SpeedButton.Font = Enum.Font.SourceSansBold
+SpeedButton.TextSize = 15
+SpeedButton.Parent = Main
+
+Instance.new("UICorner", SpeedButton).CornerRadius = UDim.new(0, 6)
+
+local Teleport = Instance.new("TextButton")
+Teleport.Size = UDim2.fromOffset(150, 38)
+Teleport.Position = UDim2.fromOffset(15, 175)
+Teleport.BackgroundColor3 = Color3.fromRGB(30, 30, 30)
+Teleport.Text = "DỊCH CHUYỂN ĐẾN ĐÂY"
+Teleport.TextColor3 = Color3.new(1, 1, 1)
+Teleport.Font = Enum.Font.SourceSansBold
+Teleport.TextSize = 13
+Teleport.Parent = Main
+
+Instance.new("UICorner", Teleport).CornerRadius = UDim.new(0, 6)
+
+local function SetAnchor(Value)
+    local Character = Player.Character
+    if not Character then return end
+
+    local Root = Character:FindFirstChild("HumanoidRootPart")
+    if Root then
+        Root.Anchored = Value
+    end
+end
+
+local function ToggleFreecam()
+    Active = not Active
+
+    if Active then
+        Status.Text = "TRẠNG THÁI: BẬT"
+        Status.BackgroundColor3 = Color3.fromRGB(16, 128, 55)
+
+        SavedType = Camera.CameraType
+        SavedSubject = Camera.CameraSubject
+        CamPosition = Camera.CFrame.Position
+
+        local X, Y = Camera.CFrame:ToOrientation()
+        RotationX = Y
+        RotationY = X
+
+        Camera.CameraType = Enum.CameraType.Scriptable
+        SetAnchor(true)
+    else
+        Status.Text = "TRẠNG THÁI: TẮT"
+        Status.BackgroundColor3 = Color3.fromRGB(30, 30, 30)
+
+        Camera.CameraType = SavedType or Enum.CameraType.Custom
+        Camera.CameraSubject = SavedSubject
+
+        SetAnchor(false)
+    end
+end
+
+Status.MouseButton1Click:Connect(ToggleFreecam)
+
+SpeedButton.MouseButton1Click:Connect(function()
+    SpeedIndex += 1
+
+    if SpeedIndex > #Speeds then
+        SpeedIndex = 1
+    end
+
+    Speed = Speeds[SpeedIndex]
+    SpeedButton.Text = "TỐC ĐỘ: " .. Speed .. "x"
+end)
+
+FOVSlider.MouseButton1Click:Connect(function()
+    local MousePosition = UIS:GetMouseLocation()
+    local X = MousePosition.X - FOVSlider.AbsolutePosition.X
+    local Percent = math.clamp(X / FOVSlider.AbsoluteSize.X, 0, 1)
+
+    FOV = math.floor(30 + Percent * 90)
+
+    FOVProgress.Size = UDim2.new(Percent, 0, 1, 0)
+    FOVLabel.Text = "FOV: " .. FOV
+    Camera.FieldOfView = FOV
+end)
+
+Teleport.MouseButton1Click:Connect(function()
+    local Character = Player.Character
+    if not Character then return end
+
+    local Root = Character:FindFirstChild("HumanoidRootPart")
+    if not Root then return end
+
+    local WasAnchored = Root.Anchored
+
+    Root.Anchored = false
+    Root.CFrame = CFrame.new(Camera.CFrame.Position)
+
+    if Active or WasAnchored then
+        Root.Anchored = true
+    end
+end)
+
+local Hidden = false
+
+local function ToggleMenu()
+    Hidden = not Hidden
+
+    Main.Size = Hidden
+        and UDim2.fromOffset(180, 40)
+        or UDim2.fromOffset(180, 235)
+
+    Hide.Text = Hidden and "HIỆN" or "ẨN"
+
+    FOVLabel.Visible = not Hidden
+    FOVSlider.Visible = not Hidden
+    Status.Visible = not Hidden
+    SpeedButton.Visible = not Hidden
+    Teleport.Visible = not Hidden
+end
+
+Hide.MouseButton1Click:Connect(ToggleMenu)
+Dot.MouseButton1Click:Connect(ToggleMenu)
+
+UIS.InputChanged:Connect(function(Input)
+    if not Active then return end
+
+    if Input.UserInputType == Enum.UserInputType.Touch
+        or Input.UserInputType == Enum.UserInputType.MouseMovement then
+
+        local Sensitivity = 0.005
+
+        RotationX -= Input.Delta.X * Sensitivity
+        RotationY -= Input.Delta.Y * Sensitivity
+
+        RotationY = math.clamp(
+            RotationY,
+            -math.rad(80),
+            math.rad(80)
+        )
+    end
+end)
+
+RunService.RenderStepped:Connect(function(DeltaTime)
+    if not Active then return end
+
+    Camera.FieldOfView = FOV
+
+    local Rotation =
+        CFrame.Angles(0, RotationX, 0) *
+        CFrame.Angles(RotationY, 0, 0)
+
+    Camera.CFrame = CFrame.new(CamPosition) * Rotation
+
+    local Character = Player.Character
+    local Humanoid = Character and Character:FindFirstChildOfClass("Humanoid")
+
+    if Humanoid then
+        local Move = Humanoid.MoveDirection
+
+        if Move.Magnitude > 0 then
+            local Forward = Camera.CFrame.LookVector
+            local Right = Camera.CFrame.RightVector
+
+            local FlatForward = Vector3.new(Forward.X, 0, Forward.Z)
+            local FlatRight = Vector3.new(Right.X, 0, Right.Z)
+
+            if FlatForward.Magnitude > 0 then
+                FlatForward = FlatForward.Unit
+            end
+
+            if FlatRight.Magnitude > 0 then
+                FlatRight = FlatRight.Unit
+            end
+
+            local ForwardInput = Move:Dot(FlatForward)
+            local SideInput = Move:Dot(FlatRight)
+
+            local FlyDirection =
+                FlatForward * ForwardInput +
+                FlatRight * SideInput
+
+            if FlyDirection.Magnitude > 0 then
+                CamPosition +=
+                    FlyDirection.Unit *
+                    Speed *
+                    60 *
+                    DeltaTime
+            end
+        end
+    end
+
+    Camera.CFrame = CFrame.new(CamPosition) * Rotation
+end)
