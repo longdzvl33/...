@@ -1,0 +1,89 @@
+local Players = game:GetService("Players")
+local player = Players.LocalPlayer
+
+-- Tạo giao diện
+local gui = Instance.new("ScreenGui")
+gui.Name = "VoidTeleport"
+gui.ResetOnSpawn = false
+gui.Parent = player:WaitForChild("PlayerGui")
+
+-- Chữ hiện khi bật script
+local intro = Instance.new("TextLabel")
+intro.Size = UDim2.new(0, 300, 0, 70)
+intro.Position = UDim2.new(0.5, -150, 0.4, 0)
+intro.BackgroundTransparency = 1
+intro.Text = "Việt Gay"
+intro.TextScaled = true
+intro.TextColor3 = Color3.new(1, 1, 1)
+intro.Parent = gui
+
+task.delay(2, function()
+    if intro then
+        intro:Destroy()
+    end
+end)
+
+-- Nút Tele Void
+local button = Instance.new("TextButton")
+button.Size = UDim2.new(0, 120, 0, 50)
+button.Position = UDim2.new(0, 30, 0.5, 0)
+button.BackgroundTransparency = 0.15
+button.Text = "GAY"
+button.TextScaled = true
+button.TextColor3 = Color3.new(1, 1, 1)
+button.Parent = gui
+
+-- Cho phép kéo nút
+local dragging = false
+local dragStart
+local startPos
+
+button.InputBegan:Connect(function(input)
+    if input.UserInputType == Enum.UserInputType.Touch
+        or input.UserInputType == Enum.UserInputType.MouseButton1 then
+
+        dragging = true
+        dragStart = input.Position
+        startPos = button.Position
+
+        input.Changed:Connect(function()
+            if input.UserInputState == Enum.UserInputState.End then
+                dragging = false
+            end
+        end)
+    end
+end)
+
+button.InputChanged:Connect(function(input)
+    if input.UserInputType == Enum.UserInputType.Touch
+        or input.UserInputType == Enum.UserInputType.MouseMovement then
+
+        local connection
+
+        connection = input.Changed:Connect(function()
+            if dragging then
+                local delta = input.Position - dragStart
+
+                button.Position = UDim2.new(
+                    startPos.X.Scale,
+                    startPos.X.Offset + delta.X,
+                    startPos.Y.Scale,
+                    startPos.Y.Offset + delta.Y
+                )
+            else
+                connection:Disconnect()
+            end
+        end)
+    end
+end)
+
+-- Tele xuống void
+button.Activated:Connect(function()
+    local character = player.Character
+    if not character then return end
+
+    local root = character:FindFirstChild("HumanoidRootPart")
+    if not root then return end
+
+    root.CFrame = root.CFrame + Vector3.new(0, -500, 0)
+end)
