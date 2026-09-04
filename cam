@@ -1,7 +1,6 @@
 local Players = game:GetService("Players")
 local RunService = game:GetService("RunService")
 local UIS = game:GetService("UserInputService")
-local Lighting = game:GetService("Lighting")
 
 local Player = Players.LocalPlayer
 local Camera = workspace.CurrentCamera
@@ -9,7 +8,6 @@ local Camera = workspace.CurrentCamera
 local Active = false
 local Speed = 1
 local FOV = 70
-local Brightness = math.clamp(Lighting.Brightness * 10, 0, 100)
 
 local SavedType
 local SavedSubject
@@ -31,7 +29,7 @@ Gui.IgnoreGuiInset = true
 Gui.Parent = game:GetService("CoreGui")
 
 local Main = Instance.new("Frame")
-Main.Size = UDim2.fromOffset(180, 370)
+Main.Size = UDim2.fromOffset(180, 235)
 Main.Position = UDim2.new(0.05, 0, 0.3, 0)
 Main.BackgroundColor3 = Color3.fromRGB(15, 15, 15)
 Main.BorderSizePixel = 0
@@ -72,15 +70,17 @@ Dot.Parent = Main
 
 Instance.new("UICorner", Dot).CornerRadius = UDim.new(1, 0)
 
-local FOVLabel = Instance.new("TextLabel")
-FOVLabel.Size = UDim2.new(1, 0, 0, 20)
-FOVLabel.Position = UDim2.fromOffset(0, 40)
-FOVLabel.BackgroundTransparency = 1
-FOVLabel.Text = "FOV: 70"
-FOVLabel.TextColor3 = Color3.fromRGB(0, 120, 255)
-FOVLabel.Font = Enum.Font.SourceSansBold
-FOVLabel.TextSize = 14
-FOVLabel.Parent = Main
+local FOVBox = Instance.new("TextBox")
+FOVBox.Size = UDim2.new(1, 0, 0, 20)
+FOVBox.Position = UDim2.fromOffset(0, 40)
+FOVBox.BackgroundTransparency = 1
+FOVBox.Text = "FOV: 70"
+FOVBox.TextColor3 = Color3.fromRGB(0, 120, 255)
+FOVBox.Font = Enum.Font.SourceSansBold
+FOVBox.TextSize = 14
+FOVBox.ClearTextOnFocus = false
+FOVBox.TextXAlignment = Enum.TextXAlignment.Center
+FOVBox.Parent = Main
 
 local FOVSlider = Instance.new("TextButton")
 FOVSlider.Size = UDim2.fromOffset(140, 6)
@@ -133,85 +133,36 @@ Teleport.Parent = Main
 
 Instance.new("UICorner", Teleport).CornerRadius = UDim.new(0, 6)
 
-local BrightnessLabel = Instance.new("TextLabel")
-BrightnessLabel.Size = UDim2.fromOffset(150, 20)
-BrightnessLabel.Position = UDim2.fromOffset(15, 220)
-BrightnessLabel.BackgroundTransparency = 1
-BrightnessLabel.Text = "ĐỘ SÁNG: " .. math.floor(Brightness) .. "%"
-BrightnessLabel.TextColor3 = Color3.new(1, 1, 1)
-BrightnessLabel.Font = Enum.Font.SourceSansBold
-BrightnessLabel.TextSize = 14
-BrightnessLabel.Parent = Main
-
-local Minus = Instance.new("TextButton")
-Minus.Size = UDim2.fromOffset(45, 35)
-Minus.Position = UDim2.fromOffset(15, 245)
-Minus.BackgroundColor3 = Color3.fromRGB(30, 30, 30)
-Minus.Text = "-"
-Minus.TextColor3 = Color3.new(1, 1, 1)
-Minus.Font = Enum.Font.SourceSansBold
-Minus.TextSize = 20
-Minus.Parent = Main
-
-Instance.new("UICorner", Minus).CornerRadius = UDim.new(0, 6)
-
-local BrightnessInput = Instance.new("TextBox")
-BrightnessInput.Size = UDim2.fromOffset(55, 35)
-BrightnessInput.Position = UDim2.fromOffset(65, 245)
-BrightnessInput.BackgroundColor3 = Color3.fromRGB(30, 30, 30)
-BrightnessInput.Text = tostring(math.floor(Brightness))
-BrightnessInput.PlaceholderText = "%"
-BrightnessInput.TextColor3 = Color3.new(1, 1, 1)
-BrightnessInput.Font = Enum.Font.SourceSansBold
-BrightnessInput.TextSize = 14
-BrightnessInput.ClearTextOnFocus = false
-BrightnessInput.TextXAlignment = Enum.TextXAlignment.Center
-BrightnessInput.Parent = Main
-
-Instance.new("UICorner", BrightnessInput).CornerRadius = UDim.new(0, 6)
-
-local Plus = Instance.new("TextButton")
-Plus.Size = UDim2.fromOffset(45, 35)
-Plus.Position = UDim2.fromOffset(120, 245)
-Plus.BackgroundColor3 = Color3.fromRGB(30, 30, 30)
-Plus.Text = "+"
-Plus.TextColor3 = Color3.new(1, 1, 1)
-Plus.Font = Enum.Font.SourceSansBold
-Plus.TextSize = 20
-Plus.Parent = Main
-
-Instance.new("UICorner", Plus).CornerRadius = UDim.new(0, 6)
-
 local UpDown = Instance.new("Frame")
-UpDown.Size = UDim2.fromOffset(80, 90)
-UpDown.Position = UDim2.new(1, -95, 1, -125)
+UpDown.Size = UDim2.fromOffset(100, 120)
+UpDown.Position = UDim2.new(1, -115, 1, -150)
 UpDown.BackgroundTransparency = 1
 UpDown.Visible = false
 UpDown.Parent = Gui
 
 local UpButton = Instance.new("TextButton")
-UpButton.Size = UDim2.fromOffset(70, 38)
+UpButton.Size = UDim2.fromOffset(90, 52)
 UpButton.Position = UDim2.fromOffset(5, 0)
 UpButton.BackgroundColor3 = Color3.fromRGB(30, 30, 30)
 UpButton.Text = "LÊN"
 UpButton.TextColor3 = Color3.new(1, 1, 1)
 UpButton.Font = Enum.Font.SourceSansBold
-UpButton.TextSize = 15
+UpButton.TextSize = 18
 UpButton.Parent = UpDown
 
-Instance.new("UICorner", UpButton).CornerRadius = UDim.new(0, 6)
+Instance.new("UICorner", UpButton).CornerRadius = UDim.new(0, 8)
 
 local DownButton = Instance.new("TextButton")
-DownButton.Size = UDim2.fromOffset(70, 38)
-DownButton.Position = UDim2.fromOffset(5, 45)
+DownButton.Size = UDim2.fromOffset(90, 52)
+DownButton.Position = UDim2.fromOffset(5, 62)
 DownButton.BackgroundColor3 = Color3.fromRGB(30, 30, 30)
 DownButton.Text = "XUỐNG"
 DownButton.TextColor3 = Color3.new(1, 1, 1)
 DownButton.Font = Enum.Font.SourceSansBold
-DownButton.TextSize = 15
+DownButton.TextSize = 18
 DownButton.Parent = UpDown
 
-Instance.new("UICorner", DownButton).CornerRadius = UDim.new(0, 6)
+Instance.new("UICorner", DownButton).CornerRadius = UDim.new(0, 8)
 
 local ShowCircle = Instance.new("TextButton")
 ShowCircle.Size = UDim2.fromOffset(50, 50)
@@ -258,15 +209,35 @@ local function SetJumpVisible(Value)
     end
 end
 
-local function ApplyBrightness()
-    Brightness = math.clamp(math.floor(Brightness), 0, 100)
+local function UpdateFOV(Value)
+    Value = math.clamp(math.floor(Value), 1, 120)
 
-    local MaxRobloxBrightness = 10
-    Lighting.Brightness = (Brightness / 100) * MaxRobloxBrightness
+    FOV = Value
+    Camera.FieldOfView = FOV
 
-    BrightnessLabel.Text = "ĐỘ SÁNG: " .. Brightness .. "%"
-    BrightnessInput.Text = tostring(Brightness)
+    FOVBox.Text = "FOV: " .. FOV
+
+    local Percent = math.clamp((FOV - 30) / 90, 0, 1)
+    FOVProgress.Size = UDim2.new(Percent, 0, 1, 0)
 end
+
+FOVBox.Focused:Connect(function()
+    FOVBox.BackgroundTransparency = 0
+    FOVBox.BackgroundColor3 = Color3.fromRGB(30, 30, 30)
+    FOVBox.Text = tostring(FOV)
+end)
+
+FOVBox.FocusLost:Connect(function()
+    local Value = tonumber(FOVBox.Text)
+
+    if Value then
+        UpdateFOV(Value)
+    else
+        FOVBox.Text = "FOV: " .. FOV
+    end
+
+    FOVBox.BackgroundTransparency = 1
+end)
 
 local function ToggleFreecam()
     Active = not Active
@@ -318,43 +289,17 @@ SpeedButton.MouseButton1Click:Connect(function()
     SpeedButton.Text = "TỐC ĐỘ: " .. Speed .. "x"
 end)
 
-local function UpdateFOVFromPosition(X)
+FOVSlider.MouseButton1Click:Connect(function()
+    local MousePosition = UIS:GetMouseLocation()
+
     local Percent = math.clamp(
-        (X - FOVSlider.AbsolutePosition.X) / FOVSlider.AbsoluteSize.X,
+        (MousePosition.X - FOVSlider.AbsolutePosition.X)
+        / FOVSlider.AbsoluteSize.X,
         0,
         1
     )
 
-    FOV = math.floor(30 + Percent * 90)
-
-    FOVProgress.Size = UDim2.new(Percent, 0, 1, 0)
-    FOVLabel.Text = "FOV: " .. FOV
-    Camera.FieldOfView = FOV
-end
-
-FOVSlider.MouseButton1Click:Connect(function()
-    local MousePosition = UIS:GetMouseLocation()
-    UpdateFOVFromPosition(MousePosition.X)
-end)
-
-Plus.MouseButton1Click:Connect(function()
-    Brightness += 1
-    ApplyBrightness()
-end)
-
-Minus.MouseButton1Click:Connect(function()
-    Brightness -= 1
-    ApplyBrightness()
-end)
-
-BrightnessInput.FocusLost:Connect(function()
-    local Value = tonumber(BrightnessInput.Text)
-
-    if Value then
-        Brightness = math.clamp(Value, 0, 100)
-    end
-
-    ApplyBrightness()
+    UpdateFOV(math.floor(30 + Percent * 90))
 end)
 
 local function SetUp(Value)
@@ -529,5 +474,3 @@ Player.CharacterAdded:Connect(function()
         SetJumpVisible(true)
     end
 end)
-
-ApplyBrightness()
